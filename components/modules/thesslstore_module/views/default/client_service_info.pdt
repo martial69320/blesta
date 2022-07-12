@@ -1,0 +1,20 @@
+	<div class="table-responsive">
+		<table class="table table-curved table-striped">
+			<thead>
+				<tr>
+					<th><?php $this->_("ThesslstoreModule.tab_client_cert_details.store_order_id");?></th>
+					<th><?php $this->_("ThesslstoreModule.tab_client_cert_details.vendor_order_id");?></th>
+					<th><?php $this->_("ThesslstoreModule.tab_client_cert_details.order_status");?></th>
+					<th><?php $this->_("ThesslstoreModule.tab_client_cert_details.vendor_status");?></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><?php $this->Html->_($store_order_id);?></td>
+					<td><?php $this->Html->_($vendor_order_id);?></td>
+					<td><?php $this->Html->_($major_status);?></td>
+					<td><?php $this->Html->_($minor_status);?></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>

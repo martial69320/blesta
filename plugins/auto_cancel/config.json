@@ -1,0 +1,11 @@
+{
+    "version": "1.2.0",
+    "name": "Auto Cancel",
+    "description": "Automatically schedules services for cancellation.",
+    "authors": [
+        {
+            "name": "Phillips Data, Inc.",
+            "url": "http://blesta.com"
+        }
+    ]
+}

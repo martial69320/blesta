@@ -1,0 +1,135 @@
+
+        <div class="system_top_row">
+            <ul class="left_nav">
+                <?php
+                foreach ($this->Html->ifSet($statistics, []) as $statistic) {
+                ?>
+                <li class="<?php $this->Html->_($statistic['class']);?>">
+
+                    <div>
+                        <i class="<?php $this->Html->_($statistic['icon']);?>"></i>
+                        <?php
+                        if ($this->Html->_($statistic['url'], true)) {
+                        ?>
+                        <a href="<?php echo $this->Html->safe($statistic['url']);?>">
+                        <?php
+                        }
+                        ?>
+                        <span><?php $this->Html->_($statistic['name']);?></span>
+                        <span class="value"><?php $this->Html->_($statistic['value']);?></span>
+                        <?php
+                        if ($this->Html->_($statistic['url'], true)) {
+                        ?>
+                        </a>
+                        <?php
+                        }
+                        ?>
+                    </div>
+                </li>
+                <?php
+                }
+                ?>
+            </ul>
+            <div class="right_box">
+                <h3><i class="fa fa-fw fa-user"></i> <?php $this->_('AdminMain.overview.heading_users');?></h3>
+                <div>
+                    <?php
+                    $recent_users = $this->Html->ifSet($recent_users, []);
+                    $num_recent_users = count($recent_users);
+
+                    foreach ($recent_users as $i => $user) {
+                    ?>
+
+                        <span class="tooltip name <?php $this->Html->_($user->class);?>">
+                            <?php
+                            if ($this->Html->ifSet($user->client_id)) {
+                            ?>
+                                <a href="<?php echo $this->Html->safe($this->base_uri . 'clients/view/' . $user->client_id . '/');?>"><?php echo $this->Html->safe($this->Html->ifSet($user->first_name) . ' ' . $this->Html->ifSet($user->last_name));?></a>
+                            <?php
+                            } else {
+                            ?>
+                                <?php echo $this->Html->safe($this->Html->ifSet($user->first_name) . ' ' . $this->Html->ifSet($user->last_name));?>
+                            <?php
+                            }
+                            ?>
+                            <div>
+                                <p>
+                                    <strong><?php $this->_('AdminMain.overview.tooltip_activity');?></strong>
+                                    <br />
+
+                                    <?php
+                                    // Show date timestamp or last activity of latest users
+                                    if ($this->Html->ifSet($user->class) == 'latest' || $this->Html->ifSet($user->class) == 'user') {
+                                        $this->Html->_($user->last_activity);
+                                    } else {
+                                        echo $this->Date->cast($user->date_updated, 'date_time');
+                                    }
+                                    ?>
+                                    <br />
+                                    <?php
+                                    if ($this->Html->ifSet($user->geo_ip['location'])) {
+                                        $location = $user->geo_ip['location'];
+                                    ?>
+                                    <br />
+                                    <strong><?php $this->_('AdminMain.overview.tooltip_location');?></strong>
+                                    <br />
+                                    <?php echo $this->Html->safe($this->Html->concat(', ', $this->Html->ifSet($location['city']), $this->Html->ifSet($location['region'])));?>
+                                    <br />
+                                    <?php
+                                        $this->Html->_($location['country_name']);
+                                    }
+                                    ?>
+                                </p>
+                            </div>
+                        </span>
+
+                    <?php
+                    }
+                    ?>
+                </div>
+
+            </div>
+        </div>
+        <div class="tabs_row">
+            <div class="tabs_nav"><a class="prev" href="#">&nbsp;</a><a class="next" href="#">&nbsp;</a></div>
+            <div id="system_overview_tabs" class="tab_slider">
+                <ul>
+                    <?php
+                    foreach ($this->Html->ifSet($tabs, []) as $tab) {
+                    ?>
+                    <li<?php echo $this->Html->ifSet($tab['current'], false) ? ' class="current"' : ''?>><a href="<?php $this->Html->_($tab['url']);?>"><?php $this->Html->_($tab['name']);?></a></li>
+                    <?php
+                    }
+                    ?>
+                </ul>
+
+            </div>
+        </div>
+        <div id="system_overview_tab_content">
+            <?php echo $this->Html->ifSet($tab_content);?>
+        </div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#widget_system_overview_admin_main').blestaBindToolTips();
+
+        $('.tab_slider li a').click(function() {
+            var current_tab = $('#system_overview_tabs li.current');
+            var new_tab = $(this).parent();
+            if (!$(new_tab).hasClass("current")) {
+                $(this).blestaRequest("get", $(this).attr('href'), null, function(data) {
+                        // Change tabs
+                        if (data["content"]) {
+                            $(current_tab).removeClass("current");
+                            $(new_tab).addClass("current");
+                            $('#system_overview_tab_content').html(data["content"]);
+                        }
+                    },
+                    null,
+                    {dataType: "json"}
+                );
+            }
+            return false;
+        });
+    });
+</script>

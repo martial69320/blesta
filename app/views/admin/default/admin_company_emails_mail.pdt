@@ -1,0 +1,85 @@
+
+        <?php echo $this->Html->ifSet($left_nav);?>
+        <div id="right_outer">
+            <?php echo $this->Html->ifSet($message);?>
+            <section id="right_container">
+                <?php
+                $this->Widget->clear();
+
+                $this->Widget->create($this->_('AdminCompanyEmails.mail.boxtitle_mail', true));
+                $this->Form->create(null, ['class' => 'disable-on-submit']);
+                ?>
+                <div class="inner">
+                    <div class="pad">
+                        <p><?php $this->_('AdminCompanyEmails.mail.text_section');?></p>
+                        <ul>
+                            <li>
+                                <?php $this->Form->fieldCheckbox('html_email', 'true', (isset($vars['html_email']) && ($vars['html_email'] == 'true') ? true : false), ['id' => 'html_email']);?>
+                                <?php $this->Form->label($this->_('AdminCompanyEmails.mail.field.html_email', true), 'html_email', ['class' => 'inline']);?>
+                                <span class="tooltip"><?php $this->_('AppController.tooltip.text');?><div><?php $this->_('AdminCompanyEmails.!tooltip.html_email');?></div></span>
+                            </li>
+                            <li>
+                                <?php $this->Form->label($this->_('AdminCompanyEmails.mail.field.mail_delivery', true), 'mail_delivery', ['class' => 'inline']);?>
+                                <span class="tooltip block"><?php $this->_('AppController.tooltip.text');?><div><?php $this->_('AdminCompanyEmails.!tooltip.mail_delivery');?></div></span>
+                                <?php $this->Form->fieldSelect('mail_delivery', $this->Html->ifSet($delivery_methods), $this->Html->ifSet($vars['mail_delivery']), ['id' => 'mail_delivery', 'class' => 'block']);?>
+                            </li>
+                        </ul>
+                        <ul id="smtp_settings">
+                            <li>
+                                <?php $this->Form->label($this->_('AdminCompanyEmails.mail.field.smtp_security', true), 'smtp_security', ['class' => 'inline']);?>
+                                <span class="tooltip block"><?php $this->_('AppController.tooltip.text');?><div><?php $this->_('AdminCompanyEmails.!tooltip.smtp_security');?></div></span>
+                                <?php $this->Form->fieldSelect('smtp_security', $this->Html->ifSet($security_options), $this->Html->ifSet($vars['smtp_security']), ['id' => 'smtp_security', 'class' => 'block']);?>
+                            </li>
+                            <li>
+                                <?php $this->Form->label($this->_('AdminCompanyEmails.mail.field.smtp_host', true), 'smtp_host', ['class' => 'inline']);?>
+                                <span class="tooltip block"><?php $this->_('AppController.tooltip.text');?><div><?php $this->_('AdminCompanyEmails.!tooltip.smtp_host');?></div></span>
+                                <?php $this->Form->fieldText('smtp_host', $this->Html->ifSet($vars['smtp_host']), ['id' => 'smtp_host', 'class' => 'block']);?>
+                            </li>
+                            <li>
+                                <?php $this->Form->label($this->_('AdminCompanyEmails.mail.field.smtp_port', true), 'smtp_port', ['class' => 'inline']);?>
+                                <span class="tooltip block"><?php $this->_('AppController.tooltip.text');?><div><?php $this->_('AdminCompanyEmails.!tooltip.smtp_port');?></div></span>
+                                <?php $this->Form->fieldText('smtp_port', $this->Html->ifSet($vars['smtp_port']), ['id' => 'smtp_port', 'class' => 'block']);?>
+                            </li>
+                            <li>
+                                <?php $this->Form->label($this->_('AdminCompanyEmails.mail.field.smtp_user', true), 'smtp_user', ['class' => 'inline']);?>
+                                <span class="tooltip block"><?php $this->_('AppController.tooltip.text');?><div><?php $this->_('AdminCompanyEmails.!tooltip.smtp_user');?></div></span>
+                                <?php $this->Form->fieldText('smtp_user', $this->Html->ifSet($vars['smtp_user']), ['id' => 'smtp_user', 'class' => 'block']);?>
+                            </li>
+                            <li>
+                                <?php $this->Form->label($this->_('AdminCompanyEmails.mail.field.smtp_password', true), 'smtp_password', ['class' => 'inline']);?>
+                                <span class="tooltip block"><?php $this->_('AppController.tooltip.text');?><div><?php $this->_('AdminCompanyEmails.!tooltip.smtp_password');?></div></span>
+                                <?php $this->Form->fieldPassword('smtp_password', ['id' => 'smtp_password', 'value' => $this->Html->ifSet($vars['smtp_password']), 'class' => 'block']);?>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="button_row">
+                        <?php
+                        $this->Form->fieldSubmit('save', $this->_('AdminCompanyEmails.mail.field.submitmail', true), ['class' => 'btn btn-primary pull-right']);
+                        ?>
+                    </div>
+                </div>
+                <?php
+                $this->Form->end();
+                $this->Widget->end();
+                ?>
+            </section>
+        </div>
+
+<?php
+$this->Javascript->setInline("
+    $(document).ready(function() {
+        showSmtpSettings();
+
+        $('#mail_delivery').change(function() {
+            showSmtpSettings();
+        });
+
+        function showSmtpSettings() {
+            if ($('#mail_delivery').val() == 'smtp')
+                $('#smtp_settings').show();
+            else
+                $('#smtp_settings').hide();
+        }
+    });
+");
+?>

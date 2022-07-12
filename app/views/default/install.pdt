@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="panel panel-default panel-simple">
+        <div class="panel-heading">
+            <h3>
+                Blesta Installer
+                <img class="pull-right blesta-logo" src="<?php echo $this->view_dir . 'images/logo-color.svg';?>" alt="Blesta" />
+            </h3>
+        </div>
+        <div class="panel-body">
+            <div class="col-lg-6">
+                <h4>Install via Web Browser</h4>
+                <p>
+                    <a href="<?php echo $this->Html->safe(WEBDIR . 'install/process/');?>" class="btn btn-success btn-block btn-lg">
+                        <i class="fa fa-arrow-right"></i> Continue with Installation
+                    </a>
+                </p>
+            </div>
+
+            <div class="col-lg-6">
+                <h4>Install via CLI</h4>
+                <p>
+                    To install via the command line, run:
+                </p>
+                <pre>cd <?php echo DOCROOTDIR;?>
+
+php <?php echo '.' . DS . str_replace(DOCROOTDIR, '', ROOTWEBDIR);?>index.php install</pre>
+            </div>
+        </div>
+    </div>
+</div>

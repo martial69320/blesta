@@ -1,0 +1,23 @@
+        <?php
+        $this->Widget->clear();
+
+        $this->Widget->setWidgetButton(['href' => $this->base_uri . 'clients/accounttypes/' . $this->Html->ifSet($client->id), 'class' => 'ajax setting']);
+        $this->Widget->create($this->_('AdminClients.accounts.boxtitle_accounts', true), ['id' => 'clients_accounts'], $this->Html->ifSet($render_section, null));
+
+        $this->Form->create($this->Html->safe($this->base_uri) . 'clients/accounttypes/' . $this->Html->ifSet($client->id));
+        ?>
+        <div class="inner">
+            <div class="title_row first"><h3><?php $this->_('AdminClients.accounttypes.heading_types');?></h3></div>
+            <?php echo $this->Html->ifSet($partial_payment_types);?>
+            <div class="button_row">
+                <?php
+                $this->Form->fieldSubmit('save', $this->_('AdminClients.accounttypes.submit_settings', true), ['class' => 'btn btn-primary pull-right']);
+                ?>
+                <a class="btn btn-default pull-right ajax" href="<?php echo $this->Html->safe($this->base_uri);?>clients/accounts/<?php $this->Html->_($client->id);?>"><?php $this->_('AdminClients.accounttypes.cancel');?></a>
+            </div>
+        </div>
+
+        <?php
+        $this->Form->end();
+        $this->Widget->end();
+        ?>

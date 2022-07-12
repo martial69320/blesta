@@ -1,0 +1,8 @@
+
+                        <ul>
+                            <li>
+                                <?php $this->Form->label($this->_('AdminCompanyClientOptions.general.field_unique_contact_emails', true), 'unique_contact_emails', ['class' => 'inline']);?>
+                                <span class="tooltip block"><?php $this->_('AppController.tooltip.text');?><div><?php $this->_('AdminCompanyClientOptions.!tooltip.unique_contact_emails');?></div></span>
+                                <?php $this->Form->fieldSelect('unique_contact_emails', $this->Html->ifSet($unique_email_options), $this->Html->ifSet($vars['unique_contact_emails']), ['id' => 'unique_contact_emails', 'class' => 'block']);?>
+                            </li>
+                        </ul>

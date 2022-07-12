@@ -1,0 +1,131 @@
+
+        <?php
+        $category_name = (isset($category->name) ? $category->name : null);
+        if (!empty($category_name) && $this->Html->ifSet($show_links, false)) {
+        ?>
+        <div class="title_row first">
+            <h3><?php $this->Html->_($category_name);?></h3>
+        </div>
+        <?php
+        }
+
+        if (!empty($category) || !empty($categories) || !empty($responses)) {
+        ?>
+        <div class="pad clear" id="responses">
+            <?php
+            // Show up a category
+            if (!empty($category)) {
+            ?>
+            <div class="up_level">
+                <?php
+                $up_href = $this->Html->ifSet($show_links, false) ? $this->Html->safe($this->base_uri . 'plugin/support_manager/admin_responses/index/' . (empty($category->parent_id) ? '' : $this->Html->ifSet($category->parent_id) . '/')) : '#';
+                ?>
+                <a id="category_<?php $this->Html->_($category->parent_id);?>" class="text_link" href="<?php echo $up_href;?>">
+                    <i class="fa fa-level-down fa-rotate-180"></i>
+                    <?php $this->_('AdminResponses.index.text_up_level');?>
+                </a>
+            </div>
+            <?php
+            }
+            ?>
+
+            <div class="row">
+                <?php
+                $i = 0;
+                // List categories
+                foreach ($this->Html->ifSet($categories, []) as $cat) {
+                    $i++;
+                ?>
+                <div class="category col-sm-4">
+                    <i class="fa fa-folder"></i>
+                    <?php
+                    if ($this->Html->ifSet($show_links, false)) {
+                    ?>
+                    <a class="text_link" href="<?php echo $this->Html->safe($this->base_uri . 'plugin/support_manager/admin_responses/index/' . $this->Html->ifSet($cat->id) . '/');?>"><?php $this->Html->_($cat->name);?></a>
+                    <?php $this->_('AdminResponses.!text.open_parenthesis');?><a href="<?php echo $this->Html->safe($this->base_uri . 'plugin/support_manager/admin_responses/editcategory/' . $this->Html->ifSet($cat->id) . '/');?>"><?php $this->_('AdminResponses.index.edit');?></a>
+                    <?php $this->_('AdminResponses.!text.forward_slash');?>
+                    <?php
+                    $this->Form->create($this->base_uri . 'plugin/support_manager/admin_responses/deletecategory/');
+                    $this->Form->fieldHidden('id', $this->Html->ifSet($cat->id));
+                    ?>
+                        <a href="<?php echo $this->Html->safe($this->base_uri . 'plugin/support_manager/admin_responses/deletecategory/' . $this->Html->ifSet($cat->id) . '/');?>" class="manage" rel="<?php $this->_('AdminResponses.modal.delete_category');?>"><?php $this->_('AdminResponses.index.delete');?></a><?php $this->_('AdminResponses.!text.closed_parenthesis');?>
+                    <?php
+                    $this->Form->end();
+                    ?>
+                    <?php
+                    } else {
+                    ?>
+                    <a id="category_<?php $this->Html->_($cat->id);?>" class="text_link" href="#"><?php $this->Html->_($cat->name);?></a>
+                    <?php
+                    }
+                    ?>
+                </div>
+                <?php
+                    if ($i % 3 == 0) {
+                        ?>
+            </div>
+            <div class="row">
+                        <?php
+                    }
+                }
+                // List responses
+                foreach ($this->Html->ifSet($responses, []) as $response) {
+                    $i++;
+                ?>
+                <div class="response_item col-sm-4">
+                    <i class="fa fa-file-o"></i>
+                    <?php
+                    if ($this->Html->ifSet($show_links, false)) {
+                    ?>
+                    <a class="text_link response" href="<?php echo $this->Html->safe($this->base_uri . 'plugin/support_manager/admin_responses/edit/' . $this->Html->ifSet($response->id) . '/');?>"><?php $this->Html->_($response->name);?></a>
+                    <?php $this->_('AdminResponses.!text.open_parenthesis');?><a href="<?php echo $this->Html->safe($this->base_uri . 'plugin/support_manager/admin_responses/edit/' . $this->Html->ifSet($response->id) . '/');?>"><?php $this->_('AdminResponses.index.edit');?></a>
+                    <?php $this->_('AdminResponses.!text.forward_slash');?>
+                    <?php
+                    $this->Form->create($this->base_uri . 'plugin/support_manager/admin_responses/delete/');
+                    $this->Form->fieldHidden('id', $this->Html->ifSet($response->id));
+                    ?>
+                        <a href="<?php echo $this->Html->safe($this->base_uri . 'plugin/support_manager/admin_responses/delete/' . $this->Html->ifSet($response->id) . '/');?>" class="manage" rel="<?php $this->_('AdminResponses.modal.delete_response');?>"><?php $this->_('AdminResponses.index.delete');?></a><?php $this->_('AdminResponses.!text.closed_parenthesis');?>
+                    <?php
+                    $this->Form->end();
+                    ?>
+                    <?php
+                    } else {
+                    ?>
+                    <a id="response_<?php $this->Html->_($response->id);?>" class="text_link response" href="#"><?php $this->Html->_($response->name);?></a>
+                    <?php
+                    }
+                    ?>
+                </div>
+                <?php
+                    if ($i % 3 == 0) {
+                        ?>
+            </div>
+            <div class="row">
+                        <?php
+                    }
+                }
+                ?>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <?php
+        }
+
+        if (empty($categories) && empty($responses)) {
+        ?>
+            <div class="empty_section">
+                <div class="empty_box"><?php $this->_('AdminResponses.index.no_responses');?></div>
+            </div>
+        <?php
+        }
+        ?>
+<?php
+if ($this->Html->ifSet($show_links, false)) {
+?>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#responses a.manage[rel]').blestaModalConfirm({base_url: '<?php echo $this->Html->safe($this->base_uri);?>', close: '<?php $this->_('AppController.modal.text_close');?>', submit: true});
+    });
+</script>
+<?php
+}

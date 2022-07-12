@@ -1,0 +1,180 @@
+            <!-- Steps -->
+            <div class="col-md-12 hidden-xs hidden-sm">
+                <div class="panel panel-blesta panel-steps">
+                    <div class="panel-body">
+                        <div class="col-md-3">
+                            <i class="fa fa-chevron-right fa-lg pull-right"></i>
+                            <a href="<?php echo $this->Html->safe($this->base_uri . 'order/main/index/' . $this->Html->ifSet($order_form->label));?>"><strong><?php $this->_('Main.steps.step_1_name');?></strong></a>
+                            <p><em><?php $this->_('Main.steps.step_1_description');?></em></p>
+                        </div>
+                        <div class="col-md-3">
+                            <i class="fa fa-chevron-right fa-lg pull-right"></i>
+                            <a href="<?php echo $this->Html->safe($this->base_uri . 'order/config/index/' . $this->Html->ifSet($order_form->label));?>"><strong><?php $this->_('Main.steps.step_2_name');?></strong></a>
+                            <p><em><?php $this->_('Main.steps.step_2_description');?></em></p>
+                        </div>
+                        <div class="col-md-3">
+                            <i class="fa fa-chevron-right fa-lg pull-right"></i>
+                            <a href="<?php echo $this->Html->safe($this->base_uri . 'order/cart/index/' . $this->Html->ifSet($order_form->label));?>" class="active"><strong><?php $this->_('Main.steps.step_3_name');?></strong></a>
+                            <p><em><?php $this->_('Main.steps.step_3_description');?></em></p>
+                        </div>
+                        <div class="col-md-3">
+                            <a href="<?php echo $this->Html->safe($this->base_uri . 'order/checkout/index/' . $this->Html->ifSet($order_form->label));?>"><strong><?php $this->_('Main.steps.step_4_name');?></strong></a>
+                            <p><em><?php $this->_('Main.steps.step_4_description');?></em></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <?php
+                echo $this->Html->ifSet($message);
+                ?>
+                <?php
+                $this->WidgetClient->create($this->_('Cart.index.header_cart', true));
+                ?>
+                <div class="panel-body">
+
+
+                    <div class="table-responsive">
+                        <?php
+                        if ($this->Html->ifSet($display_items) && !empty($display_items)) {
+                        ?>
+                        <table class="table table-curved table-striped">
+                            <thead>
+                                <tr>
+                                    <th><?php $this->_('Cart.index.table_description');?></th>
+                                    <th></th>
+                                    <th><?php $this->_('Cart.index.table_qty');?></th>
+                                    <th><?php $this->_('Cart.index.table_price');?></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                            foreach ($display_items as $item) {
+                            ?>
+                                <tr>
+                                    <td>
+                                        <?php
+                                        switch ($this->Html->ifSet($item['type'])) {
+                                            case 'addon':
+                                            case 'config_fee':
+                                                $this->Html->_($item['description']);
+                                                break;
+                                            default:
+                                                ?>
+                                                <strong><?php $this->Html->_($item['description']);?></strong>
+                                                <?php
+                                        }
+                                        ?>
+
+                                    </td>
+                                    <td>
+                                        <?php
+                                        if ($this->Html->ifSet($item['type']) == 'service' || $this->Html->ifSet($item['type']) == 'addon') {
+                                            $this->Form->create($this->base_uri . 'order/cart/remove/' . $this->Html->ifSet($order_form->label), ['class' => 'disable-on-submit']);
+                                            $this->Form->fieldHidden('item', $this->Html->ifSet($item['index']));
+                                            ?>
+
+                                            <div class="btn-group">
+                                                <a href="<?php echo $this->Html->safe($this->base_uri . 'order/config/index/' . $this->Html->ifSet($order_form->label) . '/?item=' . $this->Html->ifSet($item['index']));?>" class="btn btn-default btn-xs"><i class="fa fa-edit"></i> <?php $this->_('Cart.index.edit_item');?></a>
+                                                <button type="submit" class="btn btn-danger btn-xs">
+                                                    <i class="fa fa-ban"></i> <?php $this->_('Cart.index.remove_item');?>
+                                                </button>
+                                            </div>
+                                            <?php
+                                            $this->Form->end();
+                                        }
+                                        ?>
+                                    </td>
+                                    <td>
+                                        <?php $this->_('Cart.index.quantity', false, $this->CurrencyFormat->truncateDecimal($item['qty'], 0));?>
+                                    </td>
+                                    <td class="price-col">
+                                        <strong><?php echo $item['price'];?></strong>
+                                    </td>
+                                </tr>
+                            <?php
+                            }
+                            ?>
+                            </tbody>
+                        </table>
+                        <?php
+                        }
+                        ?>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 pull-right totals-box table-responsive">
+                            <?php
+                            if ($this->Html->ifSet($totals)) {
+                            ?>
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td><span class="pull-right"><?php $this->_('Cart.index.totals.subtotal');?></span></td>
+                                        <td><strong><?php $this->Html->_($totals['subtotal']['amount_formatted']);?></strong></td>
+                                    </tr>
+                                    <?php
+                                    if ($this->Html->ifSet($totals['discount']['amount'])) {
+                                    ?>
+                                    <tr>
+                                        <td><span class="pull-right"><?php $this->_('Cart.index.totals.discount');?></span></td>
+                                        <td><strong><?php $this->Html->_($totals['discount']['amount_formatted']);?></strong></td>
+                                    </tr>
+                                    <?php
+                                    }
+                                    if ($this->Html->ifSet($totals['tax'])) {
+                                        foreach ($totals['tax'] as $description => $tax) {
+                                    ?>
+                                        <tr>
+                                            <td><span class="pull-right"><?php $this->_('Cart.index.totals.tax', false, $description);?></span></td>
+                                            <td><strong><?php $this->Html->_($tax['amount_formatted']);?></strong></td>
+                                        </tr>
+                                    <?php
+                                        }
+                                    }
+                                    ?>
+                                    <tr>
+                                        <td><span class="pull-right"><?php $this->_('Cart.index.totals.total');?></span></td>
+                                        <td><strong><?php $this->Html->_($totals['total_without_exclusive_tax']['amount_formatted']);?></strong></td>
+                                    </tr>
+                                    <?php
+                                    if ($this->Html->ifSet($totals_recurring)) {
+                                    ?>
+                                    <tr>
+                                        <td><span class="pull-right"><?php $this->_('Cart.index.totals.total_recurring');?></span></td>
+                                        <td></td>
+                                    </tr>
+                                    <?php
+                                        foreach ($totals_recurring as $totals) {
+                                            // Determine the period to use
+                                            $term = $this->Html->safe($totals['term']);
+                                            $period = $this->Html->safe(($term == 1 ? $this->Html->ifSet($periods[$totals['period']]) : $this->Html->ifSet($periods[$totals['period'] . '_plural'])), true);
+                                            $amount = $this->Html->safe($totals['totals']['total_without_exclusive_tax']['amount_formatted']);
+                                        ?>
+                                    <tr>
+                                        <td colspan="2"><span class="pull-right"><?php $this->_('Cart.index.totals.total_recurring_amount', false, $term, $period, $amount);?></span></td>
+                                    </tr>
+                                        <?php
+                                        }
+                                    }
+                                    ?>
+                                </tbody>
+                            </table>
+                            <?php
+                            }
+                            ?>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="btn-group pull-right">
+                                <a href="<?php echo $this->Html->safe($this->base_uri . 'order/main/index/' . $this->Html->ifSet($order_form->label));?>" class="btn btn-default"><i class="fa fa-arrow-left"></i> <?php $this->_('Cart.index.order_more_btn');?></a>
+                                <a href="<?php echo $this->Html->safe($this->base_uri . 'order/checkout/index/' . $this->Html->ifSet($order_form->label));?>" class="btn btn-success"><?php $this->_('Cart.index.checkout_btn');?> <i class="fa fa-angle-double-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php
+                $this->WidgetClient->end();
+                ?>
+            </div>

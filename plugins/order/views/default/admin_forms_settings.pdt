@@ -1,0 +1,180 @@
+        <?php
+        echo $this->Html->ifSet($message);
+        ?>
+
+        <?php
+        $tabs = [
+            ['name' => $this->_('AdminForms.index.tab_forms', true), 'attributes' => ['href' => $this->base_uri . 'plugin/order/admin_forms/']],
+            ['name' => $this->_('AdminForms.index.tab_settings', true), 'current' => true, 'attributes' => ['href' => $this->base_uri . 'plugin/order/admin_forms/settings/']]
+        ];
+
+        $this->Widget->clear();
+        $this->Widget->setTabs($tabs);
+        $this->Widget->create($this->_('AdminForms.settings.boxtitle_order', true));
+        $this->Form->create(null, ['class' => 'disable-on-submit']);
+        ?>
+        <div class="inner">
+            <div class="title_row first">
+                <h3><?php $this->_('AdminForms.settings.basic_heading');?></h3>
+            </div>
+            <div class="pad">
+                <ul>
+                    <li>
+                        <?php
+                        $this->Form->label($this->_('AdminForms.settings.field_default_form', true), 'default_form');
+                        $this->Form->fieldSelect('default_form', ['' => $this->_('AdminForms.settings.default_form.none', true)] + (array)$this->Form->collapseObjectArray($order_forms, ['name', 'label'], 'id', ' - '), $this->Html->ifSet($vars['default_form']), ['id' => 'default_form']);
+                        ?>
+                    </li>
+                    <li>
+                        <?php
+                        $this->Form->label($this->_('AdminForms.settings.field_captcha', true), 'captcha');
+                        $this->Form->fieldSelect('captcha', ['' => $this->_('AdminForms.settings.field_captcha_none', true), 'recaptcha' => $this->_('AdminForms.settings.field_captcha_recaptcha', true)], $this->Html->ifSet($vars['captcha']), ['id' => 'captcha']);
+                        ?>
+                    </li>
+                    <li class="recaptcha">
+                        <?php
+                        $this->Form->label($this->_('AdminForms.settings.field_recaptcha_pub_key', true), 'recaptcha_pub_key');
+                        $this->Form->fieldText('recaptcha_pub_key', $this->Html->ifSet($vars['recaptcha_pub_key']), ['id' => 'recaptcha_pub_key']);
+                        ?>
+                    </li>
+                    <li class="recaptcha">
+                        <?php
+                        $this->Form->label($this->_('AdminForms.settings.field_recaptcha_shared_key', true), 'recaptcha_shared_key');
+                        $this->Form->fieldText('recaptcha_shared_key', $this->Html->ifSet($vars['recaptcha_shared_key']), ['id' => 'recaptcha_shared_key']);
+                        ?>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="title_row">
+                <h3><?php $this->_('AdminForms.settings.antifraud_heading');?></h3>
+            </div>
+            <div class="pad">
+                <ul>
+                    <li>
+                        <?php
+                        $this->Form->label($this->_('AdminForms.settings.field_antifraud', true), 'antifraud');
+                        $this->Form->fieldSelect('antifraud', ['' => $this->_('AdminForms.settings.field_antifraud.none', true)] + (array)$this->Html->ifSet($antifraud), $this->Html->ifSet($vars['antifraud']), ['id' => 'antifraud']);
+                        ?>
+                    </li>
+                    <li id="antifraud_frequency">
+                        <?php
+                        $this->Form->label($this->_('AdminForms.settings.field_antifraud_frequency', true));
+                        ?>
+                        <div>
+                            <?php
+                            $this->Form->fieldRadio('antifraud_frequency', 'new', ($this->Html->ifSet($vars['antifraud_frequency']) == 'new'), ['id'=>'antifraud_frequency_new']);
+                            $this->Form->label($this->_('AdminForms.settings.field_antifraud_frequency.new', true), 'antifraud_frequency_new', ['class'=>'inline']);
+                            ?>
+                        </div>
+                        <div>
+                            <?php
+                            $this->Form->fieldRadio('antifraud_frequency', 'always', ($this->Html->ifSet($vars['antifraud_frequency'], 'always') == 'always'), ['id'=>'antifraud_frequency_always']);
+                            $this->Form->label($this->_('AdminForms.settings.field_antifraud_frequency.always', true), 'antifraud_frequency_always', ['class'=>'inline']);
+                            ?>
+                        </div>
+                    </li>
+                </ul>
+                <div id="antifraud_options"></div>
+            </div>
+
+            <div class="title_row">
+                <h3><?php $this->_('AdminForms.settings.embed_code_heading');?></h3>
+            </div>
+            <div class="pad">
+                <ul>
+                    <li>
+                        <?php
+                        $this->Form->label($this->_('AdminForms.settings.field_tags', true), 'tags');
+
+                        if (is_array($this->Html->ifSet($tags))) {
+                        ?>
+                            <div class="accent_box">
+                            <?php
+                            for ($i = 0, $num_tags = count($tags); $i < $num_tags; $i++) {
+                            ?>
+                            <?php $this->Html->_($tags[$i]);?>
+                            <?php
+                            }
+                            ?>
+                            </div>
+                        <?php
+                        }
+                        ?>
+                    </li>
+                    <li>
+                        <?php $this->Form->label($this->_('AdminForms.settings.field_embed_code', true), 'embed_code');?>
+                        <?php $this->Form->fieldTextarea('embed_code', $this->Html->ifSet($vars['embed_code']), ['id' => 'embed_code']);?>
+                    </li>
+                </ul>
+            </div>
+            <div class="title_row">
+                <h3><?php $this->_('AdminForms.settings.marketing_heading');?></h3>
+            </div>
+            <div class="pad">
+                <ul>
+                    <li>
+                        <?php
+                        $this->Form->label($this->_('AdminForms.settings.field_marketing_default', true));
+                        ?>
+                        <div>
+                            <?php
+                            $this->Form->fieldRadio('marketing_default', 'true', ($this->Html->ifSet($vars['marketing_default']) == 'true'), ['id'=>'marketing_default_true']);
+                            $this->Form->label($this->_('AdminForms.settings.field_marketing_default.true', true), 'marketing_default_true', ['class'=>'inline']);
+                            ?>
+                            <span class="tooltip"><?php $this->_('AppController.tooltip.text');?><div><?php echo $this->_('AdminForms.settings.tooltip_marketing_default_true', true);?></div></span>
+                        </div>
+                        <div>
+                            <?php
+                            $this->Form->fieldRadio('marketing_default', 'false', ($this->Html->ifSet($vars['marketing_default'], 'false') == 'false'), ['id'=>'marketing_default_false']);
+                            $this->Form->label($this->_('AdminForms.settings.field_marketing_default.false', true), 'marketing_default_false', ['class'=>'inline']);
+                            ?>
+                            <span class="tooltip"><?php $this->_('AppController.tooltip.text');?><div><?php echo $this->_('AdminForms.settings.tooltip_marketing_default_false', true);?></div></span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="button_row">
+                <?php
+                $this->Form->fieldSubmit('save', $this->_('AdminForms.settings.field_save', true), ['class' => 'btn btn-primary pull-right']);
+                ?>
+            </div>
+        </div>
+        <?php
+        $this->Form->end();
+        $this->Widget->end();
+        ?>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        setCaptcha();
+        $("#captcha").change(setCaptcha);
+
+        function setCaptcha() {
+            $("li.recaptcha").hide();
+
+            if ($("#captcha").val() == "recaptcha")
+                $("li.recaptcha").show();
+        }
+
+        setAntifraud();
+        $("#antifraud").change(setAntifraud);
+
+        function setAntifraud() {
+            if ($('#antifraud').val() == '') {
+                $('#antifraud_frequency').hide();
+            } else {
+                $('#antifraud_frequency').show();
+            }
+
+            $(this).blestaRequest("POST",
+                "<?php echo $this->Html->safe($this->base_uri . 'plugin/order/admin_forms/antifraudsettings/');?>" + $("#antifraud").val(),
+                $("#antifraud").closest("form").serialize(),
+                function(data) {
+                    $("#antifraud_options").html(data);
+                }
+            );
+        }
+    });
+</script>

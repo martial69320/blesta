@@ -1,0 +1,26 @@
+
+        <?php echo $this->Html->ifSet($left_nav);?>
+        <div id="right_outer">
+            <?php echo $this->Html->ifSet($message);?>
+            <section id="right_container">
+                <?php
+                $this->Widget->clear();
+                $this->Widget->create($this->_('AdminCompanySettings.plugins.boxtitle_plugins', true));
+                ?>
+                <div class="inner pad">
+                    <?php $this->Form->create(null, ['class' => 'disable-on-submit']);?>
+                    <ul>
+                        <li>
+
+                        </li>
+                    </ul>
+                    <div class="button_row">
+                        <?php
+                        $this->Form->fieldSubmit('save', $this->_('AdminCompanySettings.plugins.field_pluginssubmit', true), ['class' => 'btn btn-primary pull-right']);
+                        ?>
+                    </div>
+                    <?php $this->Form->end();?>
+                </div>
+                <?php $this->Widget->end();?>
+            </section>
+        </div>

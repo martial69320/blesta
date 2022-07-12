@@ -1,0 +1,13 @@
+{
+	"version": "1.0.1",
+	"name": "Kassacompleetideal.name",
+	"description": "Kassa Compleet integration using the iDeal payment type",
+	"authors": [
+		{
+			"name": "Phillips Data, Inc.",
+			"url": "http://www.blesta.com"
+		}
+	],
+	"currencies": ["EUR"],
+	"signup_url": "https://portal.kassacompleet.nl/auth/signup"
+}

@@ -1,0 +1,15 @@
+<ul>
+	<li>
+		<?php
+        $this->Form->label($this->_('Bitpay.api_key', true), 'api_key');
+        $this->Form->fieldText('api_key', $this->Html->ifSet($meta['api_key']), ['id'=>'api_key']);
+        ?>
+	</li>
+	<li>
+		<?php
+        $this->Form->label($this->_('Bitpay.transaction_speed', true), 'transaction_speed');
+        $this->Form->fieldSelect('transaction_speed', $this->Html->ifSet($select_options, []), $this->Html->ifSet($meta['transaction_speed']), ['id'=>'transaction_speed']);
+        ?>
+		<span class="tooltip"><?php $this->_('AppController.tooltip.text');?><div><?php $this->_('Bitpay.transaction_speed_note');?></div></span>
+	</li>
+</ul>

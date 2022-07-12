@@ -1,0 +1,49 @@
+.order-listing .well {
+    background-color: #fff;
+}
+.order-listing .head-item {
+    padding: 5px 15px;
+}
+.order-listing .head-item h3 {
+    margin-top: 0px;
+}
+#groups, #available {
+    display: block;
+    margin-top: 5px;
+    vertical-align: top;
+    width: auto;
+    overflow-y: scroll;
+    height: 250px;
+    min-width: 250px;
+    background-color: #e1e1e1;
+}
+#groups .ui-sortable-placeholder, #available .ui-sortable-placeholder {
+    background-color: #e1e1e1;
+    visibility: visible;
+}
+#groups td, #available td {
+    min-width: 250px;
+    border-bottom: solid 1px #e1e1e1;
+    border-right: solid 1px #e1e1e1;
+    background-color: #fff;
+}
+#groups td:hover, #available td:hover {
+    background-color: #f1f1f1;
+}
+#groups tr:first-child td:hover, #available tr:first-child td:hover {
+    background-color: #fff;
+}
+table tr.non-sortable td {
+    font-size: 10px;
+}
+.inline-block {
+    display: inline-block;
+}
+.text-middle, table tr td.text-middle {
+    vertical-align: middle;
+    text-align: center;
+}
+.package-group-arrows {
+    vertical-align: bottom;
+    margin-bottom: 125px;
+}

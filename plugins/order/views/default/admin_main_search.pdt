@@ -1,0 +1,103 @@
+        <?php
+        echo $this->Html->ifSet($message);
+
+        $this->Widget->clear();
+        $this->Widget->create($this->_('AdminMain.search.boxtitle_order', true, $this->Html->_($search, true)), ['id'=>'widget_order_admin_main_search'], $this->Html->ifSet($render_section, null));
+        ?>
+        <div class="inner">
+            <?php
+            if ($this->Html->ifSet($orders) && !empty($orders)) {
+            ?>
+            <table class="table" id="orders">
+                <tr class="heading_row">
+                    <td class="icon">
+                    </td>
+                    <td><span><a href="<?php echo $this->Html->safe($this->base_uri . 'widget/order/admin_main/search/?search=' . $this->Html->ifSet($search) . '&sort=order_number&order=' . ($sort == 'order_number' ? $negate_order : $order));?>" class="ajax<?php echo $this->Html->safe($sort == 'order_number' ? ' ' . $order : '');?>"><?php $this->_('AdminMain.index.heading_order_number');?></a></span></td>
+                    <td><span><a href="<?php echo $this->Html->safe($this->base_uri . 'widget/order/admin_main/search/?search=' . $this->Html->ifSet($search) . '&sort=client_id_code&order=' . ($sort == 'client_id_code' ? $negate_order : $order));?>" class="ajax<?php echo $this->Html->safe($sort == 'client_id_code' ? ' ' . $order : '');?>"><?php $this->_('AdminMain.index.heading_client_id_code');?></a></span></td>
+                    <td><span><a href="<?php echo $this->Html->safe($this->base_uri . 'widget/order/admin_main/search/?search=' . $this->Html->ifSet($search) . '&sort=invoice_id_code&order=' . ($sort == 'invoice_id_code' ? $negate_order : $order));?>" class="ajax<?php echo $this->Html->safe($sort == 'invoice_id_code' ? ' ' . $order : '');?>"><?php $this->_('AdminMain.index.heading_invoice_id_code');?></a></span></td>
+                    <td><span><a href="<?php echo $this->Html->safe($this->base_uri . 'widget/order/admin_main/search/?search=' . $this->Html->ifSet($search) . '&sort=total&order=' . ($sort == 'total' ? $negate_order : $order));?>" class="ajax<?php echo $this->Html->safe($sort == 'total' ? ' ' . $order : '');?>"><?php $this->_('AdminMain.index.heading_total');?></a></span></td>
+                    <td><span><a href="<?php echo $this->Html->safe($this->base_uri . 'widget/order/admin_main/search/?search=' . $this->Html->ifSet($search) . '&sort=paid&order=' . ($sort == 'paid' ? $negate_order : $order));?>" class="ajax<?php echo $this->Html->safe($sort == 'paid' ? ' ' . $order : '');?>"><?php $this->_('AdminMain.index.heading_paid');?></a></span></td>
+                    <td class="last"><span><a href="<?php echo $this->Html->safe($this->base_uri . 'widget/order/admin_main/search/?search=' . $this->Html->ifSet($search) . '&sort=date_added&order=' . ($sort == 'date_added' ? $negate_order : $order));?>" class="ajax<?php echo $this->Html->safe($sort == 'date_added' ? ' ' . $order : '');?>"><?php $this->_('AdminMain.index.heading_date_added');?></a></span></td>
+                </tr>
+
+                <?php
+                $i=0;
+                foreach ($orders as $order) {
+                ?>
+                <tr class="<?php echo $this->Html->concat(' ', 'expand', 'order_info', (($i++%2 == 1) ? 'odd_row' : ''));?>">
+                    <td class="icon">
+                        <div class="<?php echo ($this->Html->ifSet($order->date_closed, null) != null ? 'active' : 'inactive');?>">&nbsp;</div>
+                    </td>
+                    <td>
+                        <span class="tooltip quiet">
+                            <?php $this->Html->_($order->order_number);?>
+                            <div>
+                                <p>
+                                    <?php $this->Html->_($order->order_form_name);?>
+                                    <br />
+                                    <?php $this->Html->_($order->ip_address);?>
+                                    <br />
+                                    <?php
+                                    if ($this->Html->ifSet($order->geo_ip) && $this->Html->ifSet($order->geo_ip['location'])) {
+                                        $location = $order->geo_ip['location'];
+                                    ?>
+                                    <br />
+                                    <strong><?php $this->_('AdminMain.index.text_location');?></strong>
+                                    <br />
+                                    <?php echo $this->Html->safe($this->Html->concat(', ', $this->Html->ifSet($location['city']), $this->Html->ifSet($location['region'])));?>
+                                    <?php $this->Html->_($location['postal_code']);?>
+                                    <br />
+                                    <?php
+                                        $this->Html->_($location['country_name']);
+                                    }
+                                    ?>
+                                </p>
+                            </div>
+                        </span>
+                    </td>
+                    <td><span class="tooltip quiet"><a href="<?php echo $this->Html->safe($this->base_uri . 'clients/view/' . $this->Html->ifSet($order->client_id));?>"><?php $this->Html->_($order->client_id_code);?></a><div><?php echo $this->Html->_($order->client_first_name, true) . ' ' . $this->Html->_($order->client_last_name, true);?><br /><?php $this->Html->_($order->client_company);?></div></span></td>
+                    <td><a href="<?php echo $this->Html->safe($this->base_uri . 'clients/editinvoice/' . $this->Html->ifSet($order->client_id) . '/' . $this->Html->ifSet($order->invoice_id));?>"><?php $this->Html->_($order->invoice_id_code);?></a></td>
+                    <td><?php echo $this->CurrencyFormat->format($order->total, $order->currency, ['html_code'=>true]);?></td>
+                    <td><?php echo $this->CurrencyFormat->format($order->paid, $order->currency, ['html_code'=>true]);?></td>
+                    <td><?php echo $this->Date->cast($this->Html->ifSet($order->date_added), 'date_time');?></td>
+                </tr>
+                <tr class="expand_details" id="orders_<?php $this->Html->_($order->id);?>">
+                    <td colspan="8" class="subtable">
+                    </td>
+                </tr>
+                <?php
+                }
+                ?>
+
+            </table>
+
+            <?php
+            $this->Pagination->build();
+            } else {
+            ?>
+            <div class="empty_section">
+                <div class="empty_box"><?php $this->_('AdminMain.index.no_results');?></div>
+            </div>
+            <?php
+            }
+            ?>
+        </div>
+        <?php
+        $this->Widget->end();
+        ?>
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+    $('#orders').blestaBindToolTips();
+
+    // Fetch order info
+    $('.order_info a', this).click(function(e) {
+        e.stopPropagation();
+    });
+    $('.order_info').click(function() {
+        $(this).blestaUpdateRow('<?php echo $this->Html->safe($this->base_uri . 'plugin/order/admin_main/orderinfo/');?>' + $(this).next('tr').attr('id').split('_')[1], '.subtable');
+    });
+});
+</script>

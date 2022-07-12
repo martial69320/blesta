@@ -1,0 +1,47 @@
+<div class="title_row first">
+    <h3><?php $this->_('CWatch.tab_licenses.upgrade_site');?></h3>
+</div>
+<div class="pad">
+<?php
+$this->Form->create($this->base_uri . 'clients/serviceTab/' . $this->Html->ifSet($service->client_id) . '/' . $this->Html->ifSet($service->id) . '/tablicenses/', ['class' => 'disable-on-submit']);
+$this->Form->fieldHidden('action', 'upgrade_site');
+?>
+    <ul>
+        <li>
+            <?php
+            $this->Form->label($this->_('CWatch.tab_licenses.current_license', true));
+            $this->_('CWatch.tab_licenses.license_name', false, $this->Html->ifSet($selected_license->licenseKey), $this->Html->ifSet($selected_license->productTitle));
+            ?>
+        </li>
+        <li>
+            <?php
+            $this->Form->label($this->_('CWatch.tab_licenses.domain', true), 'domain');
+            $this->Html->_($selected_license->site->domain);
+            $this->Form->fieldHidden('domain', $this->Html->ifSet($selected_license->site->domain), ['id' => 'domain']);
+            ?>
+        </li>
+        <?php
+        if (!empty($available_licenses)) {
+        ?>
+        <li>
+            <?php
+            $this->Form->label($this->_('CWatch.tab_licenses.licenseKey', true), 'licenseKey');
+            $this->Form->fieldSelect('licenseKey', $this->Html->ifSet($available_licenses), $this->Html->ifSet($selected_license->licenseKey), ['id' => 'licenseKey']);
+            ?>
+        </li>
+    </ul>
+    <button class="btn btn-default pull-right">
+        <i class="fa fa-edit"></i> <?php $this->_('CWatch.tab_licenses.upgrade_site');?>
+    </button>
+        <?php
+        } else {
+        ?>
+    </ul>
+    <div class="empty_section"><div class="empty_box"><?php $this->_('CWatch.tab_licenses.no_upgrade_options');?></div></div>
+    <?php
+    }
+    ?>
+<?php
+$this->Form->end();
+?>
+</div>

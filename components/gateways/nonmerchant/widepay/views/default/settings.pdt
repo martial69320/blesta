@@ -1,0 +1,20 @@
+    <ul>
+        <li>
+            <?php
+            $this->Form->label($this->_('Widepay.wallet_id', true));
+            $this->Form->fieldText('wallet_id', $this->Html->ifSet($meta['wallet_id']));
+            ?>
+        </li>
+        <li>
+            <?php
+            $this->Form->label($this->_('Widepay.wallet_token', true));
+            $this->Form->fieldText('wallet_token', $this->Html->ifSet($meta['wallet_token']));
+            ?>
+        </li>
+		<li>
+			<?php
+            $this->Form->fieldCheckbox('allow_card_payment', 'true', ($this->Html->ifSet($meta['allow_card_payment'], 'true') == 'true'), ['id' => 'allow_card_payment']);
+            $this->Form->label($this->_('Widepay.allow_card_payment', true), 'allow_card_payment', ['class' => 'inline']);
+            ?>
+		</li>
+    </ul>

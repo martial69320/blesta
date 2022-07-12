@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="panel panel-default panel-simple">
+        <div class="panel-heading">
+            <h3>Blesta Upgrader</h3>
+        </div>
+        <div class="panel-body">
+            <div class="col-lg-6">
+                <h4>Upgrade via Web Browser</h4>
+                <p>
+                    <a href="<?php echo $this->Html->safe($this->base_uri . 'upgrade/process/');?>" class="btn btn-success btn-block btn-lg">
+                        <i class="fa fa-arrow-right"></i> Continue with Upgrade
+                    </a>
+                </p>
+            </div>
+
+            <div class="col-lg-6">
+                <h4>Upgrade via CLI</h4>
+                <p>
+                    To upgrade via the command line, run the following from your Blesta installation directory:
+                </p>
+                <pre>php ./index.php <?php echo Configure::get('Route.admin');?>/upgrade</pre>
+            </div>
+        </div>
+    </div>
+</div>

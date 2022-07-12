@@ -1,0 +1,41 @@
+<div class="title_row first">
+    <h3><?php $this->_('CWatch.tab_licenses.add');?></h3>
+</div>
+<?php
+$this->Form->create($this->base_uri . 'clients/serviceTab/' . $this->Html->ifSet($service->client_id) . '/' . $this->Html->ifSet($service->id) . '/tablicenses/');
+?>
+<div class="pad">
+    <ul>
+        <li>
+            <?php
+            $this->Form->label($this->_('CWatch.tab_licenses.licenseKey', true), 'licenseKey');
+            $this->Form->fieldSelect('licenseKey', $this->Html->ifSet($available_licenses), $this->Html->ifSet($selected_license->licenseKey), ['id' => 'licenseKey']);
+            ?>
+        </li>
+        <li>
+            <?php
+            $this->Form->label($this->_('CWatch.tab_licenses.domain', true), 'domain');
+            $this->Form->fieldText('domain', '', ['id' => 'domain']);
+            ?>
+        </li>
+        <li>
+            <?php
+            $this->Form->fieldCheckbox('initiateDns', null, '1', ['class' => 'form-control', 'id' => 'initiateDns']);
+            $this->Form->label($this->_('CWatch.tab_licenses.initiateDns', true), 'initiateDns', ['class' => 'inline']);
+            ?>
+            <span class="tooltip"><?php $this->_("AppController.tooltip.text");?><div><?php $this->_("CWatch.!tooltip.initiateDns");?></div></span>
+        </li>
+        <li>
+            <?php
+            $this->Form->fieldCheckbox('autoSsl', null, '1', ['class' => 'form-control', 'id' => 'autoSsl']);
+            $this->Form->label($this->_('CWatch.tab_licenses.autoSsl', true), 'autoSsl', ['class' => 'inline']);
+            ?>
+            <span class="tooltip"><?php $this->_("AppController.tooltip.text");?><div><?php $this->_("CWatch.!tooltip.autoSsl");?></div></span>
+        </li>
+    </ul>
+</div>
+<button class="btn btn-default pull-right">
+    <i class="fa fa-edit"></i> <?php $this->_('CWatch.tab_licenses.submit');?>
+</button>
+<?php
+$this->Form->end();

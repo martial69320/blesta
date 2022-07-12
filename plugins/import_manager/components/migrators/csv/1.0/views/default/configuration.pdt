@@ -1,0 +1,64 @@
+<?php
+$this->Form->fieldHidden('step', 'configuration');
+$this->Form->fieldHidden('csv_data', $this->Html->ifSet($vars->csv_data));
+$this->Form->fieldHidden('enable_debug', $this->Html->ifSet($vars->enable_debug));
+?>
+
+<table class="table">
+    <thead>
+        <tr class="heading_row">
+            <td><?php $this->_('Csv1_0.configuration.local_field'); ?></td>
+            <td class="last"><?php $this->_('Csv1_0.configuration.remote_field'); ?></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><?php $this->_('Csv1_0.configuration.username'); ?></td>
+            <td><?php $this->Form->fieldSelect('remote_fields[username]', $remote_fields, $this->Html->ifSet($vars->remote_fields['username']), ['class' => 'username']); ?></td>
+        </tr>
+        <tr class="odd_row">
+            <td><?php $this->_('Csv1_0.configuration.first_name'); ?></td>
+            <td><?php $this->Form->fieldSelect('remote_fields[first_name]', $remote_fields, $this->Html->ifSet($vars->remote_fields['first_name']), ['class' => 'first_name']); ?></td>
+        </tr>
+        <tr>
+            <td><?php $this->_('Csv1_0.configuration.last_name'); ?></td>
+            <td><?php $this->Form->fieldSelect('remote_fields[last_name]', $remote_fields, $this->Html->ifSet($vars->remote_fields['last_name']), ['class' => 'last_name']); ?></td>
+        </tr>
+        <tr class="odd_row">
+            <td><?php $this->_('Csv1_0.configuration.email'); ?></td>
+            <td><?php $this->Form->fieldSelect('remote_fields[email]', $remote_fields, $this->Html->ifSet($vars->remote_fields['email']), ['class' => 'email']); ?></td>
+        </tr>
+        <tr>
+            <td><?php $this->_('Csv1_0.configuration.address1'); ?></td>
+            <td><?php $this->Form->fieldSelect('remote_fields[address1]', $remote_fields, $this->Html->ifSet($vars->remote_fields['address1']), ['class' => 'address1']); ?></td>
+        </tr>
+        <tr class="odd_row">
+            <td><?php $this->_('Csv1_0.configuration.address2'); ?></td>
+            <td><?php $this->Form->fieldSelect('remote_fields[address2]', $remote_fields, $this->Html->ifSet($vars->remote_fields['address2']), ['class' => 'address2']); ?></td>
+        </tr>
+        <tr>
+            <td><?php $this->_('Csv1_0.configuration.state'); ?></td>
+            <td><?php $this->Form->fieldSelect('remote_fields[state]', $remote_fields, $this->Html->ifSet($vars->remote_fields['state']), ['class' => 'state']); ?></td>
+        </tr>
+        <tr class="odd_row">
+            <td><?php $this->_('Csv1_0.configuration.city'); ?></td>
+            <td><?php $this->Form->fieldSelect('remote_fields[city]', $remote_fields, $this->Html->ifSet($vars->remote_fields['city']), ['class' => 'city']); ?></td>
+        </tr>
+        <tr>
+            <td><?php $this->_('Csv1_0.configuration.zip'); ?></td>
+            <td><?php $this->Form->fieldSelect('remote_fields[zip]', $remote_fields, $this->Html->ifSet($vars->remote_fields['zip']), ['class' => 'zip']); ?></td>
+        </tr>
+        <tr class="odd_row">
+            <td><?php $this->_('Csv1_0.configuration.country'); ?></td>
+            <td><?php $this->Form->fieldSelect('remote_fields[country]', $remote_fields, $this->Html->ifSet($vars->remote_fields['country']), ['class' => 'country']); ?></td>
+        </tr>
+        <tr>
+            <td><?php $this->_('Csv1_0.configuration.phone'); ?></td>
+            <td><?php $this->Form->fieldSelect('remote_fields[phone]', $remote_fields, $this->Html->ifSet($vars->remote_fields['phone']), ['class' => 'phone']); ?></td>
+        </tr>
+        <tr class="odd_row">
+            <td><?php $this->_('Csv1_0.configuration.company'); ?></td>
+            <td><?php $this->Form->fieldSelect('remote_fields[company]', $remote_fields, $this->Html->ifSet($vars->remote_fields['company']), ['class' => 'company']); ?></td>
+        </tr>
+    </tbody>
+</table>

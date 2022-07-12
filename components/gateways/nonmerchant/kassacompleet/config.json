@@ -1,0 +1,13 @@
+{
+	"version": "1.0.1",
+	"name": "Kassacompleet.name",
+	"description": "Kassa Compleet integration for the Credit Card payment type",
+	"authors": [
+		{
+			"name": "Phillips Data, Inc.",
+			"url": "http://www.blesta.com"
+		}
+	],
+	"currencies": ["EUR"],
+	"signup_url": "https://portal.kassacompleet.nl/auth/signup"
+}

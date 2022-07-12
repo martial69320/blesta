@@ -1,0 +1,13 @@
+{
+	"version": "1.0.2",
+	"name": "Paystack.name",
+	"description": "Paystack",
+	"authors": [
+		{
+			"name": "Phillips Data, Inc.",
+			"url": "http://www.blesta.com"
+		}
+	],
+	"currencies": ["NGN"],
+	"signup_url": "https://dashboard.paystack.com/#/signup"
+}

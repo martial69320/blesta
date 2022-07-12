@@ -1,0 +1,11 @@
+{
+    "version": "1.3.0",
+    "name": "MassMailerPlugin.name",
+    "description": "Sends email to multiple clients in the system at once.",
+    "authors": [
+        {
+            "name": "Phillips Data, Inc.",
+            "url": "http://www.blesta.com/"
+        }
+    ]
+}

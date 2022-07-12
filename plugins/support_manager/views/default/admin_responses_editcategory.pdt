@@ -1,0 +1,28 @@
+
+                <?php
+                echo $this->Html->ifSet($message);
+
+                $this->Widget->clear();
+                $this->Widget->create($this->_('AdminResponses.editcategory.boxtitle_editcategory', true));
+                ?>
+                <div class="inner">
+                    <?php $this->Form->create(null, ['class' => 'disable-on-submit']);?>
+                    <div class="pad">
+                        <ul>
+                            <li>
+                                <?php
+                                $this->Form->label($this->_('AdminResponses.editcategory.field_name', true), 'name');
+                                $this->Form->fieldText('name', $this->Html->ifSet($vars->name), ['id' => 'name']);
+                                ?>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="button_row">
+                        <?php
+                        $this->Form->fieldSubmit('save', $this->_('AdminResponses.editcategory.field_submit', true), ['class' => 'btn btn-primary pull-right']);
+                        ?>
+                    </div>
+                    <?php $this->Form->end();?>
+                </div>
+                <?php $this->Widget->end();?>

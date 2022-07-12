@@ -1,0 +1,29 @@
+<?php
+foreach ($forms as $form) {
+?>
+    <div class="col-lg-12 order-listing">
+        <div class="well">
+            <div class="col-sm-9 col-xs-12 head-item">
+                <h3><?php $this->Html->_($form->name);?></h3>
+            </div>
+            <div class="col-sm-3 col-xs-12 head-item">
+                <a
+                    href="<?php echo $this->Html->safe($this->base_uri . 'order/main/index/' . $form->label);?>"
+                    class="btn btn-lg btn-success pull-right hidden-xs"
+                ><?php $this->_('Forms.index.' . ($form->type == 'registration' ? 'register' : 'order_now'));?></a>
+            </div>
+            <div class="col-sm-12">
+                <?php
+                echo $this->TextParser->encode($parser_syntax, $form->description);
+                ?>
+            </div>
+            <div class="clearfix"></div>
+            <a
+                href="<?php echo $this->Html->safe($this->base_uri . 'order/main/index/' . $form->label);?>"
+                class="btn btn-lg btn-block btn-success visible-xs"
+            ><?php $this->_('Forms.index.' . ($form->type == 'registration' ? 'register' : 'order_now'));?></a>
+        </div>
+    </div>
+<?php
+}
+

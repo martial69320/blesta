@@ -1,0 +1,219 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="login-box vertical-center">
+                <div class="panel panel-login">
+                    <div class="panel-body">
+                        <h3><?php $this->_('AdminLogin.setup.title_adminarea', false, $this->Html->_($system_company->name, true));?></h3>
+                        <?php
+                        echo $this->Html->ifSet($message);
+                        $this->Form->create(null, ['class' => 'disable-on-submit']);
+                        ?>
+                            <div class="radio">
+                                <label>
+                                    <?php
+                                    $this->Form->fieldRadio(
+                                        'enter_key',
+                                        'false',
+                                        $this->Html->ifSet($vars['enter_key']) == 'false',
+                                        [
+                                            'id' => 'enter_key_false',
+                                            'class' => 'license_type',
+                                            'tabindex' => 1
+                                        ]
+                                    );
+                                    ?>
+                                    <?php $this->_('AdminLogin.setup.field_enter_key_false');?>
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <?php
+                                    $this->Form->fieldRadio(
+                                        'enter_key',
+                                        'true',
+                                        $this->Html->ifSet($vars['enter_key'], 'true') == 'true',
+                                        [
+                                            'id' => 'enter_key_true',
+                                            'class' => 'license_type',
+                                            'tabindex' => 2
+                                        ]
+                                    );
+                                    ?>
+                                    <?php $this->_('AdminLogin.setup.field_enter_key_true');?>
+                                </label>
+                            </div>
+                            <div class="form-group">
+                                <?php
+                                $this->Form->fieldText(
+                                    'license_key',
+                                    $this->Html->ifSet($vars['license_key']),
+                                    [
+                                        'id' => 'license_key',
+                                        'class' => 'form-control',
+                                        'tabindex' => 3,
+                                        'placeholder' => $this->_('AdminLogin.setup.field_license_key', true),
+                                        'autofocus' => 'autofocus'
+                                    ]
+                                );
+                                ?>
+                            </div>
+                            <div id="newsletter-option" class="checkbox">
+                                <label>
+                                    <?php
+                                    $this->Form->fieldCheckbox(
+                                        'newsletter',
+                                        'true',
+                                        $this->Html->ifSet($vars['newsletter'], 'true') == 'true',
+                                        ['id' => 'newsletter']
+                                    );
+                                    ?>
+                                    <span><?php $this->_('AdminLogin.setup.field_newsletter');?></span>
+                                </label>
+                            </div>
+                            <span id="text-trial-newsletter" style="display:none;"><?php $this->_('AdminLogin.setup.trial_newsletter');?></span>
+
+                            <hr />
+
+                            <p><?php $this->_('AdminLogin.setup.heading_create_account');?></p>
+
+                            <div class="form-group">
+                                <?php
+                                $this->Form->fieldText(
+                                    'first_name',
+                                    $this->Html->ifSet($vars['first_name']),
+                                    [
+                                        'id' => 'first_name',
+                                        'class' => 'form-control',
+                                        'tabindex' => 4,
+                                        'placeholder' => $this->_('AdminLogin.setup.field_first_name', true)
+                                    ]
+                                );
+                                ?>
+                            </div>
+                            <div class="form-group">
+                                <?php
+                                $this->Form->fieldText(
+                                    'last_name',
+                                    $this->Html->ifSet($vars['last_name']),
+                                    [
+                                        'id' => 'last_name',
+                                        'class' => 'form-control',
+                                        'tabindex' => 5,
+                                        'placeholder' => $this->_('AdminLogin.setup.field_last_name', true)
+                                    ]
+                                );
+                                ?>
+                            </div>
+                            <div class="form-group">
+                                <?php
+                                $this->Form->fieldText(
+                                    'email',
+                                    $this->Html->ifSet($vars['email']),
+                                    [
+                                        'id' => 'email',
+                                        'class' => 'form-control',
+                                        'tabindex' => 6,
+                                        'placeholder' => $this->_('AdminLogin.setup.field_email', true)
+                                    ]
+                                );
+                                ?>
+                            </div>
+                            <div class="form-group">
+                                <?php
+                                $this->Form->fieldText(
+                                    'username',
+                                    $this->Html->ifSet($vars['username']),
+                                    [
+                                        'id' => 'username',
+                                        'class' => 'form-control',
+                                        'tabindex' => 7,
+                                        'placeholder' => $this->_('AdminLogin.setup.field_username', true)
+                                    ]
+                                );
+                                ?>
+                            </div>
+                            <div class="form-group">
+                                <?php
+                                $this->Form->fieldPassword(
+                                    'password',
+                                    [
+                                        'id' => 'password',
+                                        'class' => 'form-control',
+                                        'tabindex' => 8,
+                                        'placeholder' => $this->_('AdminLogin.setup.field_password', true),
+                                    ]
+                                );
+                                ?>
+                            </div>
+                            <div class="form-group">
+                                <?php
+                                $this->Form->fieldPassword(
+                                    'confirm_password',
+                                    [
+                                        'id' => 'confirm_password',
+                                        'class' => 'form-control',
+                                        'tabindex' => 9,
+                                        'placeholder' => $this->_('AdminLogin.setup.field_confirm_password', true),
+                                    ]
+                                );
+                                ?>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <button class="btn btn-block btn-success pull-right" type="submit">
+                                        <i class="fa fa-check"></i> <?php $this->_('AdminLogin.setup.field_submit');?>
+                                    </button>
+                                </div>
+                            </div>
+                        <?php
+                        $this->Form->end();
+                        ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<?php
+$this->Javascript->setInline('
+    $(document).ready(function() {
+        showLicenseKey();
+        showNewsletterField();
+        $(".license_type").on("change", function() {
+            showLicenseKey();
+            showNewsletterField();
+        });
+
+        $("#license_key").on("change", function() {
+            showNewsletterField();
+        });
+
+        function showLicenseKey() {
+            if ($("#enter_key_true").is(":checked")) {
+                $("#license_key").show();
+            } else {
+                $("#license_key").hide();
+            }
+        }
+
+        function showNewsletterField() {
+            if (isTrialKey()) {
+                $("#newsletter-option").hide();
+                $("#text-trial-newsletter").show();
+            } else {
+                $("#text-trial-newsletter").hide();
+                $("#newsletter-option").show();
+            }
+        }
+
+        function isTrialKey() {
+            if ($("#enter_key_true").is(":checked") && $("#license_key").val().substring(0, 6) !== "trial-") {
+                return false;
+            }
+
+            return true;
+        }
+    });
+');

@@ -1,0 +1,31 @@
+
+	<ul>
+        <li>
+            <?php
+            $this->Form->label($this->_("Payumoney.merchant_key", true), "merchant_key");
+            $this->Form->fieldText("merchant_key", $this->Html->ifSet($meta['merchant_key']), array('id'=>"merchant_key"));
+            ?>
+            <span class="tooltip"><?php $this->_("AppController.tooltip.text");?><div><?php $this->_("Payumoney.merchant_key_note");?></div></span>
+        </li>
+		<li>
+            <?php
+            $this->Form->label($this->_("Payumoney.merchant_salt", true), "merchant_salt");
+            $this->Form->fieldText("merchant_salt", $this->Html->ifSet($meta['merchant_salt']), array('id'=>"merchant_salt"));
+            ?>
+            <span class="tooltip"><?php $this->_("AppController.tooltip.text");?><div><?php $this->_("Payumoney.merchant_salt_note");?></div></span>
+		</li>
+		<li>
+            <?php
+            $this->Form->label($this->_("Payumoney.auth_header", true), "auth_header");
+            $this->Form->fieldText("auth_header", $this->Html->ifSet($meta['auth_header']), array('id'=>"auth_header"));
+            ?>
+            <span class="tooltip"><?php $this->_("AppController.tooltip.text");?><div><?php $this->_("Payumoney.auth_header_note");?></div></span>
+		</li>
+		<li>
+            <?php
+            $this->Form->fieldCheckbox("test_mode", "true", ($this->Html->ifSet($meta['test_mode'], "false") == "true"), array('id'=>"test_mode"));
+            $this->Form->label($this->_("Payumoney.test_mode", true), "test_mode", array('class'=>"inline"));
+            ?>
+            <span class="tooltip"><?php $this->_("AppController.tooltip.text");?><div><?php $this->_("Payumoney.test_mode_note"); ?></div></span>
+        </li>
+	</ul>

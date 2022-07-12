@@ -1,0 +1,694 @@
+
+        <?php
+        echo $this->Html->ifSet($message);
+
+        $this->Widget->clear();
+        $this->Widget->create($this->_('AdminPackages.add.boxtitle_newpackage', true));
+
+        $this->Form->create(null, ['id' => 'add_package', 'class' => 'disable-on-submit']);
+        ?>
+        <div class="inner">
+            <div class="group_title_row">
+                <div class="title_row first"><h3><?php $this->_('AdminPackages.add.heading_basic');?></h3></div>
+            </div>
+            <div class="pad">
+                <ul>
+                    <li>
+                        <div class="tab_content inverse">
+                            <ul class="tabs">
+                                <?php
+                                foreach ($languages as $lang) {
+                                ?>
+                                <li<?php echo ($this->Html->ifSet($lang->code) == Configure::get('Blesta.language') ? ' class="current"' : '');?>>
+                                    <a href="#"><?php $this->Html->_($lang->name);?></a>
+                                </li>
+                                <?php
+                                }
+                                ?>
+                            </ul>
+                            <div class="inner_content">
+                                <?php
+                                foreach ($languages as $i => $lang) {
+                                    $found = false;
+                                    foreach ((array)$this->Html->ifSet($vars->names) as $name) {
+                                        if ($this->Html->ifSet($name->lang) == $lang->code) {
+                                            $found = true;
+                                            break;
+                                        }
+                                    }
+
+                                    $show_description = false;
+                                    $current_text_description = false;
+                                    foreach ((array)$this->Html->ifSet($vars->descriptions) as $description) {
+                                        if ($this->Html->ifSet($description->lang) == $lang->code) {
+                                            if (!empty($description->text) || !empty($description->html)) {
+                                                $show_description = true;
+                                                $current_text_description = !empty($description->html);
+                                            }
+                                            break;
+                                        }
+                                    }
+                                ?>
+                                <div>
+                                    <ul>
+                                        <li>
+                                            <?php
+                                            $this->Form->label($this->_('AdminPackages.add.field_packagename', true), 'name_' . $this->Html->ifSet($lang->code));
+                                            $this->Form->fieldHidden('names[' . $i . '][lang]', $this->Html->ifSet($lang->code));
+                                            ?>
+                                            <div><?php $this->Form->fieldText('names[' . $i . '][name]', $found ? $this->Html->ifSet($name->name) : null, ['id' => 'name_' . $this->Html->ifSet($lang->code)]);?></div>
+                                        </li>
+                                        <li>
+                                            <h4><a id="description_area_<?php $this->Html->_($lang->code)?>" href="#" class="show_content"><i class="fa fa-caret-down"></i> <?php $this->_('AdminPackages.add.field_description');?></a></h4>
+                                            <div id="description_content_<?php $this->Html->_($lang->code)?>" class="pad_top<?php echo !$show_description ? ' hidden' : ' show';?>">
+                                                <div>
+                                                    <?php
+                                                    $this->Form->fieldHidden('descriptions[' . $i . '][lang]', $this->Html->ifSet($lang->code));
+                                                    ?>
+                                                    <div class="tab_content">
+                                                        <ul class="tabs">
+                                                            <li<?php echo $current_text_description ? ' class="current"' : '';?>>
+                                                                <a href="#"><?php $this->Form->label($this->_('AdminPackages.add.field_description_html', true));?></a>
+                                                            </li>
+                                                            <li<?php echo !$current_text_description ? ' class="current"' : '';?>>
+                                                                <a href="#"><?php $this->Form->label($this->_('AdminPackages.add.field_description_text', true));?></a>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="inner_content">
+                                                            <div><?php $this->Form->fieldTextarea('descriptions[' . $i . '][html]', $this->Html->ifSet($description->html), ['class' => 'wysiwyg']);?></div>
+                                                            <div><?php $this->Form->fieldTextarea('descriptions[' . $i . '][text]', $this->Html->ifSet($description->text), ['data-markdown-editor' => '']);?></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <?php
+                                }
+                                ?>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <?php
+                        $this->Form->label($this->_('AdminPackages.add.field_status', true), 'status');
+                        $this->Form->fieldSelect('status', $this->Html->ifSet($status), $this->Html->ifSet($vars->status), ['id' => 'status']);
+                        ?>
+                    </li>
+                    <li>
+                        <?php
+                        $this->Form->label($this->_('AdminPackages.add.field_qty', true), 'qty');
+
+                        $this->Form->fieldRadio('qty_unlimited', 'true', $this->Html->ifSet($vars->qty) == '', ['id' => 'qty_unlimited']);
+                        $this->Form->label($this->_('AdminPackages.add.field_qty_unlimited', true), 'qty_unlimited', ['class' => 'inline']);
+
+                        $this->Form->fieldRadio('qty_unlimited', 'false', $this->Html->ifSet($vars->qty) != '', ['id' => 'qty_limited']);
+                        $this->Form->fieldText('qty', $this->Html->ifSet($vars->qty), ['id' => 'qty', 'class' => 'small']);
+                        ?>
+                    </li>
+                    <li>
+                        <?php
+                        $this->Form->fieldCheckbox('upgrades_use_renewal', '1', ($this->Html->ifSet($vars->upgrades_use_renewal, '1') == '1'), ['id' => 'upgrades_use_renewal']);
+                        $this->Form->label($this->_('AdminPackages.add.field_upgrades_use_renewal', true), 'upgrades_use_renewal', ['class' => 'inline']);
+                        ?>
+                        <span class="tooltip"><?php $this->_('AppController.tooltip.text');?> <div><?php $this->_('AdminPackages.!tooltip.upgrades_use_renewal');?></div></span>
+                    </li>
+                    <li>
+                        <h4><a id="configurable_options_area" href="#" class="show_content"><i class="fa fa-caret-down"></i> <?php $this->_('AdminPackages.add.field_configurable_options');?></a></h4>
+                        <div id="configurable_options" class="<?php echo empty($vars->option_groups) ? ' hidden' : ' show';?>">
+                            <table>
+                                <tr>
+                                    <td><?php $this->Form->label($this->_('AdminPackages.add.text_membergroups', true), 'assigned_option_groups');?></td>
+                                    <td></td>
+                                    <td><?php $this->Form->label($this->_('AdminPackages.add.text_availablegroups', true), 'available_option_groups');?></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <?php $this->Form->fieldMultiSelect('option_groups[]', $this->Html->ifSet($vars->option_groups), [], ['id' => 'assigned_option_groups']);?>
+                                    </td>
+                                    <td><a href="#" class="move_left">&nbsp;</a> &nbsp; <a href="#" class="move_right">&nbsp;</a></td>
+                                    <td>
+                                        <?php $this->Form->fieldMultiSelect('available_option_groups[]', $this->Html->ifSet($package_option_groups), [], ['id' => 'available_option_groups']);?>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </li>
+                    <?php
+                    // Display the plugins if any are available
+                    if (!empty($vars->plugins) || !empty($plugins)) {
+                    ?>
+                    <li>
+                        <h4><a id="plugins_area" href="#" class="show_content"><i class="fa fa-caret-down"></i> <?php $this->_('AdminPackages.add.field_plugins');?></a></h4>
+                        <div id="plugins" class="<?php echo empty($vars->plugins) ? ' hidden' : ' show';?>">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <label for="assigned_plugins">
+                                            <?php $this->_('AdminPackages.add.text_assigned_plugins');?>
+                                            <span class="tooltip"><?php $this->_('AppController.tooltip.text');?> <div><?php $this->_('AdminPackages.!tooltip.assigned_plugins');?></div></span>
+                                        </label>
+
+                                    </td>
+                                    <td></td>
+                                    <td><?php $this->Form->label($this->_('AdminPackages.add.text_available_plugins', true), 'available_plugins');?></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <?php $this->Form->fieldMultiSelect('plugins[]', $this->Html->ifSet($vars->plugins, []), [], ['id' => 'assigned_plugins']);?>
+                                    </td>
+                                    <td><a href="#" class="move_left">&nbsp;</a> &nbsp; <a href="#" class="move_right">&nbsp;</a></td>
+                                    <td>
+                                        <?php $this->Form->fieldMultiSelect('available_plugins[]', $this->Html->ifSet($plugins), [], ['id' => 'available_plugins']);?>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </li>
+                    <?php
+                    }
+                    ?>
+                    <li>
+                        <?php
+                        $this->Form->label($this->_('AdminPackages.add.field_module', true), 'module_id');
+                        $this->Form->fieldSelect('module_id', ['' => $this->_('AppController.select.please', true)] + $this->Html->ifSet($modules, []), $this->Html->ifSet($vars->module_id, $this->Html->ifSet($none_module_id)), ['id' => 'module_id']);
+                        ?>
+                    </li>
+                </ul>
+            </div>
+            <div id="module_options" class="module_option_fields">
+                <?php
+                $this->Form->fieldHidden('module_row', $this->Html->ifSet($vars->module_row, 0), ['id' => 'module_row']);
+                $this->Form->fieldHidden('module_group', $this->Html->ifSet($vars->module_group), ['id' => 'module_group']);
+                ?>
+            </div>
+            <div class="title_row"><h3><?php $this->_('AdminPackages.add.heading_pricing');?></h3></div>
+            <div class="pad">
+                <div class="links_row">
+                    <a class="btn btn-default pull-right btn-sm price_row_add" href="#"><span><?php $this->_('AdminPackages.add.categorylink_addprice');?></span></a>
+                </div>
+                <table class="table">
+                    <thead>
+                        <tr class="heading_row">
+                            <td><?php $this->_('AdminPackages.add.text_term');?></td>
+                            <td><?php $this->_('AdminPackages.add.text_period');?></td>
+                            <td><?php $this->_('AdminPackages.add.text_currency');?></td>
+                            <td><?php $this->_('AdminPackages.add.text_price');?></td>
+                            <td><?php $this->_('AdminPackages.add.text_price_renews');?><span class="tooltip"><?php $this->_('AppController.tooltip.text');?> <div><?php $this->_('AdminPackages.!tooltip.price_renews');?></div></span></td>
+                            <td><?php $this->_('AdminPackages.add.text_setup');?></td>
+                            <td><?php $this->_('AdminPackages.add.text_cancellation');?></td>
+                            <td class="last"><?php $this->_('AdminPackages.add.text_options');?></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                    $rows = 1;
+                    if ($this->Html->ifSet($vars->pricing['term'], false)) {
+                        $rows = count($vars->pricing['term']);
+                    }
+                    for ($i = 0; $i < $rows; $i++) {
+                    ?>
+                        <tr class="price_row">
+                            <td class="medium">
+                                <?php
+                                // Set the term, but not if onetime
+                                $term = $this->Html->ifSet($vars->pricing['term'][$i]);
+                                $disabled = [];
+                                if ($this->Html->ifSet($vars->pricing['period'][$i]) == 'onetime') {
+                                    $term = '';
+                                    $disabled = ['disabled' => 'disabled'];
+                                }
+                                $this->Form->fieldText('pricing[term][]', $this->Html->ifSet($vars->pricing['term'][$i]), array_merge(['class' => 'term stretch'], $disabled));
+                                ?>
+                            </td>
+                            <td class="medium"><?php $this->Form->fieldSelect('pricing[period][]', $this->Html->ifSet($periods), $this->Html->ifSet($vars->pricing['period'][$i], 'month'), ['class' => 'period']);?></td>
+                            <td class="medium"><?php (!empty($currencies) ? $this->Form->fieldSelect('pricing[currency][]', $this->Html->ifSet($currencies), $this->Html->ifSet($vars->pricing['currency'][$i]), ['class' => 'stretch']) : $this->Html->_($default_currency));?></td>
+                            <td class="medium"><?php $this->Form->fieldText('pricing[price][]', $this->CurrencyFormat->format($this->Html->ifSet($vars->pricing['price'][$i]), $this->Html->ifSet($vars->pricing['currency'][$i]), ['prefix' => false,'suffix' => false,'with_separator' => false,'code' => false,'decimals' => 4]), ['class' => 'stretch']);?></td>
+                            <td class="medium">
+                                <?php
+                                $renewal_price_enabled = $this->Html->ifSet(
+                                    $vars->pricing['price_enable_renews'][$i],
+                                    $this->Html->ifSet($vars->pricing['price_renews'][$i]) == $this->Html->ifSet($vars->pricing['price'][$i])
+                                        || $this->Html->ifSet($vars->pricing['price_renews'][$i], null) === null
+                                        ? '0'
+                                        : '1'
+                                ) == '1' && $this->Html->ifSet($vars->pricing['period'][$i]) != 'onetime';
+                                $this->Form->fieldCheckbox('pricing[price_enable_renews][]', '1', $renewal_price_enabled, array_merge(['class' => 'price_enable_renews'], $disabled));
+                                ?>
+                                <?php $this->Form->fieldText('pricing[price_renews][]', $this->CurrencyFormat->format($this->Html->ifSet($vars->pricing['price_renews'][$i]), $this->Html->ifSet($vars->pricing['currency'][$i]), ['prefix' => false,'suffix' => false,'with_separator' => false,'code' => false,'decimals' => 4]), array_merge(['class' => 'price_renews'], $disabled));?>
+                            </td>
+                            <td class="medium"><?php $this->Form->fieldText('pricing[setup_fee][]', $this->CurrencyFormat->format($this->Html->ifSet($vars->pricing['setup_fee'][$i]), $this->Html->ifSet($vars->pricing['currency'][$i]), ['prefix' => false,'suffix' => false,'with_separator' => false,'code' => false,'decimals' => 4]), ['class' => 'stretch']);?></td>
+                            <td class="medium"><?php $this->Form->fieldText('pricing[cancel_fee][]', $this->CurrencyFormat->format($this->Html->ifSet($vars->pricing['cancel_fee'][$i]), $this->Html->ifSet($vars->pricing['currency'][$i]), ['prefix' => false,'suffix' => false,'with_separator' => false,'code' => false,'decimals' => 4]), ['class' => 'stretch']);?></td>
+                            <td><a href="#" class="manage price_row_remove"><?php $this->_('AdminPackages.add.text_remove');?></a></td>
+                        </tr>
+                    <?php
+                    }
+                    ?>
+                    </tbody>
+                </table>
+                <ul>
+                    <li class="pad_top">
+                        <?php
+                        $this->Form->fieldCheckbox('taxable', '1', ($this->Html->ifSet($vars->taxable, '0') == '1'), ['id' => 'taxable']);
+                        $this->Form->label($this->_('AdminPackages.add.field_taxable', true), 'taxable', ['class' => 'inline']);
+                        ?>
+                    </li>
+                    <li>
+                        <?php
+                        $this->Form->fieldCheckbox('single_term', '1', ($this->Html->ifSet($vars->single_term, '0') == '1'), ['id' => 'single_term']);
+                        $this->Form->label($this->_('AdminPackages.add.field_single_term', true), 'single_term', ['class' => 'inline']);
+                        ?>
+                    </li>
+                    <li>
+                        <?php
+                        $this->Form->fieldCheckbox('prorata', '1', ($this->Html->ifSet($vars->prorata) == '1'), ['id' => 'prorata']);
+                        $this->Form->label($this->_('AdminPackages.add.field_prorata', true), 'prorata', ['class' => 'inline']);
+                        ?>
+                        <span class="tooltip"><?php $this->_('AppController.tooltip.text');?> <div><?php $this->_('AdminPackages.!tooltip.prorata');?></div></span>
+                    </li>
+                </ul>
+
+                <ul id="prorata_options" style="display:none;">
+                    <li>
+                        <?php
+                        $this->Form->label($this->_('AdminPackages.add.field_prorata_day', true), 'prorata_day');
+                        $this->Form->fieldSelect('prorata_day', $this->Html->ifSet($prorata_days, []), $this->Html->ifSet($vars->prorata_day), ['id' => 'prorata_day']);
+                        ?>
+                        <span class="tooltip"><?php $this->_('AppController.tooltip.text');?> <div><?php $this->_('AdminPackages.!tooltip.prorata_day');?></div></span>
+                    </li>
+                    <li>
+                        <?php
+                        $this->Form->label($this->_('AdminPackages.add.field_prorata_cutoff', true), 'prorata_cutoff');
+                        $this->Form->fieldSelect('prorata_cutoff', ['' => Language::_('AdminPackages.add.text_none', true)] + $this->Html->ifSet($prorata_days, []), $this->Html->ifSet($vars->prorata_cutoff, 15), ['id' => 'prorata_cutoff']);
+                        ?>
+                        <span class="tooltip"><?php $this->_('AppController.tooltip.text');?> <div><?php $this->_('AdminPackages.!tooltip.prorata_cutoff');?></div></span>
+                    </li>
+                </ul>
+            </div>
+            <div class="title_row"><h3><?php $this->_('AdminPackages.add.heading_email');?></h3></div>
+            <div class="pad">
+                <ul>
+                    <li>
+                        <?php
+                        $this->Form->label($this->_('AdminPackages.add.text_tags', true));
+                        ?>
+                        <div class="accent_box">
+                            <?php $this->Html->_($module_email_tags);?>
+                            <span id="module_email_tags"></span>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="tab_content inverse">
+                    <ul class="tabs">
+                        <?php
+                        foreach ($languages as $lang) {
+                        ?>
+                        <li<?php echo ($this->Html->ifSet($lang->code) == Configure::get('Blesta.language') ? ' class="current"' : '');?>>
+                            <a href="#"><?php $this->Html->_($lang->name);?></a>
+                        </li>
+                        <?php
+                        }
+                        ?>
+                    </ul>
+                    <div class="inner_content">
+                        <?php
+                        foreach ($languages as $i => $lang) {
+                            $found = false;
+                            foreach ((array)$this->Html->ifSet($vars->email_content) as $email_data) {
+                                if ($this->Html->ifSet($email_data->lang) == $lang->code) {
+                                    $found = true;
+                                    break;
+                                }
+                            }
+                        ?>
+                        <div>
+                            <?php
+                            $this->Form->fieldHidden('email_content[' . $i . '][lang]', $this->Html->ifSet($lang->code));
+                            ?>
+                            <div class="tab_content">
+                                <ul class="tabs">
+                                    <li class="current">
+                                        <a href="#"><?php $this->Form->label($this->_('AdminPackages.add.field_description_html', true));?></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><?php $this->Form->label($this->_('AdminPackages.add.field_description_text', true));?></a>
+                                    </li>
+                                </ul>
+                                <div class="inner_content">
+                                    <div><?php $this->Form->fieldTextarea('email_content[' . $i . '][html]', $found ? $this->Html->ifSet($email_data->html) : null, ['class' => 'wysiwyg']);?></div>
+                                    <div><?php $this->Form->fieldTextarea('email_content[' . $i . '][text]', $found ? $this->Html->ifSet($email_data->text) : null);?></div>
+                                </div>
+                            </div>
+                        </div>
+                        <?php
+                        }
+                        ?>
+                    </div>
+                </div>
+            </div>
+            <div class="title_row"><h3><?php $this->_('AdminPackages.add.heading_groups');?></h3></div>
+            <div class="pad">
+                <p><?php $this->_('AdminPackages.add.text_group');?></p>
+
+                <ul>
+                    <li>
+                        <?php
+                        $this->Form->fieldRadio('select_group_type', 'existing', ($this->Html->ifSet($vars->select_group_type, 'existing') == 'existing'), ['id' => 'select_group_type', 'class' => 'select_group_type']);
+                        $this->Form->label($this->_('AdminPackages.add.field_select_group_type', true), 'select_group_type', ['class' => 'inline']);
+
+                        $this->Form->fieldRadio('select_group_type', 'new', ($this->Html->ifSet($vars->select_group_type) == 'new' || empty($package_groups)), ['id' => 'select_group_type_new', 'class' => 'select_group_type']);
+                        $this->Form->label($this->_('AdminPackages.add.field_select_group_type_new', true), 'select_group_type_new', ['class' => 'inline']);
+                        ?>
+                    </li>
+                </ul>
+                <table id="assign_package_groups">
+                    <tr>
+                        <td><?php $this->Form->label($this->_('AdminPackages.add.text_membergroups', true), 'assigned');?></td>
+                        <td></td>
+                        <td><?php $this->Form->label($this->_('AdminPackages.add.text_availablegroups', true), 'available');?></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <?php $this->Form->fieldMultiSelect('groups[]', $this->Html->ifSet($vars->groups), [], ['id' => 'assigned']);?>
+                        </td>
+                        <td><a href="#" class="move_left">&nbsp;</a> &nbsp; <a href="#" class="move_right">&nbsp;</a></td>
+                        <td>
+                            <?php $this->Form->fieldMultiSelect('available[]', $this->Html->ifSet($package_groups), [], ['id' => 'available']);?>
+                        </td>
+                    </tr>
+                </table>
+
+                <div id="add_package_group">
+                    <div class="tab_content inverse">
+                        <ul class="tabs">
+                            <?php
+                            foreach ($languages as $lang) {
+                            ?>
+                            <li<?php echo ($this->Html->ifSet($lang->code) == Configure::get('Blesta.language') ? ' class="current"' : '');?>>
+                                <a href="#"><?php $this->Html->_($lang->name);?></a>
+                            </li>
+                            <?php
+                            }
+                            ?>
+                        </ul>
+                        <div class="inner_content">
+                            <?php
+                            foreach ($languages as $i => $lang) {
+                                $found = false;
+                                foreach ($this->Html->ifSet($vars->group_names, []) as $group_name) {
+                                    if ($this->Html->ifSet($group_name->lang) == $lang->code) {
+                                        $found = true;
+                                        break;
+                                    }
+                                }
+                                ?>
+                            <div>
+                                <?php
+                                $this->Form->fieldHidden('group_names[' . $i . '][lang]', $this->Html->ifSet($lang->code));
+                                ?>
+                                <div><?php $this->Form->fieldText('group_names[' . $i . '][name]', $found ? $this->Html->ifSet($group_name->name) : null, ['id' => 'group_names']);?></div>
+                            </div>
+                                <?php
+                            }
+                            ?>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="inner">
+            <div class="button_row">
+                <?php
+                $this->Form->fieldSubmit('save', $this->_('AdminPackages.add.field_packagesubmit', true), ['class' => 'btn btn-primary pull-right']);
+                ?>
+            </div>
+        </div>
+        <?php
+        $this->Form->end();
+
+        $this->Widget->end();
+        ?>
+
+<?php
+$description_js = '';
+foreach ($this->Html->ifSet($languages, []) as $lang) {
+    $description_js .= " $(this).blestaBindToggleEvent('#description_area_" . $this->Html->ifSet($lang->code) . "',"
+        . " '#description_content_" . $this->Html->ifSet($lang->code) . "');";
+}
+$this->Javascript->setInline("
+$(document).ready(function() {
+    updatePriceRows();
+
+    // Show package group type
+    showPackageGroupType($('.select_group_type:checked').val());
+    $('.select_group_type').change(function() {
+        showPackageGroupType($(this).val());
+    });
+
+    $('#qty').focus(function() {
+        $('#qty_limited').prop('checked', true);
+    });
+
+    $('#add_package').submit(function() {
+        $('#assigned option').prop('selected', true);
+        $('#assigned_option_groups option').prop('selected', true);
+        $('#assigned_plugins option').prop('selected', true);
+
+        // Enable fields so that they can be submitted
+        $('input.term').prop('disabled', false);
+        $('input.price_renews').prop('disabled', false);
+        $('input.price_enable_renews').prop('disabled', false);
+        $('input.price_enable_renews:not(:checked)').val('0');
+        $('input.price_enable_renews:not(:checked)').prop('checked', true);
+    });
+
+    // Toggle description
+    " . $description_js . "
+    $(this).blestaBindToggleEvent('#configurable_options_area', '#configurable_options');
+    $(this).blestaBindToggleEvent('#plugins_area', '#plugins');
+
+    $('textarea.wysiwyg').ckeditor(function() {}, {language: '" . substr(Configure::get('Blesta.language'), 0, 2) . "'});
+    $('div.tab_content').blestaTabbedContent();
+
+    $('.price_row select.period').change(function() {
+        if ($(this).val() == 'onetime') {
+            // Disable the term field for onetime pricings
+            var term = $(this).closest('.price_row').find('input.term');
+            $(term).prop('disabled', true);
+            $(term).val('');
+
+            // Disable the renewal price checkbox and input
+            $(this).closest('.price_row').find('input.price_enable_renews').prop('disabled', true);
+            $(this).closest('.price_row').find('input.price_enable_renews').prop('checked', false);
+            $(this).closest('.price_row').find('input.price_renews').prop('disabled', true);
+
+            // Empty the value of the renewal price
+            $(this).closest('.price_row').find('input.price_renews').val('');
+        } else {
+            // Enable term field and renewal price checkbox
+            $(this).closest('.price_row').find('input.term').prop('disabled', false);
+            $(this).closest('.price_row').find('input.price_enable_renews').prop('disabled', false);
+
+            // Set the value of the renewal price to that of the regular price
+            $(this).closest('.price_row').find('input.price_renews').val(
+                $(this).closest('tr.price_row').find('input[name=\"pricing[price][]\"]').val()
+            );
+        }
+    });
+
+    $('.price_row_remove').click(function() {
+        if ($('tr.price_row').length > 1)
+            $(this).closest('tr').remove();
+        updatePriceRows();
+        return false;
+    });
+
+    // Move configurable options from right to left
+    $('#configurable_options .move_left').click(function() {
+        $('#available_option_groups option:selected').appendTo($('#assigned_option_groups'));
+        return false;
+    });
+    // Move configurable options from left to right
+    $('#configurable_options .move_right').click(function() {
+        $('#assigned_option_groups option:selected').appendTo($('#available_option_groups'));
+        return false;
+    });
+
+    // Move packages from right to left
+    $('.move_left').click(function() {
+        $('#available option:selected').appendTo($('#assigned'));
+        return false;
+    });
+    // Move packages from left to right
+    $('.move_right').click(function() {
+        $('#assigned option:selected').appendTo($('#available'));
+        return false;
+    });
+
+    // Move plugins from right to left
+    $('#plugins .move_left').click(function() {
+        $('#available_plugins option:selected').appendTo($('#assigned_plugins'));
+        return false;
+    });
+    // Move plugins from left to right
+    $('#plugins .move_right').click(function() {
+        $('#assigned_plugins option:selected').appendTo($('#available_plugins'));
+        return false;
+    });
+
+    // Onload fetch module options
+    fetchModuleOptions();
+    // On change fetch module options
+    $('#module_id').change(function() {
+        $('#module_row').remove();
+        $('#module_group').remove();
+        fetchModuleOptions();
+    });
+
+    // Update module options when the server or group changes
+    $('#module_group, #module_row').live('change', function() {
+        fetchModuleOptions();
+    });
+
+    $('.price_row_add').click(function() {
+        var fields = $('tr.price_row:first').clone(true);
+        // Remove input text/hidden and textarea data
+        fields.find('input:text,input:hidden,textarea').val('');
+        fields.find('input:text').prop('disabled', false);
+        // Remove checkbox/radio data
+        fields.find('input:checkbox,input:radio').prop('checked', false);
+
+        // Set the first row's currency/period
+        var currency = $('.price_row:first').find('select[name=\"pricing[currency][]\"] option:selected').val();
+        var period = $('.price_row:first').find('select[name=\"pricing[period][]\"] option:selected').val();
+        fields.find('option[value=\"' + period + '\"]').prop('selected', true);
+        fields.find('option[value=\"' + currency + '\"]').prop('selected', true);
+
+        // Disable the term if it's one time
+        if (period == 'onetime') {
+            fields.find('input.term').prop('disabled', true);
+            fields.find('input.price_enable_renews').prop('disabled', true);
+        }
+
+        // Disable renewal price
+        fields.find('input.price_renews').prop('disabled', true);
+        fields.find('input.price_enable_renews').val('1');
+
+        $('tr.price_row:last').after(fields);
+        // Empty the phone ID
+        //$('tr.price_row:last .phone_id').attr('value', '');
+
+        updatePriceRows();
+        return false;
+    });
+
+    showProrataOptions();
+    $('#prorata').change(function() {
+        showProrataOptions();
+    });
+
+    // Disable renew price field when checkbox is unchecked and make it match the price fields
+    $('.price_enable_renews').change(function() {
+        if ($(this).is(':checked')) {
+            $(this).parent().find('.price_renews').prop('disabled', false);
+        } else {
+            if ($(this).parents('tr.price_row').find('.period').val() != 'onetime') {
+                $(this).parent().find('.price_renews').val(
+                    $(this).parents('tr.price_row').find('input[name=\"pricing[price][]\"]').val()
+                );
+            }
+
+            $(this).parent().find('.price_renews').prop('disabled', true);
+        }
+    });
+
+    $('.price_enable_renews:not(:checked)').each(function() {
+        if ($(this).parents('tr.price_row').find('.period').val() != 'onetime') {
+            $(this).parent().find('.price_renews').val(
+                $(this).parents('tr.price_row').find('input[name=\"pricing[price][]\"]').val()
+            );
+        } else {
+            $(this).parent().find('.price_renews').val('');
+        }
+        $(this).parent().find('.price_renews').prop('disabled', true);
+    })
+
+    // Make sure the value of the renewal field matches that of the price field
+    $('input[name=\"pricing[price][]\"]').change(function() {
+        if ($(this).parents('tr.price_row').find('.price_enable_renews:not(:checked)').length
+            && $(this).parents('tr.price_row').find('.period').val() != 'onetime'
+        ) {
+            $(this).parents('tr.price_row').find('.price_renews').val($(this).val());
+        }
+    });
+    $('input[name=\"pricing[price][]\"]').on('keyup',function() {
+        if ($(this).parents('tr.price_row').find('.price_enable_renews:not(:checked)').length
+            && $(this).parents('tr.price_row').find('.period').val() != 'onetime'
+        ) {
+            $(this).parents('tr.price_row').find('.price_renews').val($(this).val());
+        }
+    });
+});
+
+// Displays pro rata fields
+function showProrataOptions() {
+    if ($('#prorata').prop('checked')) {
+        $('#prorata_options').show();
+    }
+    else {
+        $('#prorata_options').hide();
+    }
+}
+
+// Show/hide package group types
+function showPackageGroupType(value) {
+    if (value == 'new') {
+        $('#assign_package_groups').hide();
+        $('#add_package_group').show();
+    }
+    else {
+        $('#add_package_group').hide();
+        $('#assign_package_groups').show();
+    }
+}
+
+// Fetch module options and set module email tags
+function fetchModuleOptions() {
+    // Set meta values on initial load
+    var meta_data = $('#add_package :input[name^=\"meta\"]');
+    var meta_values = '&" . http_build_query(['meta' => $this->Html->ifSet($vars->meta, [])]) . "';
+    if ($(meta_data).length > 0)
+        meta_values = '';
+
+    $(document).blestaRequest('POST', '" . $this->Html->safe($this->base_uri . 'packages/moduleoptions/') . "', $('#module_id').closest('form').serialize() + meta_values,
+        function(data) {
+            if (data) {
+                $('#module_options').html('');
+                $('#module_email_tags').html('');
+                $('#module_options').html(data.module_options);
+                $('#module_email_tags').html(data.module_email_tags);
+
+                $('#module_options').blestaBindToolTips();
+            }
+        },
+        null,
+        {dataType:'json'}
+    );
+}
+
+// Zebra-stripe pricing rows
+function updatePriceRows() {
+    var i = 0;
+    $('tr.price_row').each(function() {
+        if (i++%2 == 1)
+            $(this).addClass('odd_row');
+        else
+            $(this).removeClass('odd_row');
+    });
+}
+");
+?>

@@ -1,0 +1,31 @@
+
+        <?php echo $this->Html->ifSet($left_nav);?>
+        <div id="right_outer">
+            <?php echo $this->Html->ifSet($message);?>
+            <section id="right_container">
+                <?php
+                $this->Widget->clear();
+                $this->Widget->create($this->_('AdminCompanyLookandfeel.template.box_title', true));
+                $this->Form->create(null, ['class' => 'disable-on-submit']);
+                ?>
+                <div class="inner">
+                    <div class="pad">
+                        <ul>
+                            <li>
+                                <?php $this->Form->label($this->_('AdminCompanyLookandfeel.template.text_client_view_dir', true), 'client_view_dir');?>
+                                <?php $this->Form->fieldSelect('client_view_dir', $this->Html->ifSet($client_view_dirs), $this->Html->ifSet($vars['client_view_dir']), ['id' => 'client_view_dir']);?>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="button_row">
+                        <?php
+                        $this->Form->fieldSubmit('save', $this->_('AdminCompanyLookandfeel.template.text_submit', true), ['class' => 'btn btn-primary pull-right']);
+                        ?>
+                    </div>
+                </div>
+                <?php
+                $this->Form->end();
+                $this->Widget->end();
+                ?>
+            </section>
+        </div>

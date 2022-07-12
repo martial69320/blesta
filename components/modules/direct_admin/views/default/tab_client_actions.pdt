@@ -1,0 +1,45 @@
+
+	<div id="change_password">
+		<h4><?php $this->_("DirectAdmin.tab_client_actions.change_password");?></h4>
+
+		<?php
+		$this->Form->create($this->base_uri . "services/manage/" . $this->Html->ifSet($service_id) . "/tabClientActions/");
+		?>
+		<div class="col-md-12">
+			<div class="form-group">
+				<?php
+				$this->Form->label($this->_("DirectAdmin.tab_client_actions.field_direct_admin_password", true), "direct_admin_password");
+                ?>
+                <div class="row">
+                    <div class="col-md-9">
+                        <?php
+                        $this->Form->fieldPassword("direct_admin_password", array('id' => "direct_admin_password", 'class'=>"form-control direct_admin_password", 'placeholder'=>$this->_("DirectAdmin.tab_client_actions.field_direct_admin_password", true)));
+                        ?>
+                    </div>
+                    <div class="col-md-3">
+                        <a class="btn btn-block btn-info generate-password" href="#" data-options="<?php $this->Html->_($password_options);?>" data-length="<?php $this->Html->_($password_length);?>" data-base-url="<?php $this->Html->_($this->base_uri);?>" data-for-class="direct_admin_password">
+                            <i class="fa fa-refresh"></i> <?php $this->_('DirectAdmin.tab_client_actions.text_generate_password');?>
+                        </a>
+                    </div>
+                </div>
+			</div>
+            <div class="form-group">
+                <?php
+                $this->Form->label($this->_('DirectAdmin.tab_client_actions.field_direct_admin_confirm_password', true), 'direct_admin_confirm_password');
+                ?>
+                <div class="row">
+                    <div class="col-md-9">
+                        <?php
+                        $this->Form->fieldPassword('direct_admin_confirm_password', ['id' => 'direct_admin_confirm_password', 'class'=>'form-control direct_admin_password', 'placeholder'=>$this->_('DirectAdmin.tab_client_actions.field_direct_admin_confirm_password', true)]);
+                        ?>
+                    </div>
+                </div>
+            </div>
+		</div>
+		<button class="btn btn-default pull-right">
+			<i class="fa fa-edit"></i> <?php $this->_("DirectAdmin.tab_client_actions.field_password_submit");?>
+		</button>
+		<?php
+		$this->Form->end();
+		?>
+	</div>

@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="panel panel-default panel-simple">
+        <div class="panel-heading">
+            <h3>Blesta Web Upgrader</h3>
+        </div>
+        <div class="panel-body">
+            <?php
+            echo $this->Html->ifSet($message);
+            ?>
+
+            <?php
+            $this->Form->create(null, ['class' => 'disable-on-submit']);
+            $this->Form->fieldHidden('process', 'true');
+            ?>
+            <?php $this->Form->fieldSubmit('upgrade', 'Upgrade', ['class' => 'btn btn-primary pull-right']);?>
+            <div class="install_progress">
+                <div class="progress hide">
+                    <div class="progress-bar progress-bar-striped active"></div>
+                </div>
+            </div>
+            <?php
+            $this->Form->end();
+            ?>
+        </div>
+    </div>
+</div>

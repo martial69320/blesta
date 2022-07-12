@@ -1,0 +1,22 @@
+
+    <div id="change_password">
+        <h4><?php $this->_('Ispconfig.tab_client_actions.change_password'); ?></h4>
+
+        <?php
+        $this->Form->create($this->base_uri . 'services/manage/' . $this->Html->ifSet($service_id) . '/tabClientActions/');
+        ?>
+        <div class="col-md-12">
+            <div class="form-group">
+                <?php
+                $this->Form->label($this->_('Ispconfig.tab_client_actions.field_ispconfig_password', true), 'ispconfig_password');
+                $this->Form->fieldPassword('ispconfig_password', ['id' => 'ispconfig_password', 'class' => 'form-control', 'placeholder' => $this->_('Ispconfig.tab_client_actions.field_ispconfig_password', true)]);
+                ?>
+            </div>
+        </div>
+        <button class="btn btn-default pull-right">
+            <i class="fa fa-edit"></i> <?php $this->_('Ispconfig.tab_client_actions.field_password_submit'); ?>
+        </button>
+        <?php
+        $this->Form->end();
+        ?>
+    </div>

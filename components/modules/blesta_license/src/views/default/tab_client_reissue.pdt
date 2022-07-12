@@ -1,0 +1,16 @@
+
+	<?php
+	$this->Form->create($this->base_uri . "services/manage/" . $this->Html->ifSet($service_id) . "/tabClientReissue/");
+    $this->Form->fieldHidden("reissue", "true");
+	?>
+	<div class="row panel-fix">
+		<div class="col-md-12">
+            <p><?php $this->_("BlestaLicense.tab_reissue.description");?></p>
+		</div>
+	</div>
+	<button class="btn btn-default pull-right" type="submit">
+		<i class="fa fa-refresh"></i> <?php $this->_("BlestaLicense.tab_reissue.field_submit");?>
+	</button>
+	<?php
+	$this->Form->end();
+	?>

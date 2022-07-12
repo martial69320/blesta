@@ -1,0 +1,116 @@
+
+        <?php echo $this->Html->ifSet($left_nav);?>
+        <div id="right_outer">
+            <?php echo $this->Html->ifSet($message);?>
+            <section id="right_container">
+                <?php
+                $this->Widget->clear();
+                $this->Widget->create($this->_('AdminSystemGeneral.basic.boxtitle_basic', true));
+                $this->Form->create(null, ['class' => 'disable-on-submit']);
+                ?>
+                <div class="inner">
+                    <div class="pad">
+                        <ul>
+                            <li>
+                                <?php $this->Form->label($this->_('AdminSystemGeneral.basic.field.root_web_dir', true), 'root_web_dir', ['class' => 'inline']);?>
+                                <span class="tooltip block"><?php $this->_('AppController.tooltip.text');?><div><?php $this->_('AdminSystemGeneral.!tooltip.root_web_dir');?></div></span>
+                                <span class="input_span block">
+                                    <?php $this->Form->fieldText('root_web_dir', $this->Html->ifSet($vars['root_web_dir']), ['id' => 'root_web_dir']);?>
+                                    <?php
+                                    if ($this->Html->ifSet($vars['root_web_dir']) == DOCROOTDIR) {
+                                    ?>
+                                    <i class="fa fa-check"></i>
+                                    <?php
+                                    } else {
+                                    ?>
+                                    <i class="fa fa-ban"></i>
+                                    <span><?php $this->_('AdminSystemGeneral.basic.text_docroot', false, DOCROOTDIR);?></span>
+                                    <?php
+                                    }
+                                    ?>
+                                </span>
+                            </li>
+                            <li>
+                                <?php $this->Form->label($this->_('AdminSystemGeneral.basic.field.temp_dir', true), 'temp_dir', ['class' => 'inline']);?>
+                                <span class="tooltip block"><?php $this->_('AppController.tooltip.text');?><div><?php $this->_('AdminSystemGeneral.!tooltip.temp_dir');?></div></span>
+                                <span class="input_span block">
+                                    <?php $this->Form->fieldText('temp_dir', $this->Html->ifSet($vars['temp_dir']), ['id' => 'temp_dir']);?>
+                                    <?php
+                                    if ($this->Html->ifSet($dirs_writable['temp_dir'], false)) {
+                                    ?>
+                                    <i class="fa fa-check"></i>
+                                    <span><?php $this->_('AdminSystemGeneral.basic.text_writable');?></span>
+                                    <?php
+                                    } else {
+                                    ?>
+                                    <i class="fa fa-ban"></i>
+                                    <span><?php $this->_('AdminSystemGeneral.basic.text_unwritable');?></span>
+                                    <?php
+                                    }
+                                    ?>
+                                </span>
+                            </li>
+                            <li>
+                                <?php $this->Form->label($this->_('AdminSystemGeneral.basic.field.uploads_dir', true), 'uploads_dir', ['class' => 'inline']);?>
+                                <span class="tooltip block"><?php $this->_('AppController.tooltip.text');?><div><?php $this->_('AdminSystemGeneral.!tooltip.uploads_dir');?></div></span>
+                                <span class="input_span block">
+                                    <?php $this->Form->fieldText('uploads_dir', $this->Html->ifSet($vars['uploads_dir']), ['id' => 'uploads_dir']);?>
+                                    <?php
+                                    if ($this->Html->ifSet($dirs_writable['uploads_dir'], false)) {
+                                    ?>
+                                    <i class="fa fa-check"></i>
+                                    <span><?php $this->_('AdminSystemGeneral.basic.text_writable');?></span>
+                                    <?php
+                                    } else {
+                                    ?>
+                                    <i class="fa fa-ban"></i>
+                                    <span><?php $this->_('AdminSystemGeneral.basic.text_unwritable');?></span>
+                                    <?php
+                                    }
+                                    ?>
+                                </span>
+                            </li>
+                            <li>
+                                <?php $this->Form->label($this->_('AdminSystemGeneral.basic.field.log_dir', true), 'log_dir', ['class' => 'inline']);?>
+                                <span class="tooltip block"><?php $this->_('AppController.tooltip.text');?><div><?php $this->_('AdminSystemGeneral.!tooltip.log_dir');?></div></span>
+                                <span class="input_span block">
+                                    <?php $this->Form->fieldText('log_dir', $this->Html->ifSet($vars['log_dir']), ['id' => 'log_dir']);?>
+                                    <?php
+                                    if ($this->Html->ifSet($dirs_writable['log_dir'], false)) {
+                                    ?>
+                                    <i class="fa fa-check"></i>
+                                    <span><?php $this->_('AdminSystemGeneral.basic.text_writable');?></span>
+                                    <?php
+                                    } else {
+                                    ?>
+                                    <i class="fa fa-ban"></i>
+                                    <span><?php $this->_('AdminSystemGeneral.basic.text_unwritable');?></span>
+                                    <?php
+                                    }
+                                    ?>
+                                </span>
+                            </li>
+                            <li>
+                                <?php $this->Form->label($this->_('AdminSystemGeneral.basic.field.log_days', true), 'log_days', ['class' => 'inline']);?>
+                                <span class="tooltip block"><?php $this->_('AppController.tooltip.text');?><div><?php $this->_('AdminSystemGeneral.!tooltip.log_days');?></div></span>
+                                <?php $this->Form->fieldSelect('log_days', $this->Html->ifSet($log_days), $this->Html->ifSet($vars['log_days']), ['id' => 'log_days', 'class' => 'block']);?>
+                            </li>
+                            <li>
+                                <?php $this->Form->fieldCheckbox('behind_proxy', 'true', $this->Html->ifSet($vars['behind_proxy']) == 'true', ['id' => 'behind_proxy']);?>
+                                <?php $this->Form->label($this->_('AdminSystemGeneral.basic.field.behind_proxy', true), 'behind_proxy', ['class' => 'inline']);?>
+                                <span class="tooltip"><?php $this->_('AppController.tooltip.text');?><div><?php $this->_('AdminSystemGeneral.!tooltip.behind_proxy');?></div></span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="button_row">
+                        <?php
+                        $this->Form->fieldSubmit('save', $this->_('AdminSystemGeneral.basic.field.basicsubmit', true), ['class' => 'btn btn-primary pull-right']);
+                        ?>
+                    </div>
+                </div>
+                <?php
+                $this->Form->end();
+                $this->Widget->end();
+                ?>
+            </section>
+        </div>

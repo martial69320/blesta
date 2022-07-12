@@ -1,0 +1,318 @@
+<?php
+echo $this->Html->ifSet($message);
+
+$this->Widget->clear();
+$this->Widget->create($this->_('AdminFilter.index.boxtitle', true), ['id' => 'admin_filter'], $this->Html->ifSet($render_section, null));
+?>
+    <div class="inner">
+        <?php
+        $this->Form->create(null, ['id' => 'mass_mailer_filters']);
+        ?>
+        <div class="title_row first">
+            <h3><?php $this->_('AdminFilter.index.heading.client_filters');?></h3>
+        </div>
+
+        <div class="pad">
+            <div class="row">
+                <ul>
+                    <li class="col-md-3 col-sm-6">
+                        <label for="client_group_ids[]">
+                            <?php $this->_('AdminFilter.index.form.client_group_ids');?>
+                            <span class="tooltip"><?php $this->_('AppController.tooltip.text');?><div><?php $this->_('AdminFilter.!tooltip.client_group_ids');?></div></span>
+                        </label>
+                        <?php
+                        $this->Form->fieldMultiSelect(
+                            'client_group_ids[]',
+                            $this->Html->ifSet($client_groups, []),
+                            $this->Html->ifSet($vars->client_group_ids, []),
+                            ['id' => 'client_group_ids[]', 'class' => 'form-control']
+                        );
+                        ?>
+                    </li>
+                    <li class="col-md-3 col-sm-6">
+                        <label for="client_statuses[]">
+                            <?php $this->_('AdminFilter.index.form.client_statuses');?>
+                            <span class="tooltip"><?php $this->_('AppController.tooltip.text');?><div><?php $this->_('AdminFilter.!tooltip.client_statuses');?></div></span>
+                        </label>
+                        <?php
+                        $this->Form->fieldMultiSelect(
+                            'client_statuses[]',
+                            $this->Html->ifSet($client_statuses, []),
+                            $this->Html->ifSet($vars->client_statuses, []),
+                            ['id' => 'client_statuses[]', 'class' => 'form-control']
+                        );
+                        ?>
+                    </li>
+                    <li class="col-md-3 col-sm-6">
+                        <label for="languages[]">
+                            <?php $this->_('AdminFilter.index.form.languages');?>
+                            <span class="tooltip"><?php $this->_('AppController.tooltip.text');?><div><?php $this->_('AdminFilter.!tooltip.languages');?></div></span>
+                        </label>
+                        <?php
+                        $this->Form->fieldMultiSelect(
+                            'languages[]',
+                            $this->Html->ifSet($languages, []),
+                            $this->Html->ifSet($vars->languages, []),
+                            ['id' => 'languages[]', 'class' => 'form-control']
+                        );
+                        ?>
+                    </li>
+                    <li class="col-md-3 col-sm-6">
+                        <label for="contact_types[]">
+                            <?php $this->_('AdminFilter.index.form.contact_types');?>
+                            <span class="tooltip"><?php $this->_('AppController.tooltip.text');?><div><?php $this->_('AdminFilter.!tooltip.contact_types');?></div></span>
+                        </label>
+                        <?php
+                        $this->Form->fieldMultiSelect(
+                            'contact_types[]',
+                            $this->Html->ifSet($contact_types, []),
+                            $this->Html->ifSet($vars->contact_types, []),
+                            ['id' => 'contact_types[]', 'class' => 'form-control']
+                        );
+                        ?>
+                    </li>
+                </ul>
+            </div>
+
+            <ul>
+                <li>
+                    <label for="client_start_date">
+                        <?php $this->_('AdminFilter.index.form.client_start_date');?>
+                        <span class="tooltip"><?php $this->_('AppController.tooltip.text');?><div><?php $this->_('AdminFilter.!tooltip.client_start_date');?></div></span>
+                    </label>
+                    <?php
+                    $this->Form->fieldText(
+                        'client_start_date',
+                        $this->Html->ifSet($vars->client_start_date),
+                        ['id' => 'client_start_date', 'class' => 'date']
+                    );
+                    ?>
+                </li>
+                <li>
+                    <label for="client_end_date">
+                        <?php $this->_('AdminFilter.index.form.client_end_date');?>
+                        <span class="tooltip"><?php $this->_('AppController.tooltip.text');?><div><?php $this->_('AdminFilter.!tooltip.client_end_date');?></div></span>
+                    </label>
+                    <?php
+                    $this->Form->fieldText(
+                        'client_end_date',
+                        $this->Html->ifSet($vars->client_end_date),
+                        ['id' => 'client_end_date', 'class' => 'date']
+                    );
+                    ?>
+                </li>
+                <li>
+                    <?php
+                    $this->Form->fieldCheckbox(
+                        'receive_email_marketing',
+                        'true',
+                        $this->Html->ifSet($vars->exclude_nonmarketing) === 'true',
+                        ['id' => 'receive_email_marketing']
+                    );
+                    ?>
+                    <label for="receive_email_marketing" class="inline">
+                        <?php $this->_('AdminFilter.index.form.receive_email_marketing');?>
+                        <span class="tooltip"><?php $this->_('AppController.tooltip.text');?><div><?php $this->_('AdminFilter.!tooltip.receive_email_marketing');?></div></span>
+                    </label>
+                </li>
+                <li>
+                    <?php
+                    $this->Form->fieldCheckbox(
+                        'filter_services',
+                        'true',
+                        $this->Html->ifSet($vars->filter_services) === 'true',
+                        ['id' => 'filter_services']
+                    );
+                    ?>
+                    <label for="filter_services" class="inline">
+                        <?php $this->_('AdminFilter.index.form.filter_services');?>
+                        <span class="tooltip"><?php $this->_('AppController.tooltip.text');?><div><?php $this->_('AdminFilter.!tooltip.filter_services');?></div></span>
+                    </label>
+                </li>
+            </ul>
+        </div>
+
+        <div id="service_filters">
+            <div class="title_row first">
+                <h3><?php $this->_('AdminFilter.index.heading.service_filters');?></h3>
+            </div>
+            <div class="pad">
+                <ul>
+                    <li>
+                        <label for="service_renew_date">
+                            <?php $this->_('AdminFilter.index.form.service_renew_date');?>
+                            <span class="tooltip"><?php $this->_('AppController.tooltip.text');?><div><?php $this->_('AdminFilter.!tooltip.service_renew_date');?></div></span>
+                        </label>
+                        <?php
+                        $this->Form->fieldText(
+                            'service_renew_date',
+                            $this->Html->ifSet($vars->service_renew_date),
+                            ['id' => 'service_renew_date', 'class' => 'date']
+                        );
+                        ?>
+                    </li>
+                    <li>
+                        <label for="service_statuses">
+                            <?php $this->_('AdminFilter.index.form.service_statuses');?>
+                            <span class="tooltip"><?php $this->_('AppController.tooltip.text');?><div><?php $this->_('AdminFilter.!tooltip.service_statuses');?></div></span>
+                        </label>
+                        <?php
+                        $this->Form->fieldMultiSelect(
+                            'service_statuses[]',
+                            $this->Html->ifSet($service_statuses, []),
+                            $this->Html->ifSet($vars->service_statuses, []),
+                            ['id' => 'service_statuses']
+                        );
+                        ?>
+                    </li>
+                    <li>
+                        <label for="service_parent_type">
+                            <?php $this->_('AdminFilter.index.form.service_parent_type');?>
+                            <span class="tooltip"><?php $this->_('AppController.tooltip.text');?><div><?php $this->_('AdminFilter.!tooltip.service_parent_type');?></div></span>
+                        </label>
+                        <?php
+                        $this->Form->fieldRadio(
+                            'service_parent_type',
+                            'package',
+                            ($this->Html->ifSet($vars->service_parent_type, 'package') == 'package'),
+                            ['id' => 'service_parent_type_package', 'class' => 'service_parent_type']
+                        );
+                        $this->Form->label(
+                            $this->_('AdminFilter.index.form.service_parent_type_package', true),
+                            'service_parent_type_package',
+                            ['class' => 'inline']
+                        );
+
+                        $this->Form->fieldRadio(
+                            'service_parent_type',
+                            'module',
+                            ($this->Html->ifSet($vars->service_parent_type) == 'module'),
+                            ['id' => 'service_parent_type_module', 'class' => 'service_parent_type']
+                        );
+                        $this->Form->label(
+                            $this->_('AdminFilter.index.form.service_parent_type_module', true),
+                            'service_parent_type_module',
+                            ['class' => 'inline']
+                        );
+                        ?>
+                    </li>
+                </ul>
+
+                <div id="package_options">
+                    <ul>
+                        <li>
+                            <?php
+                            $this->Form->label($this->_('AdminFilter.index.form.package_group', true), 'package_group');
+                            $this->Form->fieldSelect(
+                                'package_group',
+                                $this->Html->ifSet($package_groups, []),
+                                $this->Html->ifSet($vars->package_group),
+                                ['id' => 'package_group']
+                            );
+                            ?>
+                        </li>
+                    </ul>
+                    <table>
+                        <tr>
+                            <td>
+                                <?php $this->_('AdminFilter.index.form.selected_packages');?>
+                                <span class="tooltip"><?php $this->_('AppController.tooltip.text');?><div><?php $this->_('AdminFilter.!tooltip.selected_packages');?></div></span>
+                            </td>
+                            <td></td>
+                            <td><?php $this->_('AdminFilter.index.form.selectable_packages');?></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <?php
+                                $this->Form->fieldMultiSelect(
+                                    'packages[]',
+                                    $this->Html->ifSet($vars->packages, []),
+                                    [],
+                                    ['id' => 'packages', 'class' => 'assigned'],
+                                    $this->Html->ifSet($package_attributes, [])
+                                );
+                                ?>
+                            </td>
+                            <td><a href="#" class="move_left">&nbsp;</a> &nbsp; <a href="#" class="move_right">&nbsp;</a></td>
+                            <td>
+                                <?php
+                                $this->Form->fieldMultiSelect(
+                                    'available[]',
+                                    [],
+                                    [],
+                                    ['id' => 'available', 'class' => 'available']
+                                );
+                                $this->Form->fieldMultiSelect(
+                                    'pool[]',
+                                    $this->Html->ifSet($packages, []),
+                                    [],
+                                    ['id' => 'pool', 'style' => 'display:none;'],
+                                    $this->Html->ifSet($package_attributes, [])
+                                );
+                                ?>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <ul id="module_options">
+                    <li>
+                        <label for="module_id">
+                            <?php $this->_('AdminFilter.index.form.module_id');?>
+                            <span class="tooltip"><?php $this->_('AppController.tooltip.text');?><div><?php $this->_('AdminFilter.!tooltip.module_id');?></div></span>
+                        </label>
+                        <?php
+                        $this->Form->fieldSelect(
+                            'module_id',
+                            $this->Html->ifSet($modules, []),
+                            $this->Html->ifSet($vars->module_id),
+                            ['id' => 'module_id']
+                        );
+                        ?>
+                    </li>
+                    <li>
+                        <?php
+                        $this->Form->fieldMultiSelect(
+                            'module_rows[]',
+                            $this->Html->ifSet($module_rows, []),
+                            $this->Html->ifSet($vars->module_rows, []),
+                            ['id' => 'module_rows']
+                        );
+                        ?>
+                    </li>
+                </ul>
+
+                <ul>
+                    <li>
+                        <?php
+                        $this->Form->fieldCheckbox(
+                            'include_all_services',
+                            'true',
+                            $this->Html->ifSet($vars->include_all_services) === 'true',
+                            ['id' => 'include_all_services']
+                        );
+                        ?>
+                        <label for="include_all_services" class="inline">
+                            <?php $this->_('AdminFilter.index.form.include_all_services');?>
+                            <span class="tooltip"><?php $this->_('AppController.tooltip.text');?><div><?php $this->_('AdminFilter.!tooltip.include_all_services');?></div></span>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="button_row">
+            <?php
+            $this->Form->fieldSubmit('preview', $this->_('AdminFilter.index.form.continue', true), ['class' => 'btn btn-primary pull-right']);
+            $this->Form->fieldSubmit('export', $this->_('AdminFilter.index.form.export', true), ['class' => 'btn btn-primary pull-right']);
+            ?>
+        </div>
+
+        <?php
+        $this->Form->end();
+        ?>
+    </div>
+
+<script type="text/javascript" src="<?php echo $this->Html->safe($this->view_dir . 'js/mass_mailer.js');?>"></script>
+<?php
+$this->Widget->end();

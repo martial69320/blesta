@@ -1,0 +1,218 @@
+
+	<?php
+	if($use_central_api == true){?>
+        <div class="row panel-fix">
+             <div class="col-md-12">
+                <h4><?php $this->_("ThesslstoreModule.tab_GenerateCert");?></h4>
+                <a target="_blank" href="<?php $this->Html->_($cert_generation_link); ?>" class="btn btn-default" type="button"><?php $this->_("ThesslstoreModule.tab_GenerateCert"); ?></a>
+             </div>
+        </div>
+    <?php
+	}
+	else{
+
+        $this->Form->create($this->base_uri . "services/manage/" . $this->Html->ifSet($service_id) . "/tabClientGenerateCert/");
+        $this->Form->fieldHidden("thesslstore_gen_step", $step);
+        ?>
+        <div class="row panel-fix">
+            <div class="col-md-12">
+                <h4><?php $this->_("ThesslstoreModule.tab_generate_cert.heading_server");?></h4>
+                <div class="form-group">
+                    <?php
+                    $this->Form->label($this->_("ThesslstoreModule.service_field.thesslstore_csr", true).'*', "thesslstore_csr");
+                    $this->Form->fieldTextArea("thesslstore_csr", $this->Html->ifSet($vars->thesslstore_csr), array('id' => "thesslstore_csr", 'class'=>"form-control", 'rows'=>8));
+                    ?>
+                </div>
+
+
+                <?php
+                if($san_count > 0){
+                    for($i=1; $i <= $san_count; $i++){?>
+                        <div class="form-group">
+                            <?php
+                            $this->Form->label($this->_("ThesslstoreModule.service_field.thesslstore_additional_san", true).$i, "thesslstore_additional_san".$i);
+                            $this->Form->fieldText("thesslstore_additional_san[]", $this->Html->ifSet($vars->thesslstore_additional_san[$i - 1]), array('id' => "thesslstore_additional_san".$i, 'class'=>"form-control"));
+                            ?>
+                        </div>
+                    <?php
+                    }
+                }
+                ?>
+
+                <div class="form-group">
+                    <?php
+                    $this->Form->label($this->_("ThesslstoreModule.service_field.thesslstore_webserver_type", true).'*', "thesslstore_webserver_type");
+                    $this->Form->fieldSelect("thesslstore_webserver_type", $this->Html->ifSet($thesslstore_webserver_types), $this->Html->ifSet($vars->thesslstore_webserver_type), array('id' => "thesslstore_webserver_type", 'class'=>"form-control"));
+                    ?>
+                </div>
+                <div class="form-group">
+                    <?php
+                    $this->Form->label($this->_("ThesslstoreModule.service_field.thesslstore_signature_algorithm", true).'*', "thesslstore_signature_algorithm");
+                    $this->Form->fieldSelect("thesslstore_signature_algorithm", $this->Html->ifSet($thesslstore_signature_algorithms), $this->Html->ifSet($vars->thesslstore_signature_algorithm), array('id' => "thesslstore_signature_algorithm", 'class'=>"form-control"));
+                    ?>
+                </div>
+                <?php
+                if(!empty($thesslstore_auth_methods)){
+                ?>
+                    <h4><?php $this->_("ThesslstoreModule.tab_generate_cert.heading_auth_method");?>*</h4>
+                    <div class="form-group">
+                        <?php
+                        $this->Form->label($this->_("ThesslstoreModule.service_field.thesslstore_auth_method", true), "thesslstore_auth_method");
+                        foreach($thesslstore_auth_methods as $value => $name){
+                            $checked = false;
+                            if($this->Html->ifSet($auth_method) == $value)
+                                $checked = true;
+                            $this->Form->fieldRadio("thesslstore_auth_method", $value, $checked, array('id' => "auth_".$value) );
+                            $this->Form->label($name, "auth_".$value);
+                        }
+                        ?>
+                    </div>
+                <?php
+                }
+                else{
+                   $this->Form->fieldHidden("thesslstore_auth_method", "EMAIL");
+                }
+                ?>
+                <h4><?php $this->_("ThesslstoreModule.tab_generate_cert.heading_admin");?></h4>
+                <div class="form-group">
+                    <?php
+                    $this->Form->label($this->_("ThesslstoreModule.service_field.thesslstore_admin_first_name", true).'*', "thesslstore_admin_first_name");
+                    $this->Form->fieldText("thesslstore_admin_first_name", $this->Html->ifSet($thesslstore_admin_first_name), array('id' => "thesslstore_admin_first_name", 'class'=>"form-control"));
+                    ?>
+                </div>
+                <div class="form-group">
+                    <?php
+                    $this->Form->label($this->_("ThesslstoreModule.service_field.thesslstore_admin_last_name", true).'*', "thesslstore_admin_last_name");
+                    $this->Form->fieldText("thesslstore_admin_last_name", $this->Html->ifSet($thesslstore_admin_last_name), array('id' => "thesslstore_admin_last_name", 'class'=>"form-control"));
+                    ?>
+                </div>
+                <div class="form-group">
+                    <?php
+                    $this->Form->label($this->_("ThesslstoreModule.service_field.thesslstore_admin_title", true), "thesslstore_admin_title");
+                    $this->Form->fieldText("thesslstore_admin_title", $this->Html->ifSet($thesslstore_admin_title), array('id' => "thesslstore_admin_title", 'class'=>"form-control"));
+                    ?>
+                </div>
+                <div class="form-group">
+                    <?php
+                    $this->Form->label($this->_("ThesslstoreModule.service_field.thesslstore_admin_email", true).'*', "thesslstore_admin_email");
+                    $this->Form->fieldText("thesslstore_admin_email", $this->Html->ifSet($thesslstore_admin_email), array('id' => "thesslstore_admin_email", 'class'=>"form-control"));
+                    ?>
+                </div>
+                <div class="form-group">
+                    <?php
+                    $this->Form->label($this->_("ThesslstoreModule.service_field.thesslstore_admin_phone", true).'*', "thesslstore_admin_phone");
+                    $this->Form->fieldText("thesslstore_admin_phone", $this->Html->ifSet($thesslstore_admin_phone), array('id' => "thesslstore_admin_phone", 'class'=>"form-control"));
+                    ?>
+                </div>
+                <div class="form-group">
+                    <?php
+                    $this->Form->label($this->_("ThesslstoreModule.service_field.thesslstore_org_name", true).'*', "thesslstore_org_name");
+                    $this->Form->fieldText("thesslstore_org_name", $this->Html->ifSet($thesslstore_org_name), array('id' => "thesslstore_org_name", 'class'=>"form-control"));
+                    ?>
+                </div>
+                <div class="form-group">
+                    <?php
+                    $this->Form->label($this->_("ThesslstoreModule.service_field.thesslstore_org_division", true).'*', "thesslstore_org_division");
+                    $this->Form->fieldText("thesslstore_org_division", $this->Html->ifSet($thesslstore_org_division), array('id' => "thesslstore_org_division", 'class'=>"form-control"));
+                    ?>
+                </div>
+                <div class="form-group">
+                    <?php
+                    $this->Form->label($this->_("ThesslstoreModule.service_field.thesslstore_admin_address1", true).'*', "thesslstore_admin_address1");
+                    $this->Form->fieldText("thesslstore_admin_address1", $this->Html->ifSet($thesslstore_admin_address1), array('id' => "thesslstore_admin_address1", 'class'=>"form-control"));
+                    ?>
+                </div>
+                <div class="form-group">
+                    <?php
+                    $this->Form->label($this->_("ThesslstoreModule.service_field.thesslstore_admin_address2", true), "thesslstore_admin_address2");
+                    $this->Form->fieldText("thesslstore_admin_address2", $this->Html->ifSet($thesslstore_admin_address2), array('id' => "thesslstore_admin_address2", 'class'=>"form-control"));
+                    ?>
+                </div>
+                <div class="form-group">
+                    <?php
+                    $this->Form->label($this->_("ThesslstoreModule.service_field.thesslstore_admin_city", true).'*', "thesslstore_admin_city");
+                    $this->Form->fieldText("thesslstore_admin_city", $this->Html->ifSet($thesslstore_admin_city), array('id' => "thesslstore_admin_city", 'class'=>"form-control"));
+                    ?>
+                </div>
+                <div class="form-group">
+                    <?php
+                    $this->Form->label($this->_("ThesslstoreModule.service_field.thesslstore_admin_state", true).'*', "thesslstore_admin_state");
+                    $this->Form->fieldText("thesslstore_admin_state", $this->Html->ifSet($thesslstore_admin_state), array('id' => "thesslstore_admin_state", 'class'=>"form-control"));
+                    ?>
+                </div>
+                <div class="form-group">
+                    <?php
+                    $this->Form->label($this->_("ThesslstoreModule.service_field.thesslstore_admin_country", true).'*', "thesslstore_admin_country");
+                    $this->Form->fieldSelect("thesslstore_admin_country", $this->Html->ifSet($thesslstore_countries), $this->Html->ifSet($thesslstore_admin_country), array('id' => "thesslstore_admin_country", 'class'=>"form-control"));
+                    ?>
+                </div>
+                <div class="form-group">
+                    <?php
+                    $this->Form->label($this->_("ThesslstoreModule.service_field.thesslstore_admin_zip", true).'*', "thesslstore_admin_zip");
+                    $this->Form->fieldText("thesslstore_admin_zip", $this->Html->ifSet($thesslstore_admin_zip), array('id' => "thesslstore_admin_zip", 'class'=>"form-control"));
+                    ?>
+                </div>
+
+                <h4><?php $this->_("ThesslstoreModule.tab_generate_cert.heading_tech");?></h4>
+                <div class="form-group">
+                    <?php
+                    $this->Form->fieldCheckbox("thesslstore_same_as_admin","true", $this->Html->ifSet($vars->thesslstore_same_as_admin), array('id' => "thesslstore_same_as_admin") );
+                    $this->Form->label($this->_("ThesslstoreModule.service_field.thesslstore_same_as_admin", true), "thesslstore_same_as_admin");
+                    ?>
+                </div>
+                <div class="form-group">
+                    <?php
+                    $this->Form->label($this->_("ThesslstoreModule.service_field.thesslstore_tech_first_name", true).'*', "thesslstore_tech_first_name");
+                    $this->Form->fieldText("thesslstore_tech_first_name", $this->Html->ifSet($thesslstore_tech_first_name), array('id' => "thesslstore_tech_first_name", 'class'=>"form-control"));
+                    ?>
+                </div>
+                <div class="form-group">
+                    <?php
+                    $this->Form->label($this->_("ThesslstoreModule.service_field.thesslstore_tech_last_name", true).'*', "thesslstore_tech_last_name");
+                    $this->Form->fieldText("thesslstore_tech_last_name", $this->Html->ifSet($thesslstore_tech_last_name), array('id' => "thesslstore_tech_last_name", 'class'=>"form-control"));
+                    ?>
+                </div>
+                <div class="form-group">
+                    <?php
+                    $this->Form->label($this->_("ThesslstoreModule.service_field.thesslstore_tech_title", true), "thesslstore_tech_title");
+                    $this->Form->fieldText("thesslstore_tech_title", $this->Html->ifSet($thesslstore_tech_title), array('id' => "thesslstore_tech_title", 'class'=>"form-control"));
+                    ?>
+                </div>
+                <div class="form-group">
+                    <?php
+                    $this->Form->label($this->_("ThesslstoreModule.service_field.thesslstore_tech_email", true).'*', "thesslstore_tech_email");
+                    $this->Form->fieldText("thesslstore_tech_email", $this->Html->ifSet($thesslstore_tech_email), array('id' => "thesslstore_tech_email", 'class'=>"form-control"));
+                    ?>
+                </div>
+                <div class="form-group">
+                    <?php
+                    $this->Form->label($this->_("ThesslstoreModule.service_field.thesslstore_tech_phone", true).'*', "thesslstore_tech_phone");
+                    $this->Form->fieldText("thesslstore_tech_phone", $this->Html->ifSet($thesslstore_tech_phone), array('id' => "thesslstore_tech_phone", 'class'=>"form-control"));
+                    ?>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-default pull-right" type="submit">
+             <?php $this->_("ThesslstoreModule.tab_generate_cert_step1.submit");?>
+        </button>
+        <?php
+        $this->Form->end();
+	}
+	?>
+<script type="text/javascript">
+    $(document).ready(function() {
+       //Same as admin
+       $("input#thesslstore_same_as_admin, input#thesslstore_admin_first_name, input#thesslstore_admin_last_name, input#thesslstore_admin_title, input#thesslstore_admin_email, input#thesslstore_admin_phone").change(function() {
+               if($("input#thesslstore_same_as_admin").is(":checked")) {
+                    copy_admin_to_technical();
+               }
+           });
+    });
+    function copy_admin_to_technical(){
+        $("input#thesslstore_tech_first_name").val($("input#thesslstore_admin_first_name").val());
+       $("input#thesslstore_tech_last_name").val($("input#thesslstore_admin_last_name").val());
+       $("input#thesslstore_tech_title").val($("input#thesslstore_admin_title").val());
+       $("input#thesslstore_tech_email").val($("input#thesslstore_admin_email").val());
+       $("input#thesslstore_tech_phone").val($("input#thesslstore_admin_phone").val());
+    }
+</script>

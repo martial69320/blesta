@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="panel panel-default panel-simple">
+        <div class="panel-heading">
+            <h3>License Invalid</h3>
+        </div>
+        <div class="panel-body">
+            <?php
+            if ($this->Html->ifSet($errors)) {
+            ?>
+            <p>The license failed to validate for the following reasons:</p>
+            <div class="alert alert-danger">
+                <?php
+                foreach ($errors as $field => $errors) {
+                    foreach ($errors as $key => $message_text) {
+                    ?>
+                    <p><?php $this->Html->_($message_text, false, true);?></p>
+                    <?php
+                    }
+                }
+                ?>
+            </div>
+            <?php
+            }
+            ?>
+
+            <?php
+            $this->Form->create(null, ['class' => 'disable-on-submit']);
+            ?>
+                <div class="form-group">
+                    <?php
+                    $this->Form->label('License Key ', 'key');
+                    $this->Form->fieldText('key', $this->Html->ifSet($vars->key), ['id' => 'key', 'class' => 'form-control']);
+                    ?>
+                </div>
+                <?php
+                $this->Form->fieldSubmit('update', 'Save', ['class' => 'btn btn-primary pull-right']);
+                ?>
+            <?php
+            $this->Form->end();
+            ?>
+        </div>
+    </div>
+</div>

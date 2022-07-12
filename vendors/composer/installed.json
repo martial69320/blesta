@@ -1,0 +1,4532 @@
+[
+    {
+        "name": "behat/transliterator",
+        "version": "v1.2.0",
+        "version_normalized": "1.2.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Behat/Transliterator.git",
+            "reference": "826ce7e9c2a6664c0d1f381cbb38b1fb80a7ee2c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Behat/Transliterator/zipball/826ce7e9c2a6664c0d1f381cbb38b1fb80a7ee2c",
+            "reference": "826ce7e9c2a6664c0d1f381cbb38b1fb80a7ee2c",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "require-dev": {
+            "chuyskywalker/rolling-curl": "^3.1",
+            "php-yaoi/php-yaoi": "^1.0"
+        },
+        "time": "2017-04-04T11:38:05+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.2-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Behat\\Transliterator": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "Artistic-1.0"
+        ],
+        "description": "String transliterator",
+        "keywords": [
+            "i18n",
+            "slug",
+            "transliterator"
+        ]
+    },
+    {
+        "name": "blesta/_2checkout",
+        "version": "2.0.0",
+        "version_normalized": "2.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "ssh://git@code.blesta.com:7999/gw/2checkout.git",
+            "reference": "7923a393a173e23c5932e1d122ec720f43ac0d86"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-_2checkout-2.0.0-fae8b1.tar",
+            "reference": "7923a393a173e23c5932e1d122ec720f43ac0d86",
+            "shasum": "04e1d53fd5d011aa9b2e0aa736f96f201fd56ab0"
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2019-06-03T22:09:47+00:00",
+        "type": "blesta-gateway-nonmerchant",
+        "installation-source": "dist",
+        "license": [
+            "proprietary"
+        ],
+        "description": "2Checkout"
+    },
+    {
+        "name": "blesta/alipay",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/blesta/gateway-alipay.git",
+            "reference": "b97ee64e3b89f907b1f400e37aa4ec93190f268e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/blesta/gateway-alipay/zipball/b97ee64e3b89f907b1f400e37aa4ec93190f268e",
+            "reference": "b97ee64e3b89f907b1f400e37aa4ec93190f268e",
+            "shasum": ""
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2017-08-16T22:44:43+00:00",
+        "type": "blesta-gateway-nonmerchant",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "proprietary"
+        ],
+        "description": "Alipay"
+    },
+    {
+        "name": "blesta/amazon-s3-php-class",
+        "version": "0.5.2",
+        "version_normalized": "0.5.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/blesta/amazon-s3-php-class.git",
+            "reference": "45e09f77f331c62083a817267202c89cf7b7a3e1"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/blesta/amazon-s3-php-class/zipball/45e09f77f331c62083a817267202c89cf7b7a3e1",
+            "reference": "45e09f77f331c62083a817267202c89cf7b7a3e1",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.2.0"
+        },
+        "time": "2018-10-25T18:04:12+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "S3.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-2-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Donovan Schönknecht",
+                "email": "don@tpyo.net"
+            }
+        ],
+        "description": "A standalone Amazon S3 (REST) client for PHP 5.2.x using CURL that does not require PEAR.",
+        "homepage": "https://github.com/blesta/amazon-s3-php-class"
+    },
+    {
+        "name": "blesta/authorize_net",
+        "version": "1.6.0",
+        "version_normalized": "1.6.0.0",
+        "source": {
+            "type": "git",
+            "url": "ssh://git@code.blesta.com:7999/gw/authorize-net.git",
+            "reference": "5b155df06bcd2b4fdb683eb0d8065242ba2666df"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-authorize_net-1.6.0-ce3fe7.tar",
+            "reference": "5b155df06bcd2b4fdb683eb0d8065242ba2666df",
+            "shasum": "9d3e8219bd26925eedd3f8f341328acbd0928330"
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2019-05-22T22:22:52+00:00",
+        "type": "blesta-gateway-merchant",
+        "installation-source": "dist",
+        "license": [
+            "proprietary"
+        ],
+        "description": "Authorize.net"
+    },
+    {
+        "name": "blesta/auto_cancel",
+        "version": "1.2.0",
+        "version_normalized": "1.2.0.0",
+        "source": {
+            "type": "git",
+            "url": "ssh://git@code.blesta.com:7999/plug/auto-cancel.git",
+            "reference": "dc1224ff8ee22a31c2b1aa92a351c214d7531ab4"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-auto_cancel-1.2.0-272614.tar",
+            "reference": "dc1224ff8ee22a31c2b1aa92a351c214d7531ab4",
+            "shasum": "e395fac9054cd4d16ad9f1819151a8ad8078a302"
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2018-09-27T21:33:53+00:00",
+        "type": "blesta-plugin",
+        "installation-source": "dist",
+        "license": [
+            "proprietary"
+        ],
+        "description": "Automatically Cancel Services"
+    },
+    {
+        "name": "blesta/billing_overview",
+        "version": "1.8.0",
+        "version_normalized": "1.8.0.0",
+        "source": {
+            "type": "git",
+            "url": "ssh://git@code.blesta.com:7999/plug/billing-overview.git",
+            "reference": "8950e5855e397a57ac976cf128ed6652b53f444e"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-billing_overview-1.8.0-742b2a.tar",
+            "reference": "8950e5855e397a57ac976cf128ed6652b53f444e",
+            "shasum": "914e000784433205fe56f133d510ad4abef76ab8"
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2019-05-17T21:44:41+00:00",
+        "type": "blesta-plugin",
+        "installation-source": "dist",
+        "license": [
+            "proprietary"
+        ],
+        "description": "Billing Overview"
+    },
+    {
+        "name": "blesta/binary-to-text-php",
+        "version": "2.0.0",
+        "version_normalized": "2.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/blesta/binary-to-text-php.git",
+            "reference": "9815927a49adf0f9ebfaec0b59408fbda1b57364"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/blesta/binary-to-text-php/zipball/9815927a49adf0f9ebfaec0b59408fbda1b57364",
+            "reference": "9815927a49adf0f9ebfaec0b59408fbda1b57364",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.2.14"
+        },
+        "time": "2018-10-22T20:15:37+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Base2n": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Andre DeMarre",
+                "role": "Developer"
+            }
+        ],
+        "description": "Collection of binary-to-text encoding utilities for PHP. Includes Base32 support and much more.",
+        "homepage": "https://github.com/blesta/binary-to-text-php",
+        "keywords": [
+            "base-4",
+            "base-8",
+            "base32",
+            "binary",
+            "octal",
+            "rfc4648"
+        ]
+    },
+    {
+        "name": "blesta/bitpay",
+        "version": "1.1.1",
+        "version_normalized": "1.1.1.0",
+        "source": {
+            "type": "git",
+            "url": "ssh://git@code.blesta.com:7999/gw/bitpay.git",
+            "reference": "746598d0752e7fef023e6250c972651bc5e8fb73"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-bitpay-1.1.1-405382.tar",
+            "reference": "746598d0752e7fef023e6250c972651bc5e8fb73",
+            "shasum": "df45830a611e90e10519af85cc605bbe3b0a03c3"
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2017-09-13T21:27:24+00:00",
+        "type": "blesta-gateway-nonmerchant",
+        "installation-source": "dist",
+        "license": [
+            "proprietary"
+        ],
+        "description": "Bitpay"
+    },
+    {
+        "name": "blesta/blesta_license",
+        "version": "1.3.0",
+        "version_normalized": "1.3.0.0",
+        "source": {
+            "type": "git",
+            "url": "ssh://git@code.blesta.com:7999/mod/blesta-license.git",
+            "reference": "e8c3a1dad9eaa38d0dda1d973256f8ad45d48e16"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-blesta_license-1.3.0-bb413f.tar",
+            "reference": "e8c3a1dad9eaa38d0dda1d973256f8ad45d48e16",
+            "shasum": "f0687ff04418b03547c0bea05b5fab22bf56ac50"
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0",
+            "blesta/reseller-api": "~1.1",
+            "php": ">=5.3.0"
+        },
+        "time": "2019-05-20T21:42:46+00:00",
+        "type": "blesta-module",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Blesta\\Module\\BlestaLicense\\": "src/"
+            }
+        },
+        "license": [
+            "proprietary"
+        ],
+        "authors": [
+            {
+                "name": "Cody Phillips",
+                "email": "therealclphillips@gmail.com"
+            },
+            {
+                "name": "Tyson Phillips",
+                "email": "tyson@phillipsdata.com"
+            }
+        ]
+    },
+    {
+        "name": "blesta/blue_pay",
+        "version": "1.1.0",
+        "version_normalized": "1.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "ssh://git@code.blesta.com:7999/gw/blue-pay.git",
+            "reference": "6dbcdd00644531997947c136aa00d3755eb38a6c"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-blue_pay-1.1.0-7bc835.tar",
+            "reference": "6dbcdd00644531997947c136aa00d3755eb38a6c",
+            "shasum": "b2612750af26cae021500986d5c703e0b900c5ee"
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2016-01-08T20:45:47+00:00",
+        "type": "blesta-gateway-merchant",
+        "installation-source": "dist",
+        "license": [
+            "proprietary"
+        ],
+        "description": "Blue Pay"
+    },
+    {
+        "name": "blesta/braintree",
+        "version": "1.1.0",
+        "version_normalized": "1.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "ssh://git@code.blesta.com:7999/gw/braintree.git",
+            "reference": "de159700ad1bf743047a15e98f404f0eaacf6a5d"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-braintree-1.1.0-f77989.tar",
+            "reference": "de159700ad1bf743047a15e98f404f0eaacf6a5d",
+            "shasum": "9a90d9adbc51429fdaff2c551f76a7265088508e"
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2016-01-08T20:46:24+00:00",
+        "type": "blesta-gateway-merchant",
+        "installation-source": "dist",
+        "license": [
+            "proprietary"
+        ],
+        "description": "Braintree"
+    },
+    {
+        "name": "blesta/buycpanel",
+        "version": "1.6.0",
+        "version_normalized": "1.6.0.0",
+        "source": {
+            "type": "git",
+            "url": "ssh://git@code.blesta.com:7999/mod/buycpanel.git",
+            "reference": "df5dae68eb246862f28c714b376f0d970d987bb8"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-buycpanel-1.6.0-259925.tar",
+            "reference": "df5dae68eb246862f28c714b376f0d970d987bb8",
+            "shasum": "4cbb43e067406838a0b9bba1cb3c270c5308a902"
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2019-09-11T22:31:56+00:00",
+        "type": "blesta-module",
+        "installation-source": "dist",
+        "license": [
+            "proprietary"
+        ],
+        "description": "BuycPanel"
+    },
+    {
+        "name": "blesta/ccavenue",
+        "version": "2.1.0",
+        "version_normalized": "2.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "ssh://git@code.blesta.com:7999/gw/ccavenue.git",
+            "reference": "ab6bba972a2bd2af08349cb7cbca0ca27aa42fdd"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-ccavenue-2.1.0-5fd7c3.tar",
+            "reference": "ab6bba972a2bd2af08349cb7cbca0ca27aa42fdd",
+            "shasum": "37be807c79dce8896647f635034574add6589c50"
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2016-01-12T19:11:12+00:00",
+        "type": "blesta-gateway-nonmerchant",
+        "installation-source": "dist",
+        "license": [
+            "proprietary"
+        ],
+        "description": "CCAvenue"
+    },
+    {
+        "name": "blesta/centoswebpanel",
+        "version": "1.2.0",
+        "version_normalized": "1.2.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/blesta/module-centoswebpanel.git",
+            "reference": "542e6424395de5497c7db9a0dfc40a9c9fabc212"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/blesta/module-centoswebpanel/zipball/542e6424395de5497c7db9a0dfc40a9c9fabc212",
+            "reference": "542e6424395de5497c7db9a0dfc40a9c9fabc212",
+            "shasum": ""
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0",
+            "phillipsdata/priority-schedule": "^1.0"
+        },
+        "time": "2019-05-20T21:34:43+00:00",
+        "type": "blesta-module",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "proprietary"
+        ],
+        "description": "CentOS WebPanel"
+    },
+    {
+        "name": "blesta/centovacast",
+        "version": "1.3.0",
+        "version_normalized": "1.3.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/blesta/module-centovacast.git",
+            "reference": "ef6007ab2b6a720786c8600bc55aa1960a63c48a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/blesta/module-centovacast/zipball/ef6007ab2b6a720786c8600bc55aa1960a63c48a",
+            "reference": "ef6007ab2b6a720786c8600bc55aa1960a63c48a",
+            "shasum": ""
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0",
+            "phillipsdata/priority-schedule": "^1.0"
+        },
+        "time": "2019-05-20T21:36:00+00:00",
+        "type": "blesta-module",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "proprietary"
+        ],
+        "description": "CentovaCast"
+    },
+    {
+        "name": "blesta/ckeditor",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/blesta/ckeditor.git",
+            "reference": "4d311af40fe6c19390f11a04e267bb8ca2b1485a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/blesta/ckeditor/zipball/4d311af40fe6c19390f11a04e267bb8ca2b1485a",
+            "reference": "4d311af40fe6c19390f11a04e267bb8ca2b1485a",
+            "shasum": ""
+        },
+        "time": "2018-10-22T23:30:33+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "(GPL-2.0 OR LGPL-2.1 OR MPL-1.1)"
+        ],
+        "description": "The development version of CKEditor - JavaScript WYSIWYG web text editor."
+    },
+    {
+        "name": "blesta/client_documents",
+        "version": "2.3.0",
+        "version_normalized": "2.3.0.0",
+        "source": {
+            "type": "git",
+            "url": "ssh://git@code.blesta.com:7999/plug/client-documents.git",
+            "reference": "fd263a8477d43bc99d66a2851236ddb4f37f6a52"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-client_documents-2.3.0-0f9c93.tar",
+            "reference": "fd263a8477d43bc99d66a2851236ddb4f37f6a52",
+            "shasum": "1287163db7a3b57fad717cc5a45dba0ed13176fe"
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2019-01-24T22:21:56+00:00",
+        "type": "blesta-plugin",
+        "installation-source": "dist",
+        "license": [
+            "proprietary"
+        ],
+        "description": "Client Documents"
+    },
+    {
+        "name": "blesta/cms",
+        "version": "2.4.0",
+        "version_normalized": "2.4.0.0",
+        "source": {
+            "type": "git",
+            "url": "ssh://git@code.blesta.com:7999/plug/cms.git",
+            "reference": "de8ead4dc9c6d0b4514ca00f21fc26f2ae0af215"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-cms-2.4.0-c23516.tar",
+            "reference": "de8ead4dc9c6d0b4514ca00f21fc26f2ae0af215",
+            "shasum": "087a015124d280dd3172a8c3d369744a77d09bb3"
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2018-12-19T21:00:56+00:00",
+        "type": "blesta-plugin",
+        "installation-source": "dist",
+        "license": [
+            "proprietary"
+        ],
+        "description": "CMS"
+    },
+    {
+        "name": "blesta/coin_payments",
+        "version": "1.3.0",
+        "version_normalized": "1.3.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/blesta/gateway-coinpayments.git",
+            "reference": "5d8a6f61b486fbea88b409e013f2058cf5cf97e4"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/blesta/gateway-coinpayments/zipball/5d8a6f61b486fbea88b409e013f2058cf5cf97e4",
+            "reference": "5d8a6f61b486fbea88b409e013f2058cf5cf97e4",
+            "shasum": ""
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2019-01-18T22:27:22+00:00",
+        "type": "blesta-gateway-nonmerchant",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "proprietary"
+        ],
+        "description": "Coin Payments"
+    },
+    {
+        "name": "blesta/coingate",
+        "version": "1.1.0",
+        "version_normalized": "1.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/blesta/gateway-coingate.git",
+            "reference": "022a1198b7d73742570ae7b1bf74e10331e35b2c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/blesta/gateway-coingate/zipball/022a1198b7d73742570ae7b1bf74e10331e35b2c",
+            "reference": "022a1198b7d73742570ae7b1bf74e10331e35b2c",
+            "shasum": ""
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0",
+            "ext-curl": "*",
+            "ext-json": "*"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "4.8.*"
+        },
+        "time": "2018-07-02T18:11:49+00:00",
+        "type": "blesta-gateway-nonmerchant",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "CoinGate\\": "lib/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "CoinGate and contributors",
+                "homepage": "https://github.com/blesta/gateway-coingate/graphs/contributors"
+            }
+        ],
+        "description": "CoinGate",
+        "homepage": "https://coingate.com",
+        "keywords": [
+            "bitcoin",
+            "coingate",
+            "merchant"
+        ]
+    },
+    {
+        "name": "blesta/composer-installer",
+        "version": "1.0.1",
+        "version_normalized": "1.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/blesta/composer-installer.git",
+            "reference": "11672a7cbe9c74a6d5bc602ce8148ae92781ba2e"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-composer-installer-11672a7cbe9c74a6d5bc602ce8148ae92781ba2e-zip-fdb69b.tar",
+            "reference": "11672a7cbe9c74a6d5bc602ce8148ae92781ba2e",
+            "shasum": "2ef0cdcedfdd17fd83b16dad82522413821d8d01"
+        },
+        "require": {
+            "composer/installers": "~1.0",
+            "php": ">=5.3"
+        },
+        "require-dev": {
+            "composer/composer": "1.0.*@dev",
+            "phpunit/phpunit": "~4.6",
+            "satooshi/php-coveralls": "dev-master",
+            "squizlabs/php_codesniffer": "~2.2"
+        },
+        "time": "2015-09-10T17:19:30+00:00",
+        "type": "composer-installer",
+        "extra": {
+            "class": "Blesta\\Composer\\Installer\\Installer"
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Blesta\\Composer\\Installer\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ]
+    },
+    {
+        "name": "blesta/consoleation",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/blesta/consoleation.git",
+            "reference": "aee90a534e7d3f844cb968bf7f6a09df24856167"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/blesta/consoleation/zipball/aee90a534e7d3f844cb968bf7f6a09df24856167",
+            "reference": "aee90a534e7d3f844cb968bf7f6a09df24856167",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "php-coveralls/php-coveralls": "~1.0",
+            "squizlabs/php_codesniffer": "~2.2"
+        },
+        "time": "2018-10-24T18:53:55+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Blesta\\Consoleation\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Cody Phillips",
+                "email": "therealclphillips@gmail.com"
+            },
+            {
+                "name": "Tyson Phillips"
+            }
+        ],
+        "description": "A Command Line User Interface",
+        "homepage": "https://github.com/blesta/consoleation"
+    },
+    {
+        "name": "blesta/converge",
+        "version": "1.1.0",
+        "version_normalized": "1.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "ssh://git@code.blesta.com:7999/gw/converge.git",
+            "reference": "3dcdf36f82fbe8b5d928f822e5555bef33bea5a8"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-converge-1.1.0-dc45ef.tar",
+            "reference": "3dcdf36f82fbe8b5d928f822e5555bef33bea5a8",
+            "shasum": "d121dc872782e52a6efcf72fea4ad9bf06cd7124"
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2016-01-08T22:24:06+00:00",
+        "type": "blesta-gateway-merchant",
+        "installation-source": "dist",
+        "license": [
+            "proprietary"
+        ],
+        "description": "Converge"
+    },
+    {
+        "name": "blesta/cpanel",
+        "version": "2.11.0",
+        "version_normalized": "2.11.0.0",
+        "source": {
+            "type": "git",
+            "url": "ssh://git@code.blesta.com:7999/mod/cpanel.git",
+            "reference": "abe2150e82b795459ba3c34cec207b8485603257"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-cpanel-2.11.0-3fe855.tar",
+            "reference": "abe2150e82b795459ba3c34cec207b8485603257",
+            "shasum": "f381f7da6cb5eec0785a9c39fbe13e20e2b1b3ac"
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0",
+            "phillipsdata/priority-schedule": "^1.0"
+        },
+        "time": "2019-07-30T23:22:19+00:00",
+        "type": "blesta-module",
+        "installation-source": "dist",
+        "license": [
+            "proprietary"
+        ],
+        "description": "cPanel"
+    },
+    {
+        "name": "blesta/cwatch",
+        "version": "2.2.1",
+        "version_normalized": "2.2.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/blesta/module-cwatch.git",
+            "reference": "326fbafefa5f50a14b95a2ebe9e8c70560deb785"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/blesta/module-cwatch/zipball/326fbafefa5f50a14b95a2ebe9e8c70560deb785",
+            "reference": "326fbafefa5f50a14b95a2ebe9e8c70560deb785",
+            "shasum": ""
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.6",
+            "satooshi/php-coveralls": "~0.7",
+            "squizlabs/php_codesniffer": "~3.0"
+        },
+        "time": "2019-07-29T23:17:23+00:00",
+        "type": "blesta-module",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "proprietary"
+        ],
+        "authors": [
+            {
+                "name": "Phillips Data, Inc.",
+                "email": "you@youremail.com"
+            }
+        ],
+        "description": "cWatch Module"
+    },
+    {
+        "name": "blesta/cyberpanel",
+        "version": "2.1.0",
+        "version_normalized": "2.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/blesta/module-cyberpanel.git",
+            "reference": "738de7c75ff6abba99fdc2e14e2d72ba48a21e1a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/blesta/module-cyberpanel/zipball/738de7c75ff6abba99fdc2e14e2d72ba48a21e1a",
+            "reference": "738de7c75ff6abba99fdc2e14e2d72ba48a21e1a",
+            "shasum": ""
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0",
+            "phillipsdata/priority-schedule": "^1.0"
+        },
+        "time": "2019-05-20T21:37:13+00:00",
+        "type": "blesta-module",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "proprietary"
+        ],
+        "description": "CyberPanel"
+    },
+    {
+        "name": "blesta/direct_admin",
+        "version": "2.9.0",
+        "version_normalized": "2.9.0.0",
+        "source": {
+            "type": "git",
+            "url": "ssh://git@code.blesta.com:7999/mod/direct-admin.git",
+            "reference": "376aadcf9c9300bd330ac2839437d7b4c604b227"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-direct_admin-2.9.0-56bf09.tar",
+            "reference": "376aadcf9c9300bd330ac2839437d7b4c604b227",
+            "shasum": "88be3c1c9a343c52bd5d0fcf2e48e96ecbc37716"
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2019-07-11T16:14:40+00:00",
+        "type": "blesta-module",
+        "installation-source": "dist",
+        "license": [
+            "proprietary"
+        ],
+        "description": "DirectAdmin"
+    },
+    {
+        "name": "blesta/download_manager",
+        "version": "2.6.0",
+        "version_normalized": "2.6.0.0",
+        "source": {
+            "type": "git",
+            "url": "ssh://git@code.blesta.com:7999/plug/download-manager.git",
+            "reference": "abd28cfa4c1b76808647dc56171bacec09a77465"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-download_manager-2.6.0-47b156.tar",
+            "reference": "abd28cfa4c1b76808647dc56171bacec09a77465",
+            "shasum": "cec042ac8bd7f08dcfba495a5b2424bdbc81f277"
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2019-05-14T17:54:46+00:00",
+        "type": "blesta-plugin",
+        "installation-source": "dist",
+        "license": [
+            "proprietary"
+        ],
+        "description": "Download Manager"
+    },
+    {
+        "name": "blesta/enom",
+        "version": "2.4.0",
+        "version_normalized": "2.4.0.0",
+        "source": {
+            "type": "git",
+            "url": "ssh://git@code.blesta.com:7999/mod/enom.git",
+            "reference": "2adb5d510907efffe0d74cbbb2a48a71fb1bbd01"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-enom-2.4.0-4384e9.tar",
+            "reference": "2adb5d510907efffe0d74cbbb2a48a71fb1bbd01",
+            "shasum": "ac2277611e153aa372072f898a7bd6f4ef32e113"
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2019-05-20T21:48:31+00:00",
+        "type": "blesta-module",
+        "installation-source": "dist",
+        "license": [
+            "proprietary"
+        ],
+        "description": "Enom"
+    },
+    {
+        "name": "blesta/eway",
+        "version": "1.2.0",
+        "version_normalized": "1.2.0.0",
+        "source": {
+            "type": "git",
+            "url": "ssh://git@code.blesta.com:7999/gw/eway.git",
+            "reference": "c7b16ffae7bd5669b1af421931c240173c6ed29f"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-eway-1.2.0-cdce6e.tar",
+            "reference": "c7b16ffae7bd5669b1af421931c240173c6ed29f",
+            "shasum": "7e0381f72f421a468f6ac33bb0d1eb876f68bc70"
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2016-01-08T22:25:28+00:00",
+        "type": "blesta-gateway-merchant",
+        "installation-source": "dist",
+        "license": [
+            "proprietary"
+        ],
+        "description": "Eway"
+    },
+    {
+        "name": "blesta/feed_reader",
+        "version": "2.4.0",
+        "version_normalized": "2.4.0.0",
+        "source": {
+            "type": "git",
+            "url": "ssh://git@code.blesta.com:7999/plug/feed-reader.git",
+            "reference": "a47e4f1976274d11633be36c80bcc468cddf80d8"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-feed_reader-2.4.0-1cd99e.tar",
+            "reference": "a47e4f1976274d11633be36c80bcc468cddf80d8",
+            "shasum": "32d5f8fe8878d818491baa576cdc067c940ce9ee"
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2019-05-22T21:47:06+00:00",
+        "type": "blesta-plugin",
+        "installation-source": "dist",
+        "license": [
+            "proprietary"
+        ],
+        "description": "Feed Reader"
+    },
+    {
+        "name": "blesta/gocardless",
+        "version": "1.1.0",
+        "version_normalized": "1.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/blesta/gateway-gocardless.git",
+            "reference": "9ffa4c425f30360d72c1e3516d652539a85f9657"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/blesta/gateway-gocardless/zipball/9ffa4c425f30360d72c1e3516d652539a85f9657",
+            "reference": "9ffa4c425f30360d72c1e3516d652539a85f9657",
+            "shasum": ""
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.6",
+            "satooshi/php-coveralls": "~0.7",
+            "squizlabs/php_codesniffer": "~3.0"
+        },
+        "time": "2018-09-11T23:02:49+00:00",
+        "type": "blesta-gateway-nonmerchant",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "proprietary"
+        ],
+        "description": "GoCardless"
+    },
+    {
+        "name": "blesta/gogetssl",
+        "version": "2.4.0",
+        "version_normalized": "2.4.0.0",
+        "source": {
+            "type": "git",
+            "url": "ssh://git@code.blesta.com:7999/mod/gogetssl.git",
+            "reference": "af4b02b106a26046595dc60bf66cf0ca71edea29"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-gogetssl-2.4.0-2d04cd.tar",
+            "reference": "af4b02b106a26046595dc60bf66cf0ca71edea29",
+            "shasum": "9de2a62e40992f32f94d060dc4b43826c0b8dc2f"
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2019-05-20T21:48:22+00:00",
+        "type": "blesta-module",
+        "installation-source": "dist",
+        "license": [
+            "proprietary"
+        ],
+        "description": "GoGetSSL"
+    },
+    {
+        "name": "blesta/h2o",
+        "version": "0.4.2",
+        "version_normalized": "0.4.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/blesta/h2o.git",
+            "reference": "1f28fec8069b076c6b27e2aec9671e66078b73d4"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/blesta/h2o/zipball/1f28fec8069b076c6b27e2aec9671e66078b73d4",
+            "reference": "1f28fec8069b076c6b27e2aec9671e66078b73d4",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.1.0"
+        },
+        "time": "2018-10-25T22:24:58+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "h2o.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Taylor Luk"
+            }
+        ],
+        "description": "H2O is a markup language for PHP",
+        "homepage": "https://github.com/blesta/h2o"
+    },
+    {
+        "name": "blesta/hubtel",
+        "version": "1.1.0",
+        "version_normalized": "1.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/blesta/gateway-hubtel.git",
+            "reference": "2dd8a4e685d6b4c9ba0f058b2344722e06b5bb3d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/blesta/gateway-hubtel/zipball/2dd8a4e685d6b4c9ba0f058b2344722e06b5bb3d",
+            "reference": "2dd8a4e685d6b4c9ba0f058b2344722e06b5bb3d",
+            "shasum": ""
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2017-12-06T21:27:45+00:00",
+        "type": "blesta-gateway-nonmerchant",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "proprietary"
+        ],
+        "description": "Hubtel"
+    },
+    {
+        "name": "blesta/import_manager",
+        "version": "1.7.0",
+        "version_normalized": "1.7.0.0",
+        "source": {
+            "type": "git",
+            "url": "ssh://git@code.blesta.com:7999/plug/import-manager.git",
+            "reference": "80e714570afa9c4dd75d416c6397aff017e93e2d"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-import_manager-1.7.0-d75bd1.tar",
+            "reference": "80e714570afa9c4dd75d416c6397aff017e93e2d",
+            "shasum": "bf64658f4d88be8a62b69ded9ede312f72ade6e0"
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2019-03-02T00:09:42+00:00",
+        "type": "blesta-plugin",
+        "installation-source": "dist",
+        "license": [
+            "proprietary"
+        ],
+        "description": "Import Manager"
+    },
+    {
+        "name": "blesta/interworx",
+        "version": "2.7.0",
+        "version_normalized": "2.7.0.0",
+        "source": {
+            "type": "git",
+            "url": "ssh://git@code.blesta.com:7999/mod/interworx.git",
+            "reference": "df9daea3ceff8331e4b7413ab3796f34165b46e8"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-interworx-2.7.0-25cfc7.tar",
+            "reference": "df9daea3ceff8331e4b7413ab3796f34165b46e8",
+            "shasum": "4e8f0e2a0834c0f3aae5db029c07bc55b658fcf7"
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2019-05-20T21:44:05+00:00",
+        "type": "blesta-module",
+        "installation-source": "dist",
+        "license": [
+            "proprietary"
+        ],
+        "description": "Interworx"
+    },
+    {
+        "name": "blesta/ispconfig",
+        "version": "1.3.0",
+        "version_normalized": "1.3.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/blesta/module-ispconfig.git",
+            "reference": "a4eb311ad2715fbd9536b1bf61350b6ee136ac6e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/blesta/module-ispconfig/zipball/a4eb311ad2715fbd9536b1bf61350b6ee136ac6e",
+            "reference": "a4eb311ad2715fbd9536b1bf61350b6ee136ac6e",
+            "shasum": ""
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0",
+            "phillipsdata/priority-schedule": "^1.0"
+        },
+        "time": "2019-05-22T22:10:31+00:00",
+        "type": "blesta-module",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "proprietary"
+        ],
+        "description": "ISPConfig"
+    },
+    {
+        "name": "blesta/items",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/blesta/items.git",
+            "reference": "85f77be3abbdaedda40fa697c48eb06dd6312396"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-items-85f77be3abbdaedda40fa697c48eb06dd6312396-zip-c2eed0.tar",
+            "reference": "85f77be3abbdaedda40fa697c48eb06dd6312396",
+            "shasum": "4326bc4415efc34f56de707e6db305f441eacae4"
+        },
+        "require": {
+            "php": ">=5.4"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.8",
+            "satooshi/php-coveralls": "~1.0",
+            "squizlabs/php_codesniffer": "~2.3"
+        },
+        "time": "2016-05-25T18:46:39+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Blesta\\Items\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Tyson Phillips",
+                "email": "tyson@phillipsdata.com"
+            }
+        ],
+        "description": "A library for items with arbitrary data."
+    },
+    {
+        "name": "blesta/kassacompleet",
+        "version": "1.0.1",
+        "version_normalized": "1.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/blesta/gateway-kassacompleet.git",
+            "reference": "1a03d7cbc3bf8d6a9b67a5da1391593afb6f677c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/blesta/gateway-kassacompleet/zipball/1a03d7cbc3bf8d6a9b67a5da1391593afb6f677c",
+            "reference": "1a03d7cbc3bf8d6a9b67a5da1391593afb6f677c",
+            "shasum": ""
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.6",
+            "satooshi/php-coveralls": "~0.7",
+            "squizlabs/php_codesniffer": "~3.0"
+        },
+        "time": "2019-01-24T20:38:06+00:00",
+        "type": "blesta-gateway-nonmerchant",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "proprietary"
+        ],
+        "authors": [
+            {
+                "name": "Phillips Data, Inc.",
+                "email": "sales@blesta.com"
+            }
+        ],
+        "description": "Kassa Compleet Blesta integration for the Credit Card payment type"
+    },
+    {
+        "name": "blesta/kassacompleetideal",
+        "version": "1.0.1",
+        "version_normalized": "1.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/blesta/gateway-kassacompleetideal.git",
+            "reference": "9253691087b9277926bc67fb83156d9124d63ad0"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/blesta/gateway-kassacompleetideal/zipball/9253691087b9277926bc67fb83156d9124d63ad0",
+            "reference": "9253691087b9277926bc67fb83156d9124d63ad0",
+            "shasum": ""
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.6",
+            "satooshi/php-coveralls": "~0.7",
+            "squizlabs/php_codesniffer": "~3.0"
+        },
+        "time": "2019-02-08T22:09:32+00:00",
+        "type": "blesta-gateway-nonmerchant",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "proprietary"
+        ],
+        "authors": [
+            {
+                "name": "Phillips Data, Inc.",
+                "email": "sales@blesta.com"
+            }
+        ],
+        "description": "Kassa Compleet Blesta integration for the iDeal payment method"
+    },
+    {
+        "name": "blesta/logicboxes",
+        "version": "2.5.0",
+        "version_normalized": "2.5.0.0",
+        "source": {
+            "type": "git",
+            "url": "ssh://git@code.blesta.com:7999/mod/logicboxes.git",
+            "reference": "70c56272541e2d19cf588949501c93358c1da058"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-logicboxes-2.5.0-6ac40b.tar",
+            "reference": "70c56272541e2d19cf588949501c93358c1da058",
+            "shasum": "7dc09b686cf83331fc2d2338d803e13be5c69bee"
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2019-05-20T21:43:50+00:00",
+        "type": "blesta-module",
+        "installation-source": "dist",
+        "license": [
+            "proprietary"
+        ],
+        "description": "Logicboxes"
+    },
+    {
+        "name": "blesta/mass_mailer",
+        "version": "1.3.0",
+        "version_normalized": "1.3.0.0",
+        "source": {
+            "type": "git",
+            "url": "ssh://git@code.blesta.com:7999/plug/mass-mailer.git",
+            "reference": "97fcca7b335b39d14ab425452fff550fb4c58929"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-mass_mailer-1.3.0-8c2691.tar",
+            "reference": "97fcca7b335b39d14ab425452fff550fb4c58929",
+            "shasum": "845e241d4da2fe6bf1ba828c421c20400e83ed55"
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0",
+            "phillipsdata/csv": "^1.1"
+        },
+        "time": "2019-01-24T22:24:11+00:00",
+        "type": "blesta-plugin",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Blesta\\MassMailer\\": ""
+            }
+        },
+        "license": [
+            "proprietary"
+        ],
+        "description": "Mass Mailer"
+    },
+    {
+        "name": "blesta/multicraft",
+        "version": "2.2.1",
+        "version_normalized": "2.2.1.0",
+        "source": {
+            "type": "git",
+            "url": "ssh://git@code.blesta.com:7999/mod/multicraft.git",
+            "reference": "b0e9132dcbb32ceab3bf6133f5bf87b2b004b7e0"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-multicraft-2.2.1-bfca13.tar",
+            "reference": "b0e9132dcbb32ceab3bf6133f5bf87b2b004b7e0",
+            "shasum": "e3bb36518f8cfbe0a3de9c8e801fe8775ddc957b"
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2019-09-10T17:03:01+00:00",
+        "type": "blesta-module",
+        "installation-source": "dist",
+        "license": [
+            "proprietary"
+        ],
+        "description": "Multicraft"
+    },
+    {
+        "name": "blesta/namecheap",
+        "version": "2.4.0",
+        "version_normalized": "2.4.0.0",
+        "source": {
+            "type": "git",
+            "url": "ssh://git@code.blesta.com:7999/mod/namecheap.git",
+            "reference": "f2f52b1077c7d51c3fa8f10d4b78ea88e2104a35"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-namecheap-2.4.0-f7e67f.tar",
+            "reference": "f2f52b1077c7d51c3fa8f10d4b78ea88e2104a35",
+            "shasum": "120ef963c257966b1bf879d49d25e2c76308efb3"
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2019-05-20T21:43:41+00:00",
+        "type": "blesta-module",
+        "installation-source": "dist",
+        "license": [
+            "proprietary"
+        ],
+        "description": "Namecheap"
+    },
+    {
+        "name": "blesta/none",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "ssh://git@code.blesta.com:7999/mod/none.git",
+            "reference": "988db06a4dcf8d7394f4a712bea60eb312a22dcc"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-none-1.0.0-0d7dde.tar",
+            "reference": "988db06a4dcf8d7394f4a712bea60eb312a22dcc",
+            "shasum": "7b4ecb8e635cc615c6e65e53847c1b4746f30697"
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2017-05-12T16:18:26+00:00",
+        "type": "blesta-module",
+        "installation-source": "dist",
+        "license": [
+            "proprietary"
+        ],
+        "description": "None"
+    },
+    {
+        "name": "blesta/offline",
+        "version": "1.2.0",
+        "version_normalized": "1.2.0.0",
+        "source": {
+            "type": "git",
+            "url": "ssh://git@code.blesta.com:7999/gw/offline.git",
+            "reference": "65ded852c03bc2776e429768f4c47e0efb661f19"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-offline-1.2.0-350686.tar",
+            "reference": "65ded852c03bc2776e429768f4c47e0efb661f19",
+            "shasum": "e39911fbec6529c50c5e4237b17735b7602d744d"
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2018-08-31T22:33:13+00:00",
+        "type": "blesta-gateway-nonmerchant",
+        "installation-source": "dist",
+        "license": [
+            "proprietary"
+        ],
+        "description": "Offline"
+    },
+    {
+        "name": "blesta/order",
+        "version": "2.20.0",
+        "version_normalized": "2.20.0.0",
+        "source": {
+            "type": "git",
+            "url": "ssh://git@code.blesta.com:7999/plug/order.git",
+            "reference": "943e7ff638f27e70bfe9d1191a3b39121e938cbb"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-order-2.20.0-330def.tar",
+            "reference": "943e7ff638f27e70bfe9d1191a3b39121e938cbb",
+            "shasum": "dbbb0054c867be24c31f1b22a172abdcf8c8ecfa"
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2019-09-09T17:24:21+00:00",
+        "type": "blesta-plugin",
+        "installation-source": "dist",
+        "license": [
+            "proprietary"
+        ],
+        "description": "Order"
+    },
+    {
+        "name": "blesta/pagseguro",
+        "version": "1.1.0",
+        "version_normalized": "1.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "ssh://git@code.blesta.com:7999/gw/pagseguro.git",
+            "reference": "32d78fc7e5e55c214b09acbe155dceef08445450"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-pagseguro-1.1.0-0e3e59.tar",
+            "reference": "32d78fc7e5e55c214b09acbe155dceef08445450",
+            "shasum": "de99983124d31e0f650411106fb38edf7977a535"
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2016-01-11T16:27:02+00:00",
+        "type": "blesta-gateway-nonmerchant",
+        "installation-source": "dist",
+        "license": [
+            "proprietary"
+        ],
+        "description": "Pagseguro"
+    },
+    {
+        "name": "blesta/parsedown",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/blesta/parsedown.git",
+            "reference": "4985070c9a535cc7b9ebda771052c7a1d3db8310"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/blesta/parsedown/zipball/4985070c9a535cc7b9ebda771052c7a1d3db8310",
+            "reference": "4985070c9a535cc7b9ebda771052c7a1d3db8310",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.8"
+        },
+        "time": "2018-10-30T16:52:16+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Parsedown": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Emanuil Rusev",
+                "email": "hello@erusev.com",
+                "homepage": "http://erusev.com"
+            }
+        ],
+        "description": "Parser for Markdown.",
+        "homepage": "http://parsedown.org",
+        "keywords": [
+            "markdown",
+            "parser"
+        ]
+    },
+    {
+        "name": "blesta/payflow",
+        "version": "1.1.0",
+        "version_normalized": "1.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "ssh://git@code.blesta.com:7999/gw/payflow.git",
+            "reference": "b09bf7aaa87ee855bb5e8220f330deb3de1ff87f"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-payflow-1.1.0-6b8db2.tar",
+            "reference": "b09bf7aaa87ee855bb5e8220f330deb3de1ff87f",
+            "shasum": "1d5332beab334591167ee1bea79893b8df1e1ba4"
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2016-01-08T22:26:41+00:00",
+        "type": "blesta-gateway-merchant",
+        "installation-source": "dist",
+        "license": [
+            "proprietary"
+        ],
+        "description": "Payflow Pro"
+    },
+    {
+        "name": "blesta/payjunction",
+        "version": "1.1.0",
+        "version_normalized": "1.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "ssh://git@code.blesta.com:7999/gw/payjunction.git",
+            "reference": "c9544137ff7fa0c9136b095991001bc421918052"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-payjunction-1.1.0-e5d446.tar",
+            "reference": "c9544137ff7fa0c9136b095991001bc421918052",
+            "shasum": "19ef515772f33d341438566b506f4de79d40634b"
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2016-01-08T22:27:42+00:00",
+        "type": "blesta-gateway-merchant",
+        "installation-source": "dist",
+        "license": [
+            "proprietary"
+        ],
+        "description": "Payjunction"
+    },
+    {
+        "name": "blesta/paypal_payments_standard",
+        "version": "1.5.0",
+        "version_normalized": "1.5.0.0",
+        "source": {
+            "type": "git",
+            "url": "ssh://git@code.blesta.com:7999/gw/paypal-payments-standard.git",
+            "reference": "4a34c7e99205099e91103d7eee44b9881111767c"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-paypal_payments_standard-1.5.0-029b0a.tar",
+            "reference": "4a34c7e99205099e91103d7eee44b9881111767c",
+            "shasum": "265caeac919d2ce3c56290ae64d7fc5a7c09df30"
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2019-06-07T16:25:55+00:00",
+        "type": "blesta-gateway-nonmerchant",
+        "installation-source": "dist",
+        "license": [
+            "proprietary"
+        ],
+        "description": "PayPal Payments Standard"
+    },
+    {
+        "name": "blesta/paystack",
+        "version": "1.0.2",
+        "version_normalized": "1.0.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/blesta/gateway-paystack.git",
+            "reference": "92bcc42bef763625fde534df7d984e1463c98a29"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/blesta/gateway-paystack/zipball/92bcc42bef763625fde534df7d984e1463c98a29",
+            "reference": "92bcc42bef763625fde534df7d984e1463c98a29",
+            "shasum": ""
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2019-01-25T23:57:29+00:00",
+        "type": "blesta-gateway-nonmerchant",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "proprietary"
+        ],
+        "description": "Paystack"
+    },
+    {
+        "name": "blesta/payumoney",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/blesta/gateway-payumoney.git",
+            "reference": "e89c3b50ead2d5432780acd96b0fd94887c75e17"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/blesta/gateway-payumoney/zipball/e89c3b50ead2d5432780acd96b0fd94887c75e17",
+            "reference": "e89c3b50ead2d5432780acd96b0fd94887c75e17",
+            "shasum": ""
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2017-04-26T16:04:43+00:00",
+        "type": "blesta-gateway-nonmerchant",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "proprietary"
+        ],
+        "description": "Payumoney"
+    },
+    {
+        "name": "blesta/payza",
+        "version": "1.1.1",
+        "version_normalized": "1.1.1.0",
+        "source": {
+            "type": "git",
+            "url": "ssh://git@code.blesta.com:7999/gw/payza.git",
+            "reference": "81f91dc69456f729b9ad72d017776421cf362140"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-payza-1.1.1-1e6c3a.tar",
+            "reference": "81f91dc69456f729b9ad72d017776421cf362140",
+            "shasum": "4953083b45f0ee0d6c4184e991184c01f209a00c"
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2019-09-10T17:00:34+00:00",
+        "type": "blesta-gateway-nonmerchant",
+        "installation-source": "dist",
+        "license": [
+            "proprietary"
+        ],
+        "description": "Payza"
+    },
+    {
+        "name": "blesta/perfectmoney",
+        "version": "1.0.1",
+        "version_normalized": "1.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/blesta/gateway-perfectmoney.git",
+            "reference": "3ea79867d846bd02cec5323f81cf51a87843bad6"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/blesta/gateway-perfectmoney/zipball/3ea79867d846bd02cec5323f81cf51a87843bad6",
+            "reference": "3ea79867d846bd02cec5323f81cf51a87843bad6",
+            "shasum": ""
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2018-02-13T22:44:24+00:00",
+        "type": "blesta-gateway-nonmerchant",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "proprietary"
+        ],
+        "description": "Perfect Money"
+    },
+    {
+        "name": "blesta/phpids",
+        "version": "1.5.0",
+        "version_normalized": "1.5.0.0",
+        "source": {
+            "type": "git",
+            "url": "ssh://git@code.blesta.com:7999/plug/phpids.git",
+            "reference": "93abba04be3b6b0826886a95591e2fa12133db13"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-phpids-1.5.0-c63671.tar",
+            "reference": "93abba04be3b6b0826886a95591e2fa12133db13",
+            "shasum": "5a9e2596b1f631ba3e37d4bc355e48dcf31e1b0b"
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2019-05-17T21:04:54+00:00",
+        "type": "blesta-plugin",
+        "installation-source": "dist",
+        "license": [
+            "proprietary"
+        ],
+        "description": "PHPIDS"
+    },
+    {
+        "name": "blesta/plesk",
+        "version": "2.8.2",
+        "version_normalized": "2.8.2.0",
+        "source": {
+            "type": "git",
+            "url": "ssh://git@code.blesta.com:7999/mod/plesk.git",
+            "reference": "2b510126f5e0940f586763c4de69d23cdeb72bad"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-plesk-2.8.2-79e24b.tar",
+            "reference": "2b510126f5e0940f586763c4de69d23cdeb72bad",
+            "shasum": "11b458feee946cbce610fa03902253d3671a2982"
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2019-09-10T17:01:30+00:00",
+        "type": "blesta-module",
+        "installation-source": "dist",
+        "license": [
+            "proprietary"
+        ],
+        "description": "Plesk"
+    },
+    {
+        "name": "blesta/pricing",
+        "version": "3.2.0",
+        "version_normalized": "3.2.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/blesta/pricing.git",
+            "reference": "ad124c13315b3d38f9b9889d9f6b8fb1c7ca5ff9"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-pricing-ad124c13315b3d38f9b9889d9f6b8fb1c7ca5ff9-zip-b28aad.tar",
+            "reference": "ad124c13315b3d38f9b9889d9f6b8fb1c7ca5ff9",
+            "shasum": "d7793a4b1a6a18c520630bc574d8a0ca8c94f088"
+        },
+        "require": {
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.6",
+            "satooshi/php-coveralls": "^1.0",
+            "squizlabs/php_codesniffer": "~2.3"
+        },
+        "time": "2018-06-12T18:18:26+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Blesta\\Pricing\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Cody Phillips",
+                "email": "therealclphillips@gmail.com"
+            },
+            {
+                "name": "Tyson Phillips"
+            }
+        ],
+        "description": "A library for handling pricing and pricing modifiers",
+        "homepage": "http://github.com/blesta/pricing",
+        "keywords": [
+            "discount",
+            "pricing",
+            "tax",
+            "totals"
+        ]
+    },
+    {
+        "name": "blesta/proration",
+        "version": "2.0.0",
+        "version_normalized": "2.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/blesta/proration.git",
+            "reference": "996c631e88c1047e94879dac1ca6a53636a0403f"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-proration-996c631e88c1047e94879dac1ca6a53636a0403f-zip-2f275d.tar",
+            "reference": "996c631e88c1047e94879dac1ca6a53636a0403f",
+            "shasum": "c2a328c17b860af429c8da3967b483dbb08b32b0"
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.6",
+            "squizlabs/php_codesniffer": "~2.3"
+        },
+        "time": "2017-01-10T18:05:22+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Cody Phillips",
+                "email": "therealclphillips@gmail.com"
+            },
+            {
+                "name": "Tyson Phillips"
+            }
+        ],
+        "description": "A proration calculator",
+        "homepage": "http://github.com/blesta/proration",
+        "keywords": [
+            "billing",
+            "prorata",
+            "proration"
+        ]
+    },
+    {
+        "name": "blesta/proxmox",
+        "version": "2.5.0",
+        "version_normalized": "2.5.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/blesta/module-proxmox.git",
+            "reference": "1949fdde130cba56b0f1f535bd82f427743a52b2"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-proxmox-1949fdde130cba56b0f1f535bd82f427743a52b2-zip-6e41fd.tar",
+            "reference": "1949fdde130cba56b0f1f535bd82f427743a52b2",
+            "shasum": "4c31da2289ac7c2e3af2c7f3ce90cf5abe35acc2"
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2019-05-20T21:40:54+00:00",
+        "type": "blesta-module",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "proprietary"
+        ],
+        "description": "Proxmox"
+    },
+    {
+        "name": "blesta/quantum_gateway",
+        "version": "1.1.0",
+        "version_normalized": "1.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "ssh://git@code.blesta.com:7999/gw/quantum-gateway.git",
+            "reference": "29af2fb32c5564dbe248eadab654c1ddc8e273c6"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-quantum_gateway-1.1.0-3fa775.tar",
+            "reference": "29af2fb32c5564dbe248eadab654c1ddc8e273c6",
+            "shasum": "a7a32d79cba325860dea58084ca1326c765edd13"
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2016-01-08T22:31:32+00:00",
+        "type": "blesta-gateway-merchant",
+        "installation-source": "dist",
+        "license": [
+            "proprietary"
+        ],
+        "description": "Quantum Gateway"
+    },
+    {
+        "name": "blesta/reassign_pricing",
+        "version": "1.3.0",
+        "version_normalized": "1.3.0.0",
+        "source": {
+            "type": "git",
+            "url": "ssh://git@code.blesta.com:7999/plug/reassign-pricing.git",
+            "reference": "9e0a50de645048e1f2ce1fd142ecac0beb243fbe"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-reassign_pricing-1.3.0-f7981d.tar",
+            "reference": "9e0a50de645048e1f2ce1fd142ecac0beb243fbe",
+            "shasum": "e7c97fcf16931e6fcc49da46deea8bcc8c138213"
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2019-01-24T22:27:09+00:00",
+        "type": "blesta-plugin",
+        "installation-source": "dist",
+        "license": [
+            "proprietary"
+        ],
+        "description": "Reassign Pricing"
+    },
+    {
+        "name": "blesta/reseller-api",
+        "version": "1.1.0",
+        "version_normalized": "1.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/blesta/reseller-api.git",
+            "reference": "f61b46927d56281d4dec4ecf374ca948465a1f88"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-reseller-api-f61b46927d56281d4dec4ecf374ca948465a1f88-zip-5f750f.tar",
+            "reference": "f61b46927d56281d4dec4ecf374ca948465a1f88",
+            "shasum": "679c85f7c3b108772a6e5558d83eea6753a9d4a6"
+        },
+        "require": {
+            "ext-curl": "*",
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.0",
+            "satooshi/php-coveralls": "~1.0",
+            "squizlabs/php_codesniffer": "~2.2"
+        },
+        "time": "2016-02-26T22:34:19+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Blesta\\ResellerApi\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Cody Phillips",
+                "email": "therealclphillips@gmail.com"
+            }
+        ],
+        "description": "The official implementation of the Blesta Reseller API",
+        "homepage": "http://github.com/blesta/reseller-api"
+    },
+    {
+        "name": "blesta/shared_login",
+        "version": "1.2.0",
+        "version_normalized": "1.2.0.0",
+        "source": {
+            "type": "git",
+            "url": "ssh://git@code.blesta.com:7999/plug/shared-login.git",
+            "reference": "bf567e832f6a096e5f23aa9979fc27419c8a19a4"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-shared_login-1.2.0-7c0048.tar",
+            "reference": "bf567e832f6a096e5f23aa9979fc27419c8a19a4",
+            "shasum": "1260aef29604b26fd700a232ba21fa930b6ee009"
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2018-11-28T22:56:15+00:00",
+        "type": "blesta-plugin",
+        "installation-source": "dist",
+        "license": [
+            "proprietary"
+        ],
+        "description": "Shared Login"
+    },
+    {
+        "name": "blesta/skrill",
+        "version": "1.3.0",
+        "version_normalized": "1.3.0.0",
+        "source": {
+            "type": "git",
+            "url": "ssh://git@code.blesta.com:7999/gw/skrill.git",
+            "reference": "152fd950b7740e0db0746c5aaaae8649fdbbf228"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-skrill-1.3.0-bec53a.tar",
+            "reference": "152fd950b7740e0db0746c5aaaae8649fdbbf228",
+            "shasum": "2490bc55aa3b4d70c2b2a1baa3fe82b592ad536c"
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2017-08-03T19:35:54+00:00",
+        "type": "blesta-gateway-nonmerchant",
+        "installation-source": "dist",
+        "license": [
+            "proprietary"
+        ],
+        "description": "Skrill"
+    },
+    {
+        "name": "blesta/softaculous",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/blesta/plugin-softaculous.git",
+            "reference": "f73e518f0a080534aefee873bd0710783a67e40a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/blesta/plugin-softaculous/zipball/f73e518f0a080534aefee873bd0710783a67e40a",
+            "reference": "f73e518f0a080534aefee873bd0710783a67e40a",
+            "shasum": ""
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.6",
+            "satooshi/php-coveralls": "~0.7",
+            "squizlabs/php_codesniffer": "~3.0"
+        },
+        "time": "2018-12-26T18:46:54+00:00",
+        "type": "blesta-plugin",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "proprietary"
+        ],
+        "description": "Softaculous Plugin"
+    },
+    {
+        "name": "blesta/solusvm",
+        "version": "3.10.0",
+        "version_normalized": "3.10.0.0",
+        "source": {
+            "type": "git",
+            "url": "ssh://git@code.blesta.com:7999/mod/solusvm.git",
+            "reference": "870067daad56fcc2f1b348047b86f009023f7a63"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-solusvm-3.10.0-bc9ecd.tar",
+            "reference": "870067daad56fcc2f1b348047b86f009023f7a63",
+            "shasum": "e132c674075526dc391c8aed37e3ca23bc23668d"
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2019-05-20T21:43:20+00:00",
+        "type": "blesta-module",
+        "installation-source": "dist",
+        "license": [
+            "proprietary"
+        ],
+        "description": "SolusVM"
+    },
+    {
+        "name": "blesta/square",
+        "version": "1.1.0",
+        "version_normalized": "1.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/blesta/gateway-square.git",
+            "reference": "a4dbe91c1a42af4f2c5adb5afebed58e599d7a1a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/blesta/gateway-square/zipball/a4dbe91c1a42af4f2c5adb5afebed58e599d7a1a",
+            "reference": "a4dbe91c1a42af4f2c5adb5afebed58e599d7a1a",
+            "shasum": ""
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2017-12-08T18:29:21+00:00",
+        "type": "blesta-gateway-nonmerchant",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "proprietary"
+        ],
+        "description": "Square"
+    },
+    {
+        "name": "blesta/stripe_gateway",
+        "version": "1.6.0",
+        "version_normalized": "1.6.0.0",
+        "source": {
+            "type": "git",
+            "url": "ssh://git@code.blesta.com:7999/gw/stripe.git",
+            "reference": "cd36439ff01ddf008a27fa478b68084cfc64c3bb"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-stripe_gateway-1.6.0-3df1a2.tar",
+            "reference": "cd36439ff01ddf008a27fa478b68084cfc64c3bb",
+            "shasum": "4a2314ca17f6d0326491bc240ef1b014c22e7e3b"
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2019-08-30T23:13:24+00:00",
+        "type": "blesta-gateway-merchant",
+        "installation-source": "dist",
+        "license": [
+            "proprietary"
+        ],
+        "description": "Stripe"
+    },
+    {
+        "name": "blesta/stripe_payments",
+        "version": "0.3.2",
+        "version_normalized": "0.3.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/blesta/gateway-stripepayments.git",
+            "reference": "fe7e39852ac4fad1ff35dc538a77dd6123c87ff0"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/blesta/gateway-stripepayments/zipball/fe7e39852ac4fad1ff35dc538a77dd6123c87ff0",
+            "reference": "fe7e39852ac4fad1ff35dc538a77dd6123c87ff0",
+            "shasum": ""
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0",
+            "stripe/stripe-php": "~6.40"
+        },
+        "time": "2019-08-29T23:26:10+00:00",
+        "type": "blesta-gateway-merchant",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "proprietary"
+        ],
+        "description": "Stripe Payments"
+    },
+    {
+        "name": "blesta/support_manager",
+        "version": "2.20.0",
+        "version_normalized": "2.20.0.0",
+        "source": {
+            "type": "git",
+            "url": "ssh://git@code.blesta.com:7999/plug/support-manager.git",
+            "reference": "31430842732c8ea0fa2a417ebf7864b70b8a6964"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-support_manager-2.20.0-08b74a.tar",
+            "reference": "31430842732c8ea0fa2a417ebf7864b70b8a6964",
+            "shasum": "39f23456f9f13f8924e0b7acec485b8ff35fbde4"
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2019-07-31T19:50:56+00:00",
+        "type": "blesta-plugin",
+        "installation-source": "dist",
+        "license": [
+            "proprietary"
+        ],
+        "description": "Support Manager"
+    },
+    {
+        "name": "blesta/system_overview",
+        "version": "1.7.1",
+        "version_normalized": "1.7.1.0",
+        "source": {
+            "type": "git",
+            "url": "ssh://git@code.blesta.com:7999/plug/system-overview.git",
+            "reference": "3b2f8d696213a9a6d455a0baf3de1b814bd3fce7"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-system_overview-1.7.1-ce1c06.tar",
+            "reference": "3b2f8d696213a9a6d455a0baf3de1b814bd3fce7",
+            "shasum": "30a8ea7f3db2c005198e1865b165406ec235c7f1"
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2019-06-05T19:42:53+00:00",
+        "type": "blesta-plugin",
+        "installation-source": "dist",
+        "license": [
+            "proprietary"
+        ],
+        "description": "System Overview"
+    },
+    {
+        "name": "blesta/system_status",
+        "version": "1.6.0",
+        "version_normalized": "1.6.0.0",
+        "source": {
+            "type": "git",
+            "url": "ssh://git@code.blesta.com:7999/plug/system-status.git",
+            "reference": "62103a0bb9a40e7ae188bd961f9041adf988c2e4"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-system_status-1.6.0-479579.tar",
+            "reference": "62103a0bb9a40e7ae188bd961f9041adf988c2e4",
+            "shasum": "ce7813de6950761a754e6e071a3dd9681311ed95"
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2019-04-29T23:41:53+00:00",
+        "type": "blesta-plugin",
+        "installation-source": "dist",
+        "license": [
+            "proprietary"
+        ],
+        "description": "System Status"
+    },
+    {
+        "name": "blesta/tcadmin",
+        "version": "1.3.0",
+        "version_normalized": "1.3.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/blesta/module-tcadmin.git",
+            "reference": "c2c9c9eca69539c5417476bd9aab546e64acf5d4"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/blesta/module-tcadmin/zipball/c2c9c9eca69539c5417476bd9aab546e64acf5d4",
+            "reference": "c2c9c9eca69539c5417476bd9aab546e64acf5d4",
+            "shasum": ""
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2019-05-20T21:41:53+00:00",
+        "type": "blesta-module",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "proprietary"
+        ],
+        "description": "TCAdmin"
+    },
+    {
+        "name": "blesta/teamspeak",
+        "version": "1.3.0",
+        "version_normalized": "1.3.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/blesta/module-teamspeak.git",
+            "reference": "e2b1cb013971d09745eb8db4fa9f748c2d501643"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/blesta/module-teamspeak/zipball/e2b1cb013971d09745eb8db4fa9f748c2d501643",
+            "reference": "e2b1cb013971d09745eb8db4fa9f748c2d501643",
+            "shasum": ""
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0",
+            "phillipsdata/priority-schedule": "^1.0"
+        },
+        "time": "2019-05-20T21:42:59+00:00",
+        "type": "blesta-module",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "proprietary"
+        ],
+        "description": "TeamSpeak"
+    },
+    {
+        "name": "blesta/thesslstore",
+        "version": "1.3.0",
+        "version_normalized": "1.3.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/blesta/plugin-thesslstore.git",
+            "reference": "4d953fa05b12f260f3eaa76606b7c32b9d746d5d"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-thesslstore-4d953fa05b12f260f3eaa76606b7c32b9d746d5d-zip-e03345.tar",
+            "reference": "4d953fa05b12f260f3eaa76606b7c32b9d746d5d",
+            "shasum": "6e9191fc7da73197d8962ef20ca2da069252f931"
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2018-12-05T16:31:16+00:00",
+        "type": "blesta-plugin",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "TheSSLStore plugin"
+    },
+    {
+        "name": "blesta/thesslstore_module",
+        "version": "1.7.0",
+        "version_normalized": "1.7.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/blesta/module-thesslstore.git",
+            "reference": "81c0e65d57319a700461ab13896787407f007e0e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/blesta/module-thesslstore/zipball/81c0e65d57319a700461ab13896787407f007e0e",
+            "reference": "81c0e65d57319a700461ab13896787407f007e0e",
+            "shasum": ""
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2018-12-05T16:31:27+00:00",
+        "type": "blesta-module",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "TheSSLStore"
+    },
+    {
+        "name": "blesta/universal_module",
+        "version": "1.7.0",
+        "version_normalized": "1.7.0.0",
+        "source": {
+            "type": "git",
+            "url": "ssh://git@code.blesta.com:7999/mod/universal.git",
+            "reference": "ad0fb201e0cf83c18789b02cad7eba7825634a6f"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-universal_module-1.7.0-f8483f.tar",
+            "reference": "ad0fb201e0cf83c18789b02cad7eba7825634a6f",
+            "shasum": "870ce9259c42a072be47df2419d22a79c1e8385e"
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2018-11-21T21:25:34+00:00",
+        "type": "blesta-module",
+        "installation-source": "dist",
+        "license": [
+            "proprietary"
+        ],
+        "description": "Universal"
+    },
+    {
+        "name": "blesta/vesta",
+        "version": "1.4.0",
+        "version_normalized": "1.4.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/blesta/module-vesta.git",
+            "reference": "0b075a7738ffb069f7c0ff1f3110d1c25e7ef24e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/blesta/module-vesta/zipball/0b075a7738ffb069f7c0ff1f3110d1c25e7ef24e",
+            "reference": "0b075a7738ffb069f7c0ff1f3110d1c25e7ef24e",
+            "shasum": ""
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2019-08-30T23:34:55+00:00",
+        "type": "blesta-module",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "proprietary"
+        ],
+        "description": "Vesta"
+    },
+    {
+        "name": "blesta/virtualmin",
+        "version": "1.3.0",
+        "version_normalized": "1.3.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/blesta/module-virtualmin.git",
+            "reference": "bb4294e02399f732a88e8f7e66707313df650704"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/blesta/module-virtualmin/zipball/bb4294e02399f732a88e8f7e66707313df650704",
+            "reference": "bb4294e02399f732a88e8f7e66707313df650704",
+            "shasum": ""
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2019-05-20T21:44:37+00:00",
+        "type": "blesta-module",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "proprietary"
+        ],
+        "description": "VirtualMin"
+    },
+    {
+        "name": "blesta/vpsdotnet",
+        "version": "2.5.0",
+        "version_normalized": "2.5.0.0",
+        "source": {
+            "type": "git",
+            "url": "ssh://git@code.blesta.com:7999/mod/vpsdotnet.git",
+            "reference": "a85d78b245de70767a2ddaec0462ddf31b0c3601"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/blesta-vpsdotnet-2.5.0-d4bcaa.tar",
+            "reference": "a85d78b245de70767a2ddaec0462ddf31b0c3601",
+            "shasum": "44a0aec7b6c06c8922b3b4cd81a5881a74f3a962"
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2019-05-22T21:46:18+00:00",
+        "type": "blesta-module",
+        "installation-source": "dist",
+        "license": [
+            "proprietary"
+        ],
+        "description": "VPS.net"
+    },
+    {
+        "name": "blesta/vultr",
+        "version": "1.5.0",
+        "version_normalized": "1.5.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/blesta/module-vultr.git",
+            "reference": "5ae40bcc2dcfab985fd5a1cf3e9f9f3b60ac8f03"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/blesta/module-vultr/zipball/5ae40bcc2dcfab985fd5a1cf3e9f9f3b60ac8f03",
+            "reference": "5ae40bcc2dcfab985fd5a1cf3e9f9f3b60ac8f03",
+            "shasum": ""
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0",
+            "phillipsdata/priority-schedule": "^1.0"
+        },
+        "time": "2019-05-20T21:45:24+00:00",
+        "type": "blesta-module",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "proprietary"
+        ],
+        "description": "Vultr"
+    },
+    {
+        "name": "blesta/whmsonic",
+        "version": "1.3.0",
+        "version_normalized": "1.3.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/blesta/module-whmsonic.git",
+            "reference": "2f616a38ae1391a3ef39918751452a50b5df69ab"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/blesta/module-whmsonic/zipball/2f616a38ae1391a3ef39918751452a50b5df69ab",
+            "reference": "2f616a38ae1391a3ef39918751452a50b5df69ab",
+            "shasum": ""
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2019-05-20T21:46:02+00:00",
+        "type": "blesta-module",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "proprietary"
+        ],
+        "description": "WHMsonic"
+    },
+    {
+        "name": "blesta/widepay",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/blesta/gateway-widepay.git",
+            "reference": "fc3dc95a9118726cee70c6d1e3469b7d37d06587"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/blesta/gateway-widepay/zipball/fc3dc95a9118726cee70c6d1e3469b7d37d06587",
+            "reference": "fc3dc95a9118726cee70c6d1e3469b7d37d06587",
+            "shasum": ""
+        },
+        "require": {
+            "blesta/composer-installer": "~1.0"
+        },
+        "time": "2019-05-23T16:05:29+00:00",
+        "type": "blesta-gateway-nonmerchant",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "proprietary"
+        ],
+        "description": "Widepay"
+    },
+    {
+        "name": "composer/ca-bundle",
+        "version": "1.2.4",
+        "version_normalized": "1.2.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/composer/ca-bundle.git",
+            "reference": "10bb96592168a0f8e8f6dcde3532d9fa50b0b527"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/composer/ca-bundle/zipball/10bb96592168a0f8e8f6dcde3532d9fa50b0b527",
+            "reference": "10bb96592168a0f8e8f6dcde3532d9fa50b0b527",
+            "shasum": ""
+        },
+        "require": {
+            "ext-openssl": "*",
+            "ext-pcre": "*",
+            "php": "^5.3.2 || ^7.0 || ^8.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^4.8.35 || ^5.7 || 6.5 - 8",
+            "psr/log": "^1.0",
+            "symfony/process": "^2.5 || ^3.0 || ^4.0"
+        },
+        "time": "2019-08-30T08:44:50+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Composer\\CaBundle\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Jordi Boggiano",
+                "email": "j.boggiano@seld.be",
+                "homepage": "http://seld.be"
+            }
+        ],
+        "description": "Lets you find a path to the system CA bundle, and includes a fallback to the Mozilla CA bundle.",
+        "keywords": [
+            "cabundle",
+            "cacert",
+            "certificate",
+            "ssl",
+            "tls"
+        ]
+    },
+    {
+        "name": "composer/installers",
+        "version": "v1.7.0",
+        "version_normalized": "1.7.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/composer/installers.git",
+            "reference": "141b272484481432cda342727a427dc1e206bfa0"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/composer-installers-141b272484481432cda342727a427dc1e206bfa0-zip-c0c6fc.tar",
+            "reference": "141b272484481432cda342727a427dc1e206bfa0",
+            "shasum": "66fe9bd05de17233ba3f167210221235ffbcb8ec"
+        },
+        "require": {
+            "composer-plugin-api": "^1.0"
+        },
+        "replace": {
+            "roundcube/plugin-installer": "*",
+            "shama/baton": "*"
+        },
+        "require-dev": {
+            "composer/composer": "1.0.*@dev",
+            "phpunit/phpunit": "^4.8.36"
+        },
+        "time": "2019-08-12T15:00:31+00:00",
+        "type": "composer-plugin",
+        "extra": {
+            "class": "Composer\\Installers\\Plugin",
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Composer\\Installers\\": "src/Composer/Installers"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Kyle Robinson Young",
+                "email": "kyle@dontkry.com",
+                "homepage": "https://github.com/shama"
+            }
+        ],
+        "description": "A multi-framework Composer library installer",
+        "homepage": "https://composer.github.io/installers/",
+        "keywords": [
+            "Craft",
+            "Dolibarr",
+            "Eliasis",
+            "Hurad",
+            "ImageCMS",
+            "Kanboard",
+            "Lan Management System",
+            "MODX Evo",
+            "Mautic",
+            "Maya",
+            "OXID",
+            "Plentymarkets",
+            "Porto",
+            "RadPHP",
+            "SMF",
+            "Thelia",
+            "Whmcs",
+            "WolfCMS",
+            "agl",
+            "aimeos",
+            "annotatecms",
+            "attogram",
+            "bitrix",
+            "cakephp",
+            "chef",
+            "cockpit",
+            "codeigniter",
+            "concrete5",
+            "croogo",
+            "dokuwiki",
+            "drupal",
+            "eZ Platform",
+            "elgg",
+            "expressionengine",
+            "fuelphp",
+            "grav",
+            "installer",
+            "itop",
+            "joomla",
+            "known",
+            "kohana",
+            "laravel",
+            "lavalite",
+            "lithium",
+            "magento",
+            "majima",
+            "mako",
+            "mediawiki",
+            "modulework",
+            "modx",
+            "moodle",
+            "osclass",
+            "phpbb",
+            "piwik",
+            "ppi",
+            "puppet",
+            "pxcms",
+            "reindex",
+            "roundcube",
+            "shopware",
+            "silverstripe",
+            "sydes",
+            "symfony",
+            "typo3",
+            "wordpress",
+            "yawik",
+            "zend",
+            "zikula"
+        ]
+    },
+    {
+        "name": "container-interop/container-interop",
+        "version": "1.2.0",
+        "version_normalized": "1.2.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/container-interop/container-interop.git",
+            "reference": "79cbf1341c22ec75643d841642dd5d6acd83bdb8"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/container-interop/container-interop/zipball/79cbf1341c22ec75643d841642dd5d6acd83bdb8",
+            "reference": "79cbf1341c22ec75643d841642dd5d6acd83bdb8",
+            "shasum": ""
+        },
+        "require": {
+            "psr/container": "^1.0"
+        },
+        "time": "2017-02-14T19:40:03+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Interop\\Container\\": "src/Interop/Container/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "Promoting the interoperability of container objects (DIC, SL, etc.)",
+        "homepage": "https://github.com/container-interop/container-interop"
+    },
+    {
+        "name": "direte/microftps",
+        "version": "1.1.0",
+        "version_normalized": "1.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/phillipsdata/microftps.git",
+            "reference": "e0cb7cfd5a8d86dd37a43ff049ceb9fde21027f1"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/phillipsdata/microftps/zipball/e0cb7cfd5a8d86dd37a43ff049ceb9fde21027f1",
+            "reference": "e0cb7cfd5a8d86dd37a43ff049ceb9fde21027f1",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "4.2.*"
+        },
+        "time": "2017-10-04T17:31:35+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "DiRete\\": "src/"
+            }
+        },
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Artur Arseniev",
+                "email": "artur@direte.it"
+            }
+        ],
+        "description": "Micro library to deal with FTPS connections over cUrl",
+        "homepage": "https://github.com/direte/microftps",
+        "keywords": [
+            "file",
+            "ftp",
+            "sftp",
+            "ssl",
+            "ssl-ftp"
+        ],
+        "support": {
+            "source": "https://github.com/phillipsdata/microftps/tree/1.1.0"
+        }
+    },
+    {
+        "name": "geoip2/geoip2",
+        "version": "v2.9.0",
+        "version_normalized": "2.9.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/maxmind/GeoIP2-php.git",
+            "reference": "a807fbf65212eef5d8d2db1a1b31082b53633d77"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/maxmind/GeoIP2-php/zipball/a807fbf65212eef5d8d2db1a1b31082b53633d77",
+            "reference": "a807fbf65212eef5d8d2db1a1b31082b53633d77",
+            "shasum": ""
+        },
+        "require": {
+            "maxmind-db/reader": "~1.0",
+            "maxmind/web-service-common": "~0.5",
+            "php": ">=5.4"
+        },
+        "require-dev": {
+            "friendsofphp/php-cs-fixer": "2.*",
+            "phpunit/phpunit": "4.*",
+            "squizlabs/php_codesniffer": "3.*"
+        },
+        "time": "2018-04-10T15:32:59+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "GeoIp2\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "Apache-2.0"
+        ],
+        "authors": [
+            {
+                "name": "Gregory J. Oschwald",
+                "email": "goschwald@maxmind.com",
+                "homepage": "http://www.maxmind.com/"
+            }
+        ],
+        "description": "MaxMind GeoIP2 PHP API",
+        "homepage": "https://github.com/maxmind/GeoIP2-php",
+        "keywords": [
+            "IP",
+            "geoip",
+            "geoip2",
+            "geolocation",
+            "maxmind"
+        ]
+    },
+    {
+        "name": "google/recaptcha",
+        "version": "1.1.2",
+        "version_normalized": "1.1.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/google/recaptcha.git",
+            "reference": "2b7e00566afca82a38a1d3adb8e42c118006296e"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/google-recaptcha-2b7e00566afca82a38a1d3adb8e42c118006296e-zip-ba3cad.tar",
+            "reference": "2b7e00566afca82a38a1d3adb8e42c118006296e",
+            "shasum": "3dea99f38241817f02e670ddd6a15d8199428ac6"
+        },
+        "require": {
+            "php": ">=5.3.2"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "4.5.*"
+        },
+        "time": "2015-09-02T17:23:59+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.1.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "ReCaptcha\\": "src/ReCaptcha"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "description": "Client library for reCAPTCHA, a free service that protect websites from spam and abuse.",
+        "homepage": "http://www.google.com/recaptcha/",
+        "keywords": [
+            "Abuse",
+            "captcha",
+            "recaptcha",
+            "spam"
+        ]
+    },
+    {
+        "name": "html2text/html2text",
+        "version": "3.1.0",
+        "version_normalized": "3.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/mtibben/html2text.git",
+            "reference": "1338bc954d1e73dd98643c9859cb0bb27f324412"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/mtibben/html2text/zipball/1338bc954d1e73dd98643c9859cb0bb27f324412",
+            "reference": "1338bc954d1e73dd98643c9859cb0bb27f324412",
+            "shasum": ""
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4"
+        },
+        "time": "2016-02-22T00:38:07+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Html2Text\\": [
+                    "src/",
+                    "test/"
+                ]
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPLv2"
+        ],
+        "description": "Converts HTML to formatted plain text"
+    },
+    {
+        "name": "ircmaxell/password-compat",
+        "version": "v1.0.4",
+        "version_normalized": "1.0.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/ircmaxell/password_compat.git",
+            "reference": "5c5cde8822a69545767f7c7f3058cb15ff84614c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/ircmaxell/password_compat/zipball/5c5cde8822a69545767f7c7f3058cb15ff84614c",
+            "reference": "5c5cde8822a69545767f7c7f3058cb15ff84614c",
+            "shasum": ""
+        },
+        "require-dev": {
+            "phpunit/phpunit": "4.*"
+        },
+        "time": "2014-11-20T16:49:30+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "lib/password.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Anthony Ferrara",
+                "email": "ircmaxell@php.net",
+                "homepage": "http://blog.ircmaxell.com"
+            }
+        ],
+        "description": "A compatibility library for the proposed simplified password hashing algorithm: https://wiki.php.net/rfc/password_hash",
+        "homepage": "https://github.com/ircmaxell/password_compat",
+        "keywords": [
+            "hashing",
+            "password"
+        ]
+    },
+    {
+        "name": "jeroendesloovere/vcard",
+        "version": "1.7.2",
+        "version_normalized": "1.7.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/jeroendesloovere/vcard.git",
+            "reference": "21a7341a589d80196a55e1f6317468a93e57c104"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/jeroendesloovere/vcard/zipball/21a7341a589d80196a55e1f6317468a93e57c104",
+            "reference": "21a7341a589d80196a55e1f6317468a93e57c104",
+            "shasum": ""
+        },
+        "require": {
+            "behat/transliterator": "~1.0",
+            "php": ">=5.3.3"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "4.6.*"
+        },
+        "time": "2019-03-02T13:21:03+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "JeroenDesloovere\\VCard\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Jeroen Desloovere",
+                "email": "info@jeroendesloovere.be",
+                "homepage": "http://jeroendesloovere.be",
+                "role": "Developer"
+            }
+        ],
+        "description": "This VCard PHP class can generate a vCard with some data. When using an iOS device it will export as a .ics file because iOS devices don't support the default .vcf files.",
+        "homepage": "https://github.com/jeroendesloovere/vcard",
+        "keywords": [
+            ".vcf",
+            "generator",
+            "php",
+            "vCard"
+        ]
+    },
+    {
+        "name": "maxmind-db/reader",
+        "version": "v1.4.1",
+        "version_normalized": "1.4.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/maxmind/MaxMind-DB-Reader-php.git",
+            "reference": "eb83d0ee1c1f9b8a340206302136bc81ee02ae74"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/maxmind/MaxMind-DB-Reader-php/zipball/eb83d0ee1c1f9b8a340206302136bc81ee02ae74",
+            "reference": "eb83d0ee1c1f9b8a340206302136bc81ee02ae74",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4"
+        },
+        "require-dev": {
+            "friendsofphp/php-cs-fixer": "2.*",
+            "phpunit/phpunit": "4.* || 5.*",
+            "satooshi/php-coveralls": "1.0.*",
+            "squizlabs/php_codesniffer": "3.*"
+        },
+        "suggest": {
+            "ext-bcmath": "bcmath or gmp is required for decoding larger integers with the pure PHP decoder",
+            "ext-gmp": "bcmath or gmp is required for decoding larger integers with the pure PHP decoder",
+            "ext-maxminddb": "A C-based database decoder that provides significantly faster lookups"
+        },
+        "time": "2019-01-04T19:55:56+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "MaxMind\\Db\\": "src/MaxMind/Db"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "Apache-2.0"
+        ],
+        "authors": [
+            {
+                "name": "Gregory J. Oschwald",
+                "email": "goschwald@maxmind.com",
+                "homepage": "http://www.maxmind.com/"
+            }
+        ],
+        "description": "MaxMind DB Reader API",
+        "homepage": "https://github.com/maxmind/MaxMind-DB-Reader-php",
+        "keywords": [
+            "database",
+            "geoip",
+            "geoip2",
+            "geolocation",
+            "maxmind"
+        ]
+    },
+    {
+        "name": "maxmind/web-service-common",
+        "version": "v0.5.0",
+        "version_normalized": "0.5.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/maxmind/web-service-common-php.git",
+            "reference": "61a9836fa3bb1743ab89752bae5005d71e78c73b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/maxmind/web-service-common-php/zipball/61a9836fa3bb1743ab89752bae5005d71e78c73b",
+            "reference": "61a9836fa3bb1743ab89752bae5005d71e78c73b",
+            "shasum": ""
+        },
+        "require": {
+            "composer/ca-bundle": "^1.0.3",
+            "ext-curl": "*",
+            "ext-json": "*",
+            "php": ">=5.4"
+        },
+        "require-dev": {
+            "friendsofphp/php-cs-fixer": "2.*",
+            "phpunit/phpunit": "4.*",
+            "squizlabs/php_codesniffer": "3.*"
+        },
+        "time": "2018-02-12T22:31:54+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "MaxMind\\Exception\\": "src/Exception",
+                "MaxMind\\WebService\\": "src/WebService"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "Apache-2.0"
+        ],
+        "authors": [
+            {
+                "name": "Gregory Oschwald",
+                "email": "goschwald@maxmind.com"
+            }
+        ],
+        "description": "Internal MaxMind Web Service API",
+        "homepage": "https://github.com/maxmind/web-service-common-php"
+    },
+    {
+        "name": "minphp/acl",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/phillipsdata/minphp-acl.git",
+            "reference": "966d6bb2169c9ece9eba4171178e8a6b97eef95f"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/phillipsdata/minphp-acl/zipball/966d6bb2169c9ece9eba4171178e8a6b97eef95f",
+            "reference": "966d6bb2169c9ece9eba4171178e8a6b97eef95f",
+            "shasum": ""
+        },
+        "require": {
+            "minphp/record": "~2.0",
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "php": ">=5.4.0",
+            "phpunit/phpunit": "~4.0",
+            "satooshi/php-coveralls": "dev-master",
+            "seedling/seedling": "~1.4.2",
+            "squizlabs/php_codesniffer": "~2.2"
+        },
+        "time": "2015-11-30T23:31:45+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Minphp\\Acl\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Cody Phillips",
+                "email": "therealclphillips@gmail.com"
+            }
+        ],
+        "description": "Generic ACL Library",
+        "homepage": "http://github.com/phillipsdata/minphp-acl"
+    },
+    {
+        "name": "minphp/bridge",
+        "version": "1.0.1",
+        "version_normalized": "1.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/phillipsdata/minphp-bridge.git",
+            "reference": "7930c2be60581b2d9df31b2fc13a9ce64150ce2b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/phillipsdata/minphp-bridge/zipball/7930c2be60581b2d9df31b2fc13a9ce64150ce2b",
+            "reference": "7930c2be60581b2d9df31b2fc13a9ce64150ce2b",
+            "shasum": ""
+        },
+        "require": {
+            "minphp/acl": "^1.0",
+            "minphp/cache": "^1.0",
+            "minphp/configure": "^2.0",
+            "minphp/container": "^2.1",
+            "minphp/date": "^1.0",
+            "minphp/form": "^1.0",
+            "minphp/html": "^1.0",
+            "minphp/input": "^1.0",
+            "minphp/javascript": "^1.0",
+            "minphp/language": "^1.1",
+            "minphp/pagination": "^1.0",
+            "minphp/record": "^2.0",
+            "minphp/session": "^1.2.1",
+            "minphp/xml": "^1.0",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "php-coveralls/php-coveralls": "~1.0",
+            "phpunit/phpunit": "~4.0",
+            "squizlabs/php_codesniffer": "~2.2"
+        },
+        "time": "2018-09-11T21:35:51+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Minphp\\Bridge\\": "src"
+            },
+            "classmap": [
+                "src/Components",
+                "src/Helpers",
+                "src/Lib"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Cody Phillips",
+                "email": "therealclphillips@gmail.com"
+            }
+        ],
+        "description": "Bridges minPHP 0.x to minPHP 1.x",
+        "homepage": "http://github.com/phillipsdata/minphp-bridge"
+    },
+    {
+        "name": "minphp/cache",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/phillipsdata/minphp-cache.git",
+            "reference": "b4b4ec7103180b1fe758894bd2f00a3572fe08a9"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/phillipsdata/minphp-cache/zipball/b4b4ec7103180b1fe758894bd2f00a3572fe08a9",
+            "reference": "b4b4ec7103180b1fe758894bd2f00a3572fe08a9",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.0",
+            "satooshi/php-coveralls": "dev-master",
+            "squizlabs/php_codesniffer": "~2.2"
+        },
+        "time": "2015-12-11T22:48:59+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Minphp\\Cache\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Cody Phillips",
+                "email": "therealclphillips@gmail.com"
+            }
+        ],
+        "description": "Cache Library",
+        "homepage": "http://github.com/phillipsdata/minphp-cache"
+    },
+    {
+        "name": "minphp/configure",
+        "version": "2.1.0",
+        "version_normalized": "2.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/phillipsdata/minphp-configure.git",
+            "reference": "d62591e1b2549a23360a16869b36e16604932c49"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/phillipsdata/minphp-configure/zipball/d62591e1b2549a23360a16869b36e16604932c49",
+            "reference": "d62591e1b2549a23360a16869b36e16604932c49",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.0",
+            "satooshi/php-coveralls": "~1.0",
+            "squizlabs/php_codesniffer": "~2.2"
+        },
+        "time": "2017-10-31T18:20:52+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Minphp\\Configure\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Cody Phillips",
+                "email": "therealclphillips@gmail.com"
+            }
+        ],
+        "description": "Generic Configuration Library",
+        "homepage": "http://github.com/phillipsdata/minphp-configure"
+    },
+    {
+        "name": "minphp/container",
+        "version": "2.1.0",
+        "version_normalized": "2.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/phillipsdata/minphp-container.git",
+            "reference": "8991fde2c51353c0b2da3c0a8ff8bd213d197083"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/phillipsdata/minphp-container/zipball/8991fde2c51353c0b2da3c0a8ff8bd213d197083",
+            "reference": "8991fde2c51353c0b2da3c0a8ff8bd213d197083",
+            "shasum": ""
+        },
+        "require": {
+            "container-interop/container-interop": "^1.0",
+            "php": ">=5.3.0",
+            "pimple/pimple": "^3.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^4.0",
+            "satooshi/php-coveralls": "^1.0",
+            "squizlabs/php_codesniffer": "^2.2"
+        },
+        "time": "2016-04-01T22:49:41+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Minphp\\Container\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Cody Phillips",
+                "email": "therealclphillips@gmail.com"
+            }
+        ],
+        "description": "A Dependency Injection Container based on Pimple",
+        "homepage": "http://github.com/phillipsdata/minphp-container"
+    },
+    {
+        "name": "minphp/date",
+        "version": "1.3.1",
+        "version_normalized": "1.3.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/phillipsdata/minphp-date.git",
+            "reference": "b5b0030bbd23f27d52283c3ce58e4c4efe38d459"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/phillipsdata/minphp-date/zipball/b5b0030bbd23f27d52283c3ce58e4c4efe38d459",
+            "reference": "b5b0030bbd23f27d52283c3ce58e4c4efe38d459",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.0",
+            "satooshi/php-coveralls": "~0.7",
+            "squizlabs/php_codesniffer": "~2.2"
+        },
+        "time": "2017-10-31T18:05:27+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Minphp\\Date\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Cody Phillips",
+                "email": "therealclphillips@gmail.com"
+            }
+        ],
+        "description": "Date Library",
+        "homepage": "http://github.com/phillipsdata/minphp-date"
+    },
+    {
+        "name": "minphp/db",
+        "version": "2.0.1",
+        "version_normalized": "2.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/phillipsdata/minphp-db.git",
+            "reference": "e90a7af90938148b2e4cbba28175429ecc9a104d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/phillipsdata/minphp-db/zipball/e90a7af90938148b2e4cbba28175429ecc9a104d",
+            "reference": "e90a7af90938148b2e4cbba28175429ecc9a104d",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.0",
+            "squizlabs/php_codesniffer": "~2.2"
+        },
+        "time": "2015-11-30T22:49:06+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Minphp\\Db\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Cody Phillips",
+                "email": "therealclphillips@gmail.com"
+            }
+        ],
+        "description": "Database Connection Library",
+        "homepage": "http://github.com/phillipsdata/minphp-db"
+    },
+    {
+        "name": "minphp/form",
+        "version": "1.1.1",
+        "version_normalized": "1.1.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/phillipsdata/minphp-form.git",
+            "reference": "d0486dbf64e78b80c702482e8df85407c4d8d607"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/phillipsdata/minphp-form/zipball/d0486dbf64e78b80c702482e8df85407c4d8d607",
+            "reference": "d0486dbf64e78b80c702482e8df85407c4d8d607",
+            "shasum": ""
+        },
+        "require": {
+            "minphp/html": "~1.0",
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "php-coveralls/php-coveralls": "~1.0",
+            "phpunit/phpunit": "~4.0",
+            "squizlabs/php_codesniffer": "~2.2"
+        },
+        "time": "2019-06-03T19:59:28+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Minphp\\Form\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Cody Phillips",
+                "email": "therealclphillips@gmail.com"
+            }
+        ],
+        "description": "Form Builder Library",
+        "homepage": "http://github.com/phillipsdata/minphp-form"
+    },
+    {
+        "name": "minphp/html",
+        "version": "1.1.0",
+        "version_normalized": "1.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/phillipsdata/minphp-html.git",
+            "reference": "16002daf410b074df92fcf5752f996087fdf9e1f"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/phillipsdata/minphp-html/zipball/16002daf410b074df92fcf5752f996087fdf9e1f",
+            "reference": "16002daf410b074df92fcf5752f996087fdf9e1f",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.0",
+            "satooshi/php-coveralls": "~1.0",
+            "squizlabs/php_codesniffer": "~2.2"
+        },
+        "suggest": {
+            "ext-mbstring": "May increase performance encoding characters"
+        },
+        "time": "2017-10-31T23:34:18+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Minphp\\Html\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Cody Phillips",
+                "email": "therealclphillips@gmail.com"
+            }
+        ],
+        "description": "HTML Helper",
+        "homepage": "http://github.com/phillipsdata/minphp-html"
+    },
+    {
+        "name": "minphp/input",
+        "version": "1.0.2",
+        "version_normalized": "1.0.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/phillipsdata/minphp-input.git",
+            "reference": "561315a6881ef1d8e201ffe3d47adac14893dd86"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/phillipsdata/minphp-input/zipball/561315a6881ef1d8e201ffe3d47adac14893dd86",
+            "reference": "561315a6881ef1d8e201ffe3d47adac14893dd86",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "php-coveralls/php-coveralls": "~1.1",
+            "phpunit/phpunit": "~4.0",
+            "squizlabs/php_codesniffer": "~2.2"
+        },
+        "time": "2019-06-10T18:51:03+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Minphp\\Input\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Cody Phillips",
+                "email": "therealclphillips@gmail.com"
+            }
+        ],
+        "description": "Input Validation Library",
+        "homepage": "http://github.com/phillipsdata/minphp-input"
+    },
+    {
+        "name": "minphp/javascript",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/phillipsdata/minphp-javascript.git",
+            "reference": "0f7baaf4fce67d42ecd7f7e6a4c252644c011efd"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/phillipsdata/minphp-javascript/zipball/0f7baaf4fce67d42ecd7f7e6a4c252644c011efd",
+            "reference": "0f7baaf4fce67d42ecd7f7e6a4c252644c011efd",
+            "shasum": ""
+        },
+        "require": {
+            "minphp/html": "~1.0",
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.0",
+            "satooshi/php-coveralls": "dev-master",
+            "squizlabs/php_codesniffer": "~2.2"
+        },
+        "time": "2015-12-11T22:08:14+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Minphp\\Javascript\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Cody Phillips",
+                "email": "therealclphillips@gmail.com"
+            }
+        ],
+        "description": "Javascript Helper",
+        "homepage": "http://github.com/phillipsdata/minphp-javascript"
+    },
+    {
+        "name": "minphp/language",
+        "version": "1.1.1",
+        "version_normalized": "1.1.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/phillipsdata/minphp-language.git",
+            "reference": "650f11f6dbbe7000f2642d8e7f4d710a04afd20c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/phillipsdata/minphp-language/zipball/650f11f6dbbe7000f2642d8e7f4d710a04afd20c",
+            "reference": "650f11f6dbbe7000f2642d8e7f4d710a04afd20c",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.0",
+            "satooshi/php-coveralls": "~1.0",
+            "squizlabs/php_codesniffer": "~2.2"
+        },
+        "time": "2017-10-31T18:07:56+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Minphp\\Language\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Cody Phillips",
+                "email": "therealclphillips@gmail.com"
+            }
+        ],
+        "description": "Language Library",
+        "homepage": "http://github.com/phillipsdata/minphp-language"
+    },
+    {
+        "name": "minphp/pagination",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/phillipsdata/minphp-pagination.git",
+            "reference": "0e4a7bef0593401852522ec21fe33267b5ee1384"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/phillipsdata/minphp-pagination/zipball/0e4a7bef0593401852522ec21fe33267b5ee1384",
+            "reference": "0e4a7bef0593401852522ec21fe33267b5ee1384",
+            "shasum": ""
+        },
+        "require": {
+            "minphp/html": "~1.0",
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.0",
+            "satooshi/php-coveralls": "dev-master",
+            "squizlabs/php_codesniffer": "~2.2"
+        },
+        "time": "2015-12-11T20:59:29+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Minphp\\Pagination\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Cody Phillips",
+                "email": "therealclphillips@gmail.com"
+            }
+        ],
+        "description": "Pagination Helper",
+        "homepage": "http://github.com/phillipsdata/minphp-pagination"
+    },
+    {
+        "name": "minphp/record",
+        "version": "2.0.1",
+        "version_normalized": "2.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/phillipsdata/minphp-record.git",
+            "reference": "5ebf2b37a27e7018a2f73f84b1803af9be3d2469"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/phillipsdata/minphp-record/zipball/5ebf2b37a27e7018a2f73f84b1803af9be3d2469",
+            "reference": "5ebf2b37a27e7018a2f73f84b1803af9be3d2469",
+            "shasum": ""
+        },
+        "require": {
+            "minphp/db": "~2.0",
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.0",
+            "squizlabs/php_codesniffer": "~2.2"
+        },
+        "time": "2016-09-08T22:29:41+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Minphp\\Record\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Cody Phillips",
+                "email": "therealclphillips@gmail.com"
+            }
+        ],
+        "description": "Database Access Library",
+        "homepage": "http://github.com/phillipsdata/minphp-record"
+    },
+    {
+        "name": "minphp/session",
+        "version": "1.2.2",
+        "version_normalized": "1.2.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/phillipsdata/minphp-session.git",
+            "reference": "06a222ac6182b8cc8048d721f185fde5b455f216"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/phillipsdata/minphp-session/zipball/06a222ac6182b8cc8048d721f185fde5b455f216",
+            "reference": "06a222ac6182b8cc8048d721f185fde5b455f216",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "php": ">=5.4.0",
+            "php-coveralls/php-coveralls": "~1.1",
+            "phpunit/phpunit": "~4.0",
+            "squizlabs/php_codesniffer": "~2.2"
+        },
+        "time": "2019-05-21T23:34:37+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Minphp\\Session\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Cody Phillips",
+                "email": "therealclphillips@gmail.com"
+            },
+            {
+                "name": "Tyson Phillips",
+                "email": "tyson@phillipsdata.com"
+            }
+        ],
+        "description": "Session Management Library",
+        "homepage": "http://github.com/phillipsdata/minphp-session"
+    },
+    {
+        "name": "minphp/xml",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/phillipsdata/minphp-xml.git",
+            "reference": "436f210733dd25e6cdd041a3db7e775c18bc060e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/phillipsdata/minphp-xml/zipball/436f210733dd25e6cdd041a3db7e775c18bc060e",
+            "reference": "436f210733dd25e6cdd041a3db7e775c18bc060e",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.0",
+            "satooshi/php-coveralls": "dev-master",
+            "squizlabs/php_codesniffer": "~2.2"
+        },
+        "time": "2015-12-11T22:33:50+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Minphp\\Xml\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Cody Phillips",
+                "email": "therealclphillips@gmail.com"
+            }
+        ],
+        "description": "XML Helper",
+        "homepage": "http://github.com/phillipsdata/minphp-xml"
+    },
+    {
+        "name": "monolog/monolog",
+        "version": "1.25.1",
+        "version_normalized": "1.25.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Seldaek/monolog.git",
+            "reference": "70e65a5470a42cfec1a7da00d30edb6e617e8dcf"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Seldaek/monolog/zipball/70e65a5470a42cfec1a7da00d30edb6e617e8dcf",
+            "reference": "70e65a5470a42cfec1a7da00d30edb6e617e8dcf",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0",
+            "psr/log": "~1.0"
+        },
+        "provide": {
+            "psr/log-implementation": "1.0.0"
+        },
+        "require-dev": {
+            "aws/aws-sdk-php": "^2.4.9 || ^3.0",
+            "doctrine/couchdb": "~1.0@dev",
+            "graylog2/gelf-php": "~1.0",
+            "jakub-onderka/php-parallel-lint": "0.9",
+            "php-amqplib/php-amqplib": "~2.4",
+            "php-console/php-console": "^3.1.3",
+            "phpunit/phpunit": "~4.5",
+            "phpunit/phpunit-mock-objects": "2.3.0",
+            "ruflin/elastica": ">=0.90 <3.0",
+            "sentry/sentry": "^0.13",
+            "swiftmailer/swiftmailer": "^5.3|^6.0"
+        },
+        "suggest": {
+            "aws/aws-sdk-php": "Allow sending log messages to AWS services like DynamoDB",
+            "doctrine/couchdb": "Allow sending log messages to a CouchDB server",
+            "ext-amqp": "Allow sending log messages to an AMQP server (1.0+ required)",
+            "ext-mongo": "Allow sending log messages to a MongoDB server",
+            "graylog2/gelf-php": "Allow sending log messages to a GrayLog2 server",
+            "mongodb/mongodb": "Allow sending log messages to a MongoDB server via PHP Driver",
+            "php-amqplib/php-amqplib": "Allow sending log messages to an AMQP server using php-amqplib",
+            "php-console/php-console": "Allow sending log messages to Google Chrome",
+            "rollbar/rollbar": "Allow sending log messages to Rollbar",
+            "ruflin/elastica": "Allow sending log messages to an Elastic Search server",
+            "sentry/sentry": "Allow sending log messages to a Sentry server"
+        },
+        "time": "2019-09-06T13:49:17+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Monolog\\": "src/Monolog"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Jordi Boggiano",
+                "email": "j.boggiano@seld.be",
+                "homepage": "http://seld.be"
+            }
+        ],
+        "description": "Sends your logs to files, sockets, inboxes, databases and various web services",
+        "homepage": "http://github.com/Seldaek/monolog",
+        "keywords": [
+            "log",
+            "logging",
+            "psr-3"
+        ]
+    },
+    {
+        "name": "phillipsdata/csv",
+        "version": "1.1.0",
+        "version_normalized": "1.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/phillipsdata/csv.git",
+            "reference": "4adf31ff85370bde3ca3c1a4211805a41bafb9ad"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/phillipsdata-csv-4adf31ff85370bde3ca3c1a4211805a41bafb9ad-zip-a515d0.tar",
+            "reference": "4adf31ff85370bde3ca3c1a4211805a41bafb9ad",
+            "shasum": "5bb29354797c96995f9f2b0ba972d46972418778"
+        },
+        "require": {
+            "php": ">=5.4"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.8",
+            "satooshi/php-coveralls": "~1.0",
+            "squizlabs/php_codesniffer": "~2.3"
+        },
+        "time": "2016-03-04T19:48:08+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "PhillipsData\\Csv\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "description": "CSV Reader and Writer",
+        "keywords": [
+            "csv",
+            "delimited",
+            "file",
+            "parser",
+            "tab"
+        ]
+    },
+    {
+        "name": "phillipsdata/priority-schedule",
+        "version": "1.0.2",
+        "version_normalized": "1.0.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/phillipsdata/priority-schedule.git",
+            "reference": "2a3f1f099f5269e1640046d50bbce9aa5d5ba93a"
+        },
+        "dist": {
+            "type": "tar",
+            "url": "https://composer.blesta.com/dist/phillipsdata-priority-schedule-2a3f1f099f5269e1640046d50bbce9aa5d5ba93a-zip-64c7f4.tar",
+            "reference": "2a3f1f099f5269e1640046d50bbce9aa5d5ba93a",
+            "shasum": "07bdf4f28c485fd279784a7f25b3970edd01b077"
+        },
+        "require": {
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^4.8",
+            "satooshi/php-coveralls": "^1.0",
+            "squizlabs/php_codesniffer": "^2.2"
+        },
+        "time": "2016-03-24T21:56:40+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "PhillipsData\\PrioritySchedule\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Cody Phillips",
+                "email": "therealclphillips@gmail.com"
+            }
+        ],
+        "description": "A priority schedule library",
+        "homepage": "http://github.com/phillipsdata/priority-schedule"
+    },
+    {
+        "name": "phpseclib/phpseclib",
+        "version": "2.0.12",
+        "version_normalized": "2.0.12.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/phpseclib/phpseclib.git",
+            "reference": "8814dc7841db159daed0b32c2b08fb7e03c6afe7"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/8814dc7841db159daed0b32c2b08fb7e03c6afe7",
+            "reference": "8814dc7841db159daed0b32c2b08fb7e03c6afe7",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "require-dev": {
+            "phing/phing": "~2.7",
+            "phpunit/phpunit": "^4.8.35|^5.7|^6.0",
+            "sami/sami": "~2.0",
+            "squizlabs/php_codesniffer": "~2.0"
+        },
+        "suggest": {
+            "ext-gmp": "Install the GMP (GNU Multiple Precision) extension in order to speed up arbitrary precision integer arithmetic operations.",
+            "ext-libsodium": "SSH2/SFTP can make use of some algorithms provided by the libsodium-php extension.",
+            "ext-mcrypt": "Install the Mcrypt extension in order to speed up a few other cryptographic operations.",
+            "ext-openssl": "Install the OpenSSL extension in order to speed up a wide variety of cryptographic operations."
+        },
+        "time": "2018-11-04T05:45:48+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "phpseclib/bootstrap.php"
+            ],
+            "psr-4": {
+                "phpseclib\\": "phpseclib/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Jim Wigginton",
+                "email": "terrafrost@php.net",
+                "role": "Lead Developer"
+            },
+            {
+                "name": "Patrick Monnerat",
+                "email": "pm@datasphere.ch",
+                "role": "Developer"
+            },
+            {
+                "name": "Andreas Fischer",
+                "email": "bantu@phpbb.com",
+                "role": "Developer"
+            },
+            {
+                "name": "Hans-Jürgen Petrich",
+                "email": "petrich@tronic-media.com",
+                "role": "Developer"
+            },
+            {
+                "name": "Graham Campbell",
+                "email": "graham@alt-three.com",
+                "role": "Developer"
+            }
+        ],
+        "description": "PHP Secure Communications Library - Pure-PHP implementations of RSA, AES, SSH2, SFTP, X.509 etc.",
+        "homepage": "http://phpseclib.sourceforge.net",
+        "keywords": [
+            "BigInteger",
+            "aes",
+            "asn.1",
+            "asn1",
+            "blowfish",
+            "crypto",
+            "cryptography",
+            "encryption",
+            "rsa",
+            "security",
+            "sftp",
+            "signature",
+            "signing",
+            "ssh",
+            "twofish",
+            "x.509",
+            "x509"
+        ]
+    },
+    {
+        "name": "pimple/pimple",
+        "version": "v3.2.3",
+        "version_normalized": "3.2.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/silexphp/Pimple.git",
+            "reference": "9e403941ef9d65d20cba7d54e29fe906db42cf32"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/silexphp/Pimple/zipball/9e403941ef9d65d20cba7d54e29fe906db42cf32",
+            "reference": "9e403941ef9d65d20cba7d54e29fe906db42cf32",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0",
+            "psr/container": "^1.0"
+        },
+        "require-dev": {
+            "symfony/phpunit-bridge": "^3.2"
+        },
+        "time": "2018-01-21T07:42:36+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.2.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Pimple": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            }
+        ],
+        "description": "Pimple, a simple Dependency Injection Container",
+        "homepage": "http://pimple.sensiolabs.org",
+        "keywords": [
+            "container",
+            "dependency injection"
+        ]
+    },
+    {
+        "name": "psr/container",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/php-fig/container.git",
+            "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/php-fig/container/zipball/b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
+            "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2017-02-14T16:28:37+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Psr\\Container\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "PHP-FIG",
+                "homepage": "http://www.php-fig.org/"
+            }
+        ],
+        "description": "Common Container Interface (PHP FIG PSR-11)",
+        "homepage": "https://github.com/php-fig/container",
+        "keywords": [
+            "PSR-11",
+            "container",
+            "container-interface",
+            "container-interop",
+            "psr"
+        ]
+    },
+    {
+        "name": "psr/log",
+        "version": "1.1.0",
+        "version_normalized": "1.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/php-fig/log.git",
+            "reference": "6c001f1daafa3a3ac1d8ff69ee4db8e799a654dd"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/php-fig/log/zipball/6c001f1daafa3a3ac1d8ff69ee4db8e799a654dd",
+            "reference": "6c001f1daafa3a3ac1d8ff69ee4db8e799a654dd",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2018-11-20T15:27:04+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Psr\\Log\\": "Psr/Log/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "PHP-FIG",
+                "homepage": "http://www.php-fig.org/"
+            }
+        ],
+        "description": "Common interface for logging libraries",
+        "homepage": "https://github.com/php-fig/log",
+        "keywords": [
+            "log",
+            "psr",
+            "psr-3"
+        ]
+    },
+    {
+        "name": "stripe/stripe-php",
+        "version": "v6.43.1",
+        "version_normalized": "6.43.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/stripe/stripe-php.git",
+            "reference": "42fcdaf99c44bb26937223f8eae1f263491d5ab8"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/stripe/stripe-php/zipball/42fcdaf99c44bb26937223f8eae1f263491d5ab8",
+            "reference": "42fcdaf99c44bb26937223f8eae1f263491d5ab8",
+            "shasum": ""
+        },
+        "require": {
+            "ext-curl": "*",
+            "ext-json": "*",
+            "ext-mbstring": "*",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "php-coveralls/php-coveralls": "1.*",
+            "phpunit/phpunit": "~4.0",
+            "squizlabs/php_codesniffer": "~2.0",
+            "symfony/process": "~2.8"
+        },
+        "time": "2019-08-29T16:56:12+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Stripe\\": "lib/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Stripe and contributors",
+                "homepage": "https://github.com/stripe/stripe-php/contributors"
+            }
+        ],
+        "description": "Stripe PHP Library",
+        "homepage": "https://stripe.com/",
+        "keywords": [
+            "api",
+            "payment processing",
+            "stripe"
+        ]
+    },
+    {
+        "name": "swiftmailer/swiftmailer",
+        "version": "v5.4.12",
+        "version_normalized": "5.4.12.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/swiftmailer/swiftmailer.git",
+            "reference": "181b89f18a90f8925ef805f950d47a7190e9b950"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/181b89f18a90f8925ef805f950d47a7190e9b950",
+            "reference": "181b89f18a90f8925ef805f950d47a7190e9b950",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "require-dev": {
+            "mockery/mockery": "~0.9.1",
+            "symfony/phpunit-bridge": "~3.2"
+        },
+        "time": "2018-07-31T09:26:32+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "5.4-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "lib/swift_required.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Chris Corbyn"
+            },
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            }
+        ],
+        "description": "Swiftmailer, free feature-rich PHP mailer",
+        "homepage": "https://swiftmailer.symfony.com",
+        "keywords": [
+            "email",
+            "mail",
+            "mailer"
+        ]
+    },
+    {
+        "name": "tecnickcom/tcpdf",
+        "version": "6.2.26",
+        "version_normalized": "6.2.26.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/tecnickcom/TCPDF.git",
+            "reference": "367241059ca166e3a76490f4448c284e0a161f15"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/tecnickcom/TCPDF/zipball/367241059ca166e3a76490f4448c284e0a161f15",
+            "reference": "367241059ca166e3a76490f4448c284e0a161f15",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2018-10-16T17:24:05+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "config",
+                "include",
+                "tcpdf.php",
+                "tcpdf_parser.php",
+                "tcpdf_import.php",
+                "tcpdf_barcodes_1d.php",
+                "tcpdf_barcodes_2d.php",
+                "include/tcpdf_colors.php",
+                "include/tcpdf_filters.php",
+                "include/tcpdf_font_data.php",
+                "include/tcpdf_fonts.php",
+                "include/tcpdf_images.php",
+                "include/tcpdf_static.php",
+                "include/barcodes/datamatrix.php",
+                "include/barcodes/pdf417.php",
+                "include/barcodes/qrcode.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "LGPL-3.0"
+        ],
+        "authors": [
+            {
+                "name": "Nicola Asuni",
+                "role": "lead",
+                "email": "info@tecnick.com"
+            }
+        ],
+        "description": "TCPDF is a PHP class for generating PDF documents and barcodes.",
+        "homepage": "http://www.tcpdf.org/",
+        "keywords": [
+            "PDFD32000-2008",
+            "TCPDF",
+            "barcodes",
+            "datamatrix",
+            "pdf",
+            "pdf417",
+            "qrcode"
+        ]
+    }
+]

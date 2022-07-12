@@ -1,0 +1,151 @@
+                    <?php
+                    $this->Form->create($this->base_uri . 'plugin/support_manager/admin_tickets/replyaction/' . $this->Html->ifSet($ticket->id) . '/', ['id' => 'ticket_replies']);
+
+                    foreach ($this->Html->ifSet($ticket->replies, []) as $reply) {
+                        if ($this->Html->ifSet($reply->staff_id) != '') {
+                            $first_name = $this->Html->ifSet($reply->first_name, $this->_('AdminTickets.reply.system', true));
+                            $last_name = $this->Html->ifSet($reply->last_name);
+                        } else {
+                            $first_name = $this->Html->ifSet($reply->first_name);
+                            if ($reply->first_name == '') {
+                                $first_name = $this->Html->ifSet($ticket->email);
+                            }
+
+                            $last_name = $this->Html->ifSet($reply->last_name);
+                        }
+                        $first_name = $this->Html->safe($first_name);
+                        $last_name = $this->Html->safe($last_name);
+                    ?>
+                    <div class="<?php echo $this->Html->_($reply->type, true) . ($this->Html->_($reply->type, true) == 'note' ? ' reply' : '');?>">
+                        <?php
+                        if ($this->Html->ifSet($reply->type) == 'reply' || $this->Html->ifSet($reply->type) == 'note') {
+                        ?>
+                        <div class="topbar<?php echo ($this->Html->ifSet($reply->staff_id) != '' ? ' staff' : '');?>">
+                            <div class="reply-by">
+                                <p>
+                                <?php
+                                $this->_('AdminTickets.reply.reply_date', false, $this->Date->cast($this->Html->ifSet($reply->date_added), Configure::get('SupportManager.reply_date_format')), $first_name, $last_name);
+                                ?>
+                                </p>
+                            </div>
+                            <div class="options">
+                                <?php
+                                $this->Form->fieldCheckbox('replies[]', $this->Html->ifSet($reply->id), false, ['class'=>'replies']);
+                                ?>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="left">
+                            <div>
+                                <img src="//www.gravatar.com/avatar/<?php echo md5(strtolower(trim($this->Html->_($reply->email, true))));?>?s=120" />
+                            </div>
+                            <p class="name">
+                            <?php
+                            if ($this->Html->ifSet($reply->staff_id) == '' && $ticket->client_id) {
+                            ?>
+                                <a href="<?php echo $this->Html->safe($this->base_uri . 'clients/view/' . $ticket->client_id);?>"><?php echo $this->Html->concat(' ', $first_name, $last_name);?></a>
+                            <?php
+                            } else {
+                                echo $this->Html->concat(' ', $first_name, $last_name);
+                            }
+                            ?>
+                            </p>
+                            <?php
+                            if ($this->Html->ifSet($reply->staff_id) != '' && $this->Html->ifSet($reply->staff_id) != 0) {
+                                $staff_title = $this->_('AdminTickets.reply.staff_title', true);
+                                if ($this->Html->ifSet($staff_settings[$reply->staff_id], false) && !empty($staff_settings[$reply->staff_id]['title'])) {
+                                    $staff_title = $this->Html->safe($staff_settings[$reply->staff_id]['title']);
+                                }
+                            ?>
+                            <p class="title"><?php echo $staff_title;?></p>
+                            <?php
+                            }
+                            ?>
+                        </div>
+                        <div class="right">
+                            <?php
+                            // Show attachments
+                            if (!empty($reply->attachments)) {
+                            ?>
+                            <div class="attachments">
+                                <p>
+                                    <?php
+                                    foreach ($reply->attachments as $attachment) {
+                                    ?>
+                                    <span>
+                                        <a href="<?php echo $this->Html->safe($this->base_uri . 'plugin/support_manager/admin_tickets/getattachment/' . $this->Html->ifSet($attachment->id) . '/');?>">
+                                            <i class="fa fa-paperclip"></i>
+                                            <?php $this->Html->_($attachment->name);?>
+                                        </a>
+                                    </span>
+                                    <?php
+                                    }
+                                    ?>
+                                </p>
+                            </div>
+                            <?php
+                            }
+                            ?>
+                            <div class="response">
+                                <?php echo $this->TextParser->encode('markdown', $this->Html->ifSet($reply->details));?>
+                            </div>
+                            <?php
+                            // Show attachments
+                            if ($this->Html->ifSet($reply->images)) {
+                            ?>
+                            <div class="image-attachments">
+                                <div class="row equal">
+                                    <?php
+                                    $index = 0;
+                                    $columns = max(1, (int)$this->Html->ifSet($thumbnails_per_row, 0));
+                                    foreach ($reply->images as $id => $name) {
+                                        if ($index % $columns == 0 && $index != 0) {
+                                        ?>
+                                </div>
+                                <div class="row equal">
+                                        <?php
+                                        }
+                                        ?>
+                                        <div class="col-md-2 col-xs-4">
+                                            <img src="<?php echo $this->Html->safe($this->base_uri . 'plugin/support_manager/admin_tickets/getattachment/' . $id . '/');?>" data-slide="<?php echo $index;?>" alt="<?php echo $this->Html->safe($name);?>" title="<?php echo $this->Html->safe($name);?>" style="max-width: 100%;">
+                                        </div>
+                                        <?php
+                                        $index++;
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                            <?php
+                            }
+                            ?>
+                        </div>
+                        <div class="clear"></div>
+                        <?php
+                        } elseif ($this->Html->ifSet($reply->type) == 'log') {
+                        ?>
+                        <div class="icon-line fa-2x">
+                            <i class="fa fa-info-circle"></i>
+                            <p>
+                                <?php $this->Html->_($reply->details);?>
+                                <em><?php $this->_('AdminTickets.reply.log_date', false, $this->Date->cast($this->Html->ifSet($reply->date_added), Configure::get('SupportManager.reply_date_format')), $first_name, $last_name);?></em>
+                            </p>
+                        </div>
+                        <?php
+                        }
+                        ?>
+                    </div>
+                    <?php
+                    }
+                    ?>
+                    <div id="ticket_actions" style="display:none;">
+                        <div class="left">
+                            <span><?php $this->_('AdminTickets.reply.text_with_selected');?></span>
+                            <?php $this->Form->fieldSelect('action', $this->Html->ifSet($ticket_actions), '', ['id' => 'reply_action']);?>
+                        </div>
+                        <?php
+                        $this->Form->fieldSubmit('save', $this->_('AdminTickets.reply.field_actionsubmit', true), ['class' => 'btn btn-primary pull-right']);
+                        ?>
+                    </div>
+                    <?php
+                    $this->Form->end();
+                    ?>

@@ -1,0 +1,52 @@
+
+    <h4><?php $this->_('Teamspeak.tab_client_logs.heading_log'); ?></h4>
+    <div class="table-responsive">
+        <table class="table table-curved table-striped">
+            <thead>
+                <tr>
+                    <th><?php $this->_('Teamspeak.tab_client_logs.log_heading.date'); ?></th>
+                    <th><?php $this->_('Teamspeak.tab_client_logs.log_heading.type'); ?></th>
+                    <th><?php $this->_('Teamspeak.tab_client_logs.log_heading.function'); ?></th>
+                    <th width="10%"><?php $this->_('Teamspeak.tab_client_logs.log_heading.server_id'); ?></th>
+                    <th width="25%"><?php $this->_('Teamspeak.tab_client_logs.log_heading.description'); ?></th>
+                </tr>
+            </thead>
+            <tbody>
+            <?php
+            if (!empty($log->log)) {
+                foreach ($log->log as $log) {
+                    ?>
+                <tr>
+                    <td><?php $this->Html->_($log->date); ?></td>
+                    <td>
+                        <?php
+                        if ($log->type == 'WARNING') {
+                            $status_class = 'warning';
+                        } elseif ($log->type == 'INFO') {
+                            $status_class = 'info';
+                        } elseif ($log->type == 'DANGER') {
+                            $status_class = 'danger';
+                        } else {
+                            $status_class = 'success';
+                        } ?>
+                        <span class="label label-<?php $this->Html->_($status_class); ?>">
+                            <?php $this->_('Teamspeak.tab_client_logs.type_' . $this->Html->_($log->type, true)); ?>
+                        </span>
+                    </td>
+                    <td><?php $this->Html->_($log->function); ?></td>
+                    <td><?php $this->Html->_($log->server_id); ?></td>
+                    <td><?php $this->Html->_($log->description); ?></td>
+                </tr>
+            <?php
+                }
+            } else {
+            ?>
+                <tr>
+                    <td colspan="5"><?php $this->_('Teamspeak.tab_client_logs.text_no_logs'); ?></td>
+                </tr>
+            <?php
+            }
+            ?>
+            </tbody>
+        </table>
+    </div>

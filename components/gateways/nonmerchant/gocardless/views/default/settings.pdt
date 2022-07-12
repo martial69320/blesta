@@ -1,0 +1,43 @@
+<ul>
+    <li>
+        <?php
+            $this->Form->label($this->_('Gocardless.access_token', true), 'access_token');
+            $this->Form->fieldText('access_token', $this->Html->ifSet($meta['access_token']), ['id' => 'access_token']);
+        ?>
+    </li>
+    <li>
+        <?php
+            $this->Form->label($this->_('Gocardless.webhook_secret', true), 'webhook_secret');
+            $this->Form->fieldText('webhook_secret', $this->Html->ifSet($meta['webhook_secret']), ['id' => 'webhook_secret']);
+        ?>
+    </li>
+    <li>
+        <?php
+            $this->Form->label($this->_('Gocardless.pay_type', true));
+
+            $this->Form->fieldRadio('pay_type', 'both', ($this->Html->ifSet($meta['pay_type'], 'both') == 'both'), ['id' => 'pay_type_both']);
+            $this->Form->label($this->_('Gocardless.pay_type_both', true), 'pay_type_both', ['class' => 'inline']);
+
+            $this->Form->fieldRadio('pay_type', 'onetime', ($this->Html->ifSet($meta['pay_type'], 'both') == 'onetime'), ['id' => 'pay_type_onetime']);
+            $this->Form->label($this->_('Gocardless.pay_type_onetime', true), 'pay_type_onetime', ['class' => 'inline']);
+
+            $this->Form->fieldRadio('pay_type', 'subscribe', ($this->Html->ifSet($meta['pay_type'], 'both') == 'subscribe'), ['id' => 'pay_type_subscribe']);
+            $this->Form->label($this->_('Gocardless.pay_type_subscribe', true), 'pay_type_subscribe', ['class' => 'inline']);
+        ?>
+    </li>
+    <li>
+        <?php
+            $this->Form->fieldCheckbox('dev_mode', 'true', ($this->Html->ifSet($meta['dev_mode'], 'false') == 'true'), ['id' => 'dev_mode']);
+            $this->Form->label($this->_('Gocardless.dev_mode', true), 'dev_mode', ['class' => 'inline']);
+        ?>
+        <span class="tooltip"><?php $this->_('AppController.tooltip.text'); ?><div><?php $this->_('Gocardless.dev_mode_note'); ?></div></span>
+    </li>
+</ul>
+
+<div class="title_row">
+    <h3><?php $this->_('Gocardless.webhook'); ?></h3>
+</div>
+<div class="pad">
+    <p><?php $this->_('Gocardless.webhook_note'); ?></p>
+    <code><?php echo Configure::get('Blesta.gw_callback_url') . Configure::get('Blesta.company_id') . '/gocardless/'; ?></code>
+</div>

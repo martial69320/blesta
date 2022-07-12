@@ -1,0 +1,3 @@
+<?php
+header('Location: ' . $this->base_uri . 'order/signup/index/' . $this->Html->ifSet($order_form->label));
+exit;

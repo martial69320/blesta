@@ -1,0 +1,38 @@
+<?php
+$html_dir = (in_array($this->_('AppController.lang.dir', true), ['ltr', 'rtl']) ? $this->_('AppController.lang.dir', true) : 'ltr');
+$html_lang = (!empty($language) ? substr($language, 0, 2) : 'en');
+?><!DOCTYPE html>
+<html dir="<?php $this->Html->_($html_dir);?>" lang="<?php $this->Html->_($html_lang);?>" xml:lang="<?php $this->Html->_($html_lang);?>">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title><?php echo (($page_title = (isset($page_title) ? $page_title : $this->_($page_title_lang, true, $get_params))) ? $this->Html->_($page_title, true) . ' | ' : '') . $this->Html->_($system_company->name, true);?></title>
+        <link rel="shortcut icon" href="<?php echo $this->view_dir;?>images/favicon.ico" />
+        <link rel="stylesheet" href="<?php echo $this->view_dir;?>css/application.min.css" />
+        <link rel="stylesheet" href="<?php echo $this->view_dir;?>css/font-awesome.min.css" />
+        <link rel="stylesheet" href="<?php echo $this->view_dir;?>css/admin_login/login.min.css" type="text/css" media="all" />
+        <?php
+        if (isset($theme_css)) {
+        ?>
+        <link rel="stylesheet" href="<?php $this->Html->_($theme_css);?>" type="text/css" media="screen" />
+        <?php
+        }
+        if ($this->_('AppController.lang.dir', true) == 'rtl') {
+        ?>
+        <link rel="stylesheet" href="<?php echo $this->view_dir;?>css/rtl.css" type="text/css" media="screen" />
+        <?php
+        }
+        ?>
+        <script src="<?php echo $this->Html->safe($this->view_dir . 'javascript/jquery.min.js');?>"></script>
+        <script src="<?php echo $this->Html->safe($this->view_dir . 'javascript/bootstrap.min.js');?>"></script>
+        <?php echo $this->Html->ifSet($head);?>
+    </head>
+    <body>
+        <?php echo $this->Html->ifSet($body_start);?>
+        <?php echo $this->Html->ifSet($content);?>
+
+        <?php echo $this->Javascript->getFiles('body');?>
+        <?php echo $this->Javascript->getInline();?>
+        <?php echo $this->Html->ifSet($body_end);?>
+    </body>
+</html>

@@ -1,0 +1,281 @@
+                    <div class="panel panel-blesta">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><?php $this->_('Summary.index.box_heading');?></h3>
+                        </div>
+                        <div class="panel-body">
+                            <?php
+                            if (empty($summary['cart']['display_items'])) {
+                            ?>
+                            <div class="alert alert-warning">
+                                <i class="fa fa-exclamation-triangle"></i> <?php $this->_('Summary.index.cart_empty');?>
+                            </div>
+                            <?php
+                            } else {
+                            ?>
+                            <div class="table-responsive cart-summary">
+                                <table class="table table-condensed">
+                                    <tbody>
+                                        <?php
+                                        foreach ($this->Html->ifSet($summary['cart']['display_items'], []) as $item) {
+                                        ?>
+                                            <tr>
+                                                <td>
+                                                    <?php
+                                                    switch ($this->Html->ifSet($item['type'])) {
+                                                        case 'addon':
+                                                            // No break, display the item description
+                                                        case 'config_fee':
+                                                            $this->Html->_($item['description']);
+                                                            break;
+                                                        default:
+                                                            ?>
+                                                            <strong><?php $this->Html->_($item['description']);?></strong>
+                                                            <?php
+                                                    }
+                                                    ?>
+                                                    <?php $this->_('Summary.index.price', false, $this->Html->_($item['price'], true));?>
+                                                </td>
+                                                <?php
+                                                if ($this->Html->ifSet($item['type']) == 'service' || $this->Html->ifSet($item['type']) == 'addon') {
+                                                ?>
+                                                <td>
+                                                    <span class="pull-right"><a href="<?php echo $this->Html->safe($this->base_uri . 'order/cart/remove/' . $this->Html->ifSet($order_form->label) . '/?item=' . $this->Html->ifSet($item['index']));?>"><i class="fa fa-ban fa-fw fa-lg text-danger"></i></a></span>
+                                                </td>
+                                                <?php
+                                                }
+                                                ?>
+                                            </tr>
+                                            <?php
+                                        }
+                                        ?>
+                                    </tbody>
+                                </table>
+                                <hr>
+
+                                <?php
+                                if ($this->Html->ifSet($summary['totals'])) {
+                                ?>
+                                <table class="table table-responsive table-condensed totals">
+                                    <tbody>
+                                        <tr>
+                                            <td><span class="pull-right"><?php $this->_('Summary.index.totals.subtotal');?></span></td>
+                                            <td><span class="pull-right"><?php $this->Html->_($summary['totals']['subtotal']['amount_formatted']);?></span></td>
+                                        </tr>
+                                        <?php
+                                        if ($this->Html->ifSet($summary['totals']['discount']['amount'])) {
+                                        ?>
+                                        <tr>
+                                            <td><span class="pull-right"><?php $this->_('Summary.index.totals.discount');?></span></td>
+                                            <td><span class="pull-right"><?php $this->Html->_($summary['totals']['discount']['amount_formatted']);?></span></td>
+                                        </tr>
+                                        <?php
+                                        }
+                                        if ($this->Html->ifSet($summary['totals']['tax'])) {
+                                            foreach ($summary['totals']['tax'] as $description => $tax) {
+                                        ?>
+                                            <tr>
+                                                <td><span class="pull-right"><?php $this->_('Summary.index.totals.tax', false, $description);?></span></td>
+                                                <td><span class="pull-right"><?php $this->Html->_($tax['amount_formatted']);?></span></td>
+                                            </tr>
+                                        <?php
+                                            }
+                                        }
+                                        ?>
+                                        <tr>
+                                            <td><span class="pull-right"><?php $this->_('Summary.index.totals.total');?></span></td>
+                                            <td><span class="pull-right"><?php $this->Html->_($summary['totals']['total_without_exclusive_tax']['amount_formatted']);?></span></td>
+                                        </tr>
+                                        <?php
+                                        // Display recurring totals
+                                        if ($this->Html->ifSet($summary['totals_recurring'])) {
+                                        ?>
+                                        <tr>
+                                            <td><span class="pull-right"><?php $this->_('Summary.index.totals.total_recurring');?></span></td>
+                                            <td></td>
+                                        </tr>
+                                            <?php
+                                            foreach ($summary['totals_recurring'] as $totals) {
+                                                // Determine the period to use
+                                                $term = $this->Html->safe($totals['term']);
+                                                $period = $this->Html->safe(($term == 1 ? $this->Html->ifSet($periods[$totals['period']]) : $this->Html->ifSet($periods[$totals['period'] . '_plural'])), true);
+                                                $amount = $this->Html->safe($totals['totals']['total_without_exclusive_tax']['amount_formatted']);
+                                            ?>
+                                        <tr>
+                                            <td colspan="2"><span class="pull-right"><?php $this->_('Summary.index.totals.total_recurring_amount', false, $term, $period, $amount);?></span></td>
+                                        </tr>
+                                            <?php
+                                            }
+                                        }
+                                        ?>
+                                    </tbody>
+                                </table>
+                                <?php
+                                }
+                                ?>
+                            </div>
+                            <?php
+                            }
+                            ?>
+                            <?php
+                            if ($this->Html->ifSet($order_form->allow_coupons) == '1') {
+                            ?>
+                                <p><a href="#coupon_box" data-toggle="collapse"><i class="fa fa-chevron-down"></i> <?php $this->_('Summary.index.have_coupon');?></a></p>
+                                <div id="coupon_box" class="collapse">
+                                    <?php
+                                    $this->Form->create($this->Html->ifSet($this->base_uri) . 'order/cart/applycoupon/' . $this->Html->ifSet($order_form->label), ['id' => 'applycoupon', 'class' => 'disable-on-submit']);
+                                    ?>
+                                    <div class="form-group">
+                                        <div id="coupon_message"></div>
+                                    </div>
+                                    <div class="input-group">
+                                        <?php
+                                        $this->Form->fieldText('coupon', $this->Html->ifSet($summary['cart']['coupon'], $this->Html->ifSet($temp_coupon)), ['class' => 'form-control', 'id' => 'coupon', 'placeholder' => $this->_('Summary.index.coupon', true)]);
+                                        ?>
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-default" type="submit"><i class="fa fa-refresh"></i> <?php $this->_('Summary.index.coupon_btn');?></button>
+                                        </div>
+                                    </div>
+                                    <?php
+                                    $this->Form->end();
+                                    ?>
+                                    <hr />
+                                </div>
+                            <?php
+                            }
+                            ?>
+
+                            <div class="row">
+                                <div class="col-md-5 col-sm-5 col-xs-5">
+                                    <?php
+                                    if (count($this->Html->ifSet($order_form->currencies, [])) > 1) {
+                                        $this->Form->setCsrfOptions(['set_on_create' => false]);
+                                        $this->Form->create(null, ['method' => 'GET']);
+                                    ?>
+                                        <div class="form-group currency-selector">
+                                            <?php
+                                            $this->Form->fieldSelect('currency', $this->Form->collapseObjectArray($order_form->currencies, 'currency', 'currency'), $this->Html->ifSet($summary['cart']['currency']), ['class' => 'form-control input-sm', 'id' => 'change_currency']);
+                                            ?>
+                                        </div>
+                                    <?php
+                                        $this->Form->end();
+                                        $this->Form->setCsrfOptions(['set_on_create' => true]);
+                                    }
+                                    ?>
+                                </div>
+                                <div class="col-md-7">
+                                    <?php
+                                    if (!empty($summary['cart']['items'])) {
+                                    ?>
+                                    <a href="<?php echo $this->Html->safe($this->base_uri . 'order/cart/index/' . $this->Html->ifSet($order_form->label));?>" class="btn btn-success btn-sm pull-right"><?php $this->_('Summary.index.checkout_btn');?> <i class="fa fa-angle-double-right"></i></a>
+                                    <?php
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                            <?php
+                            if (!$this->Html->ifSet($client)) {
+                            ?>
+                            <div class="panel-footer" id="login_section">
+                                <?php $this->_('Summary.index.login_customer');?>
+                                <a href="#login_box" data-toggle="collapse"><?php $this->_('Summary.index.login_link');?></a>
+                                <div id="login_box" class="collapse">
+                                    <?php
+                                    $this->Form->create($this->base_uri . 'order/login/index/' . $this->Html->ifSet($order_form->label), ['id' => 'order_login', 'class' => 'disable-on-submit']);
+                                    ?>
+                                        <div class="form-group">
+                                            <div id="login_message"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <?php
+                                            $this->Form->label($this->_('Summary.index.field_username', true));
+                                            $this->Form->fieldText('username', null, ['class' => 'form-control']);
+                                            ?>
+                                        </div>
+                                        <div class="form-group">
+                                            <?php
+                                            $this->Form->label($this->_('Summary.index.field_password', true));
+                                            $this->Form->fieldPassword('password', ['class' => 'form-control']);
+                                            ?>
+                                        </div>
+
+                                        <button class="btn btn-default btn-block" type="submit"><i class="fa fa-lock"></i> <?php $this->_('Summary.index.login_btn');?></button>
+                                        <div class="pass-reset">
+                                            <a class="pull-right" href="<?php echo $this->Html->safe($this->client_uri . "login/reset/");?>" target="_blank"><?php $this->_("Summary.index.link_resetpassword");?></a>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    <?php
+                                    $this->Form->end();
+                                    ?>
+                                </div>
+                            </div>
+                            <?php
+                            }
+                            ?>
+                        </div>
+                    </div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    // Process change currency request
+    $("#change_currency").change(function() {
+        $(this).closest("form").attr('action', window.location.href);
+        $(this).closest("form").submit();
+    });
+
+    // Process login request
+    $("#order_login").submit(function(event) {
+        $(this).blestaRequest('POST', $(this).attr('action'), $(this).serialize(),
+            function(data) {
+                if (data.error) {
+                    $("#login_message").html(data.error);
+
+                    // Re-enable the submit buttons
+                    $(document).blestaEnableFormSubmission($('#order_login'));
+                } else {
+                    $("#login_section").hide();
+                }
+            },
+            null,
+            {dataType: 'json'}
+        );
+
+        event.preventDefault();
+    });
+
+    $("#applycoupon").on('submit', function(event) {
+        $(this).blestaRequest('POST', $(this).attr('action'), $(this).serialize(),
+            function(data) {
+                if (data.error)
+                    $("#coupon_message").html(data.error);
+                else {
+                    var success_message = (data.success ? data.success : "");
+
+                    $(this).blestaRequest('GET', '<?php echo $this->Html->safe($this->base_uri . 'order/summary/index/' . $this->Html->ifSet($order_form->label));?>', null,
+                        function(data) {
+                            $("#summary_section").html(data);
+
+                            if (success_message.length > 0) {
+                                $("#coupon_message").html(success_message);
+                                $("#coupon_box").toggle();
+                            }
+                        }
+                    );
+                }
+            },
+            null,
+            {dataType: 'json', complete: function() { $("#applycoupon").blestaEnableFormSubmission($("#applycoupon")); }}
+        );
+
+        event.preventDefault();
+    });
+
+    <?php
+    // Attempt to auto-apply a temp coupon by submitting the coupon form
+    if (!empty($temp_coupon) && empty($summary['cart']['coupon'])) {
+    ?>
+    $("#applycoupon").trigger("submit");
+    <?php
+    }
+    ?>
+});
+</script>

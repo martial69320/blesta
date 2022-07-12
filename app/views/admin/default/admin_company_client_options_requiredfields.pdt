@@ -1,0 +1,30 @@
+
+        <?php echo $this->Html->ifSet($left_nav);?>
+        <div id="right_outer">
+            <?php echo $this->Html->ifSet($message);?>
+            <section id="right_container">
+                <?php
+                $this->Widget->clear();
+                $this->Widget->create($this->_('AdminCompanyClientOptions.requiredfields.boxtitle', true));
+                ?>
+                <div class="inner">
+                    <?php
+                    $this->Form->create(null, ['class' => 'disable-on-submit']);
+                    ?>
+                    <div class="pad">
+                        <?php echo $this->Html->ifSet($required_fields_form);?>
+                    </div>
+
+                    <div class="button_row">
+                        <?php
+                        $this->Form->fieldSubmit('save', $this->_('AdminCompanyClientOptions.requiredfields.text_submit', true), ['class' => 'btn btn-primary pull-right']);
+                        ?>
+                    </div>
+
+                    <?php $this->Form->end(); ?>
+                </div>
+                <?php
+                $this->Widget->end();
+                ?>
+            </section>
+        </div>

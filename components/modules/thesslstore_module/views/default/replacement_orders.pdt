@@ -1,0 +1,79 @@
+<?php
+        $selecteddate='';
+        if(isset($_REQUEST['date'])) {
+         $selecteddate=$_REQUEST['date'];
+        }
+		$this->Widget->clear();
+		$this->Widget->create($this->_("ThesslstoreModule.replacement_order.box_title", true));
+		?>
+		<div class="inner">
+		    <?php
+            			$this->Form->create();
+            			?>
+            			<div class="pad">
+            				<ul>
+            				    <li>
+                                    <?php
+                                    $this->Form->label($this->_("ThesslstoreModule.row_meta.replace_date", true), "replace_by_date");
+                                    $this->Form->fieldSelect("replace_by_date",array('2018-03-15'=>'03-15-2018','2018-09-13'=>'09-13-2018') ,$selecteddate, array('id' => "replace_by_date"));
+                                    ?>
+                                </li>
+            				</ul>
+            			</div>
+            			<div class="button_row"><a class="btn btn-primary submit" href="#"><?php $this->_("ThesslstoreModule.tab_generate_cert_step1.submit");?></a></div>
+            			<?php
+            			$this->Form->end();
+            			?>
+		    <div class="links_row button_row">
+			    <a target="_blank" class="pull-right btn btn-default" href="<?php $this->Html->_($export_to_csv_link); ?>"><?php $this->_("ThesslstoreModule.replacement_order.export_csv"); ?> </a>
+            </div>
+		    <table class="table">
+                <tbody>
+                    <tr class="heading_row">
+                        <td>Purchase Date</td>
+                        <td>Store ID</td>
+                        <td>Vendor ID</td>
+                        <td>Product Details</td>
+                        <td>Issued Date</td>
+                        <td>Expire Date</td>
+                        <td>Status</td>
+                        <td>Action</td>
+                        <td>Replace By Date</td>
+                    </tr>
+                    <?php
+                    if(!empty($orders)){
+                        $odd = false;
+                        foreach($orders as $order){
+                            if($odd == true){
+                                $class = "class='odd_row'";
+                                $odd = false;
+                            }
+                            elseif($odd == false){
+                                $class = '';
+                                $odd = true;
+                            }
+                            ?>
+                            <tr <?php echo $class; ?> >
+                                <td><?php $this->Html->_($order->PurchaseDate); ?></td>
+                                <td><?php $this->Html->_($order->TheSSLStoreOrderID); ?></td>
+                                <td><?php $this->Html->_($order->VendorOrderID); ?></td>
+                                <td><?php $this->Html->_($order->ProductName); ?></td>
+                                <td><?php $this->Html->_($order->CertificateStartDate); ?></td>
+                                <td><?php $this->Html->_($order->CertificateEndDate); ?></td>
+                                <td><?php $this->Html->_($order->Status); ?></td>
+                                <td><?php $this->Html->_($order->Action); ?></td>
+                                <td><?php $this->Html->_($order->ReplaceByDate); ?></td>
+                            </tr>
+<?php
+                        }
+                        }else{ ?>
+                                                         <tr><td colspan="9"><?php echo "No records Found"; ?></td></tr>
+                                                     <?php }
+                    ?>
+                </tbody>
+            </table>
+		</div>
+
+		<?php
+            $this->Widget->end();
+        ?>

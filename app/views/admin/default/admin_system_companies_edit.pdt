@@ -1,0 +1,46 @@
+
+        <?php echo $this->Html->ifSet($left_nav);?>
+        <div id="right_outer">
+            <?php echo $this->Html->ifSet($message);?>
+            <section id="right_container">
+                <?php
+                $this->Widget->clear();
+                $this->Widget->create($this->_('AdminSystemCompanies.edit.boxtitle_editcompany', true));
+                ?>
+                <div class="inner">
+                    <?php $this->Form->create(null, ['class' => 'disable-on-submit']);?>
+                    <div class="pad">
+                        <ul>
+                            <li>
+                                <?php $this->Form->label($this->_('AdminSystemCompanies.edit.field_name', true), 'name');?>
+                                <?php $this->Form->fieldText('name', $this->Html->ifSet($vars->name), ['id' => 'name']);?>
+                            </li>
+                            <li>
+                                <?php $this->Form->label($this->_('AdminSystemCompanies.edit.field_hostname', true), 'hostname', ['class' => 'inline']);?>
+                                <span class="tooltip block"><?php $this->_('AppController.tooltip.text');?><div><?php $this->_('AdminSystemCompanies.!tooltip.hostname');?></div></span>
+                                <?php $this->Form->fieldText('hostname', $this->Html->ifSet($vars->hostname), ['id' => 'hostname', 'class' => 'block']);?>
+                            </li>
+                            <li>
+                                <?php $this->Form->label($this->_('AdminSystemCompanies.edit.field_address', true), 'address');?>
+                                <?php $this->Form->fieldTextarea('address', $this->Html->ifSet($vars->address), ['id' => 'address']);?>
+                            </li>
+                            <li>
+                                <?php $this->Form->label($this->_('AdminSystemCompanies.edit.field_phone', true), 'phone');?>
+                                <?php $this->Form->fieldText('phone', $this->Html->ifSet($vars->phone), ['id' => 'phone']);?>
+                            </li>
+                            <li>
+                                <?php $this->Form->label($this->_('AdminSystemCompanies.edit.field_fax', true), 'fax');?>
+                                <?php $this->Form->fieldText('fax', $this->Html->ifSet($vars->fax), ['id' => 'fax']);?>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="button_row">
+                        <?php
+                        $this->Form->fieldSubmit('save', $this->_('AddSystemCompanies.edit.field_companysubmit', true), ['class' => 'btn btn-primary pull-right']);
+                        ?>
+                    </div>
+                    <?php $this->Form->end();?>
+                </div>
+                <?php $this->Widget->end();?>
+            </section>
+        </div>
